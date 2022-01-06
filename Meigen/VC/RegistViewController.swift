@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 
-class RegistViewController: UIViewController {
+final class RegistViewController: UIViewController {
 
 //MARK: IBOutlet-
     @IBOutlet weak var MeigenTextView: UITextView!

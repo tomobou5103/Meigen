@@ -1,6 +1,6 @@
 
 import UIKit
 
-class TopTableViewCell: UITableViewCell {
+final class TopTableViewCell: UITableViewCell {
 
 }

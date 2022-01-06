@@ -1,6 +1,6 @@
 import UIKit
 
-class TopViewController: UIViewController{
+final class TopViewController: UIViewController{
     
 //MARK: Property-
    

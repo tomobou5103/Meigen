@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+final class CategoryViewController: UIViewController {
     
 //MARK: Property
 private let categoryId = "TopTableViewCell"
