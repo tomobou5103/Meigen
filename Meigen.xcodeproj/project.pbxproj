@@ -130,7 +130,7 @@
 			children = (
 				73FFD78527210D34000F236E /* AppDelegate.swift */,
 				73FFD78727210D34000F236E /* SceneDelegate.swift */,
-				73FFD7B7272110D8000F236E /* View */,
+				73FFD7B7272110D8000F236E /* VC */,
 				73FFD79027210D35000F236E /* LaunchScreen.storyboard */,
 				73FFD78B27210D34000F236E /* Main.storyboard */,
 				7337B4982722D60C006C6820 /* Meigen.swift */,
@@ -157,25 +157,25 @@
 			path = MeigenUITests;
 			sourceTree = "<group>";
 		};
-		73FFD7B7272110D8000F236E /* View */ = {
+		73FFD7B7272110D8000F236E /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				73FFD7B5272110CA000F236E /* TopViewController.swift */,
 				73FFD7BE27211AFC000F236E /* CategoryViewController.swift */,
 				73FFD7C02721235F000F236E /* MeigenViewController.swift */,
 				73FFD7C227213D4E000F236E /* RegistViewController.swift */,
-				73FFD7BD272113E2000F236E /* UITableViewCell */,
+				73FFD7BD272113E2000F236E /* View */,
 			);
-			path = View;
+			path = VC;
 			sourceTree = "<group>";
 		};
-		73FFD7BD272113E2000F236E /* UITableViewCell */ = {
+		73FFD7BD272113E2000F236E /* View */ = {
 			isa = PBXGroup;
 			children = (
 				73FFD7B9272113D5000F236E /* TopTableViewCell.swift */,
 				73FFD7BA272113D5000F236E /* TopTableViewCell.xib */,
 			);
-			path = UITableViewCell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		8B4107D17D38F527DC2F96E8 /* Frameworks */ = {
