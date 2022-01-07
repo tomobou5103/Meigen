@@ -22,7 +22,6 @@ final class SearchBookViewController: UIViewController {
         textF.rx.text
             .subscribe{text in
                 GoogleBooksAPI.shared.receiveBooksData(textValue: text ?? "",completion:{ model in
-                    print(model.items[0])
                     self.model = model
                     DispatchQueue.main.async {
                         self.tableV.reloadData()
