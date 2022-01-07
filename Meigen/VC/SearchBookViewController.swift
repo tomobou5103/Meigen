@@ -6,12 +6,7 @@ import Alamofire
 final class SearchBookViewController: UIViewController {
 
     @IBOutlet weak private var textF: UITextField!
-    @IBOutlet weak private var tableV: UITableView!{
-        didSet{
-            self.tableV.delegate = self
-            self.tableV.dataSource = self
-        }
-    }
+    @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
     
     private let disposeBag = DisposeBag()
     private var model:BooksModel?
@@ -30,6 +25,10 @@ final class SearchBookViewController: UIViewController {
             }
             .disposed(by: disposeBag)
    }
+    private func tableViewConfigure(tableView:UITableView){
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
 extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
