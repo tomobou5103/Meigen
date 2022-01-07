@@ -15,10 +15,7 @@ final class SearchBookViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func textFieldDidChangValue(){
         textF.rx.text
             .subscribe{text in
                 GoogleBooksAPI.shared.receiveBooksData(textValue: text ?? "",completion:{ model in
@@ -29,6 +26,10 @@ final class SearchBookViewController: UIViewController {
                 })
             }
             .disposed(by: disposeBag)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textFieldDidChangValue()
    }
 }
 extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
