@@ -11,6 +11,11 @@ final class SearchBookViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var model:BooksModel?
     
+    private func tableViewConfigure(tableView:UITableView){
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,10 +30,6 @@ final class SearchBookViewController: UIViewController {
             }
             .disposed(by: disposeBag)
    }
-    private func tableViewConfigure(tableView:UITableView){
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
 }
 extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
