@@ -5,7 +5,6 @@ final class TopViewController: UIViewController{
 //MARK: Property-
    
     private let topTableId = "TopTableViewCell" //TableViewCellID
-    private let meigens:[[Meigen]] = []
     
 //MARK: IBOutlet-
 
@@ -34,13 +33,12 @@ final class TopViewController: UIViewController{
 extension TopViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //UserDefaults()
-        return meigens.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableV.dequeueReusableCell(withIdentifier: topTableId, for: indexPath) as? TopTableViewCell
         cell?.textLabel?.text = "カテゴリー名"
-        cell?.textLabel?.text = meigens[indexPath.section][indexPath.row].bookName
         return cell ?? UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

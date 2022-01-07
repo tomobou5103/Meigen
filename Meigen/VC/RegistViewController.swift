@@ -15,13 +15,6 @@ final class RegistViewController: UIViewController {
     //MARK: IBAction-
     
     @IBAction func barButtonAction(_ sender: Any) {
-        let nameText = self.bookNameTextField.text ?? ""
-        let meigenText = MeigenTextView.text ?? ""
-        let quoteText = quoteTextField.text ?? ""
-        let authorText = authorTextField.text ?? ""
-        let commentText = commentTextField.text ?? ""
-        let meigen = Meigen(name: nameText, meigen: meigenText, quote: quoteText, author: authorText, comment: commentText)
-        
         //UD()
         
         
