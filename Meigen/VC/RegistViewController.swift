@@ -11,10 +11,9 @@ final class RegistViewController: UIViewController {
     @IBOutlet weak var MeigenTextView: UITextView!
     @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var bookNameTextField: UITextField!
-    @IBOutlet weak var quoteTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var commentTextField: UITextField!
-    //MARK: IBAction-
+//MARK: IBAction-
     
     @IBAction func barButtonAction(_ sender: Any) {
         //UD()
