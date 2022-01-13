@@ -8,9 +8,18 @@ final class SearchBookViewController: UIViewController {
     @IBOutlet weak private var textF: UITextField!
     @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
     
+//MARK: -Propety
     private let disposeBag = DisposeBag()
     private var model:BooksModel?
     private let tableViewNameId = "SearchBookTableViewCell"
+    private let segueId = "SearchBookRegist"
+    private var keepIndexPath:Int = 0
+    
+//MARK: -IBOutlet
+    @IBOutlet weak private var textF: UITextField!
+    @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
+    
+
     
     private func tableViewConfigure(tableView:UITableView){
         tableView.delegate = self
@@ -33,6 +42,17 @@ final class SearchBookViewController: UIViewController {
         super.viewDidLoad()
         textFieldDidChangValue()
    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueId{
+            guard
+                let model = self.model?.items[self.keepIndexPath],
+                let nextVC = segue.destination as? RegistViewController
+            else{
+                return
+            }
+            nextVC.configure(model: model)
+        }
+    }
 }
 extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,5 +68,10 @@ extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
         }
         cell.configure(model: model.items[indexPath.row].volumeInfo)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.keepIndexPath = indexPath.row
+        performSegue(withIdentifier: segueId, sender: nil)
+        
     }
 }
