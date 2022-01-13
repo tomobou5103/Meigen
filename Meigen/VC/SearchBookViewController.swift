@@ -12,7 +12,7 @@ final class SearchBookViewController: UIViewController {
     private var keepIndexPath:Int = 0
     
 //MARK: -IBOutlet
-    @IBOutlet weak private var textF: UITextField!
+    @IBOutlet weak private var textF: UITextField!{didSet{textFieldDidChangValue()}}
     @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
     
 
@@ -23,6 +23,7 @@ final class SearchBookViewController: UIViewController {
         tableView.register(UINib(nibName: tableViewNameId, bundle: nil), forCellReuseIdentifier: tableViewNameId)
     }
     private func textFieldDidChangValue(){
+        
         textF.rx.text.orEmpty.asDriver()
             .drive(onNext:{[unowned self] text in
                 GoogleBooksAPI.shared.receiveBooksData(textValue: text,completion:{ booksModel in
@@ -36,7 +37,6 @@ final class SearchBookViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldDidChangValue()
    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.segueId{
