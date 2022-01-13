@@ -10,21 +10,23 @@ final class SearchBookViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private var model:BooksModel?
+    private let tableViewNameId = "SearchBookTableViewCell"
     
     private func tableViewConfigure(tableView:UITableView){
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: tableViewNameId, bundle: nil), forCellReuseIdentifier: tableViewNameId)
     }
     private func textFieldDidChangValue(){
-        textF.rx.text
-            .subscribe{text in
-                GoogleBooksAPI.shared.receiveBooksData(textValue: text ?? "",completion:{ model in
-                    self.model = model
+        textF.rx.text.orEmpty.asDriver()
+            .drive(onNext:{[unowned self] text in
+                GoogleBooksAPI.shared.receiveBooksData(textValue: text,completion:{ booksModel in
+                    self.model = booksModel
                     DispatchQueue.main.async {
                         self.tableV.reloadData()
                     }
                 })
-            }
+            })
             .disposed(by: disposeBag)
     }
     override func viewDidLoad() {
@@ -38,8 +40,13 @@ extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = self.model?.items[indexPath.row].volumeInfo.title
+        guard
+            let cell = tableV.dequeueReusableCell(withIdentifier: tableViewNameId, for: indexPath) as? SearchBookTableViewCell,
+            let model = self.model
+        else{
+            return UITableViewCell()
+        }
+        cell.configure(model: model.items[indexPath.row].volumeInfo)
         return cell
     }
 }
