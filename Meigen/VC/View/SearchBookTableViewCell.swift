@@ -20,17 +20,15 @@ final class SearchBookTableViewCell: UITableViewCell {
     
     private func getImageData(model:ImageLinks,completion:@escaping(UIImage)->Void){
         DispatchQueue.global().async {
-            if let imageSt = model.thumbnail{
-                let imageUrl = URL(string: imageSt)
-                do{
-                    let imageData = try? Data(contentsOf: imageUrl!)
-                    completion(UIImage(data: imageData!)!)
-                }catch{
-                    print("Could not load image file")
-                }
-            }else{
-                completion(UIImage())
+            guard
+                let imageSt = model.thumbnail,
+                let imageUrl = URL(string: imageSt),
+                let imageData = try? Data(contentsOf: imageUrl),
+                let image = UIImage(data: imageData)
+            else{
+                return
             }
+            completion(image)
         }
     }
 }
