@@ -23,8 +23,7 @@ final class SearchBookTableViewCell: UITableViewCell {
             if let imageSt = model.thumbnail{
                 let imageUrl = URL(string: imageSt)
                 do{
-                let imageData = try? Data(contentsOf: imageUrl!)
-                    
+                    let imageData = try? Data(contentsOf: imageUrl!)
                     completion(UIImage(data: imageData!)!)
                 }catch{
                     print("Could not load image file")

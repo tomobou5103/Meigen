@@ -4,10 +4,6 @@ import RxCocoa
 import Alamofire
 
 final class SearchBookViewController: UIViewController {
-
-    @IBOutlet weak private var textF: UITextField!
-    @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
-    
 //MARK: -Propety
     private let disposeBag = DisposeBag()
     private var model:BooksModel?
