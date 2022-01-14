@@ -14,9 +14,7 @@ final class SearchBookViewController: UIViewController {
 //MARK: -IBOutlet
     @IBOutlet weak private var textF: UITextField!{didSet{textFieldDidChangValue()}}
     @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
-    
 
-    
     private func tableViewConfigure(tableView:UITableView){
         tableView.delegate = self
         tableView.dataSource = self
