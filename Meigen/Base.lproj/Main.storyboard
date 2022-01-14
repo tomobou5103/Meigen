@@ -222,13 +222,23 @@
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-pn-GuK">
+                                        <rect key="frame" x="322" y="244" width="67" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="insertImageButton:" destination="Q5n-6k-y53" eventType="touchUpInside" id="Oqs-7D-wG6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="backgroundColor" red="0.34150703143202954" green="0.66486791237113407" blue="0.35310649898079649" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="48e-de-ytq"/>
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="leading" secondItem="s3c-Ea-UEs" secondAttribute="leading" constant="15" id="Lus-qM-rDe"/>
                                     <constraint firstAttribute="trailing" secondItem="4PU-vY-MKi" secondAttribute="trailing" constant="15" id="QVC-9g-l0v"/>
+                                    <constraint firstAttribute="trailing" secondItem="Soj-pn-GuK" secondAttribute="trailing" constant="25" id="abj-wA-leO"/>
                                     <constraint firstAttribute="bottom" secondItem="4PU-vY-MKi" secondAttribute="bottom" constant="15" id="ras-I0-K9a"/>
+                                    <constraint firstAttribute="bottom" secondItem="Soj-pn-GuK" secondAttribute="bottom" constant="25" id="u92-cQ-OdE"/>
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="top" secondItem="s3c-Ea-UEs" secondAttribute="top" constant="15" id="xsr-gn-ha8"/>
                                 </constraints>
                             </view>
@@ -312,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-Pq-ebm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="874"/>
+            <point key="canvasLocation" x="1682.608695652174" y="873.88392857142856"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="gB8-qY-cYX">

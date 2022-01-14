@@ -15,7 +15,10 @@ final class RegistViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
 //MARK: IBAction-
     
-    @IBAction func barButtonAction(_ sender: Any) {
+    @IBAction private func insertImageButton(_ sender: Any) {
+    }
+    
+    @IBAction private func barButtonAction(_ sender: Any) {
         //UD()
         
         
