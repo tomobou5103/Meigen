@@ -8,11 +8,11 @@ final class RegistViewController: UIViewController {
 //MARK: Property-
     private var model:Item?
 //MARK: IBOutlet-
-    @IBOutlet weak var MeigenTextView: UITextView!
-    @IBOutlet weak var barButton: UIBarButtonItem!
-    @IBOutlet weak var bookNameTextField: UITextField!
-    @IBOutlet weak var authorTextField: UITextField!
-    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak private var MeigenTextView: UITextView!
+    @IBOutlet weak private var barButton: UIBarButtonItem!
+    @IBOutlet weak private var bookNameTextField: UITextField!
+    @IBOutlet weak private var authorTextField: UITextField!
+    @IBOutlet weak private var commentTextField: UITextField!
 //MARK: IBAction-
     
     @IBAction private func insertImageButton(_ sender: Any) {
