@@ -14,7 +14,7 @@ final class SearchBookViewController: UIViewController {
 //MARK: -IBOutlet
     @IBOutlet weak private var textF: UITextField!{didSet{textFieldDidChangValue()}}
     @IBOutlet weak private var tableV: UITableView!{didSet{tableViewConfigure(tableView: tableV)}}
-
+//MARK: -Configure
     private func tableViewConfigure(tableView:UITableView){
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,6 +33,7 @@ final class SearchBookViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+//MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
    }
@@ -48,6 +49,7 @@ final class SearchBookViewController: UIViewController {
         }
     }
 }
+//MARK: -Extension UITableView
 extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model?.items.count ?? 0

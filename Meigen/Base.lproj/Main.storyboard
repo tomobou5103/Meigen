@@ -217,7 +217,7 @@
                                         <rect key="frame" x="15" y="15" width="384" height="270"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Meigenを入力することができます
-名言を入力</string>
+</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -230,15 +230,22 @@
                                             <action selector="insertImageButton:" destination="Q5n-6k-y53" eventType="touchUpInside" id="Oqs-7D-wG6"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BmP-YC-L0Q">
+                                        <rect key="frame" x="111" y="15" width="192" height="270"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34150703143202954" green="0.66486791237113407" blue="0.35310649898079649" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="48e-de-ytq"/>
+                                    <constraint firstItem="BmP-YC-L0Q" firstAttribute="width" secondItem="4PU-vY-MKi" secondAttribute="width" multiplier="0.5" id="8Ow-Cc-p5o"/>
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="leading" secondItem="s3c-Ea-UEs" secondAttribute="leading" constant="15" id="Lus-qM-rDe"/>
+                                    <constraint firstItem="BmP-YC-L0Q" firstAttribute="top" secondItem="4PU-vY-MKi" secondAttribute="top" id="MDr-SE-QUA"/>
                                     <constraint firstAttribute="trailing" secondItem="4PU-vY-MKi" secondAttribute="trailing" constant="15" id="QVC-9g-l0v"/>
                                     <constraint firstAttribute="trailing" secondItem="Soj-pn-GuK" secondAttribute="trailing" constant="25" id="abj-wA-leO"/>
+                                    <constraint firstItem="BmP-YC-L0Q" firstAttribute="height" secondItem="4PU-vY-MKi" secondAttribute="height" id="qnw-0z-JmW"/>
                                     <constraint firstAttribute="bottom" secondItem="4PU-vY-MKi" secondAttribute="bottom" constant="15" id="ras-I0-K9a"/>
                                     <constraint firstAttribute="bottom" secondItem="Soj-pn-GuK" secondAttribute="bottom" constant="25" id="u92-cQ-OdE"/>
+                                    <constraint firstItem="BmP-YC-L0Q" firstAttribute="centerX" secondItem="s3c-Ea-UEs" secondAttribute="centerX" id="wur-SS-KH1"/>
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="top" secondItem="s3c-Ea-UEs" secondAttribute="top" constant="15" id="xsr-gn-ha8"/>
                                 </constraints>
                             </view>
@@ -318,6 +325,7 @@
                         <outlet property="barButton" destination="ZJJ-Fc-vAV" id="lri-Q4-0nx"/>
                         <outlet property="bookNameTextField" destination="iN8-Jb-qgx" id="gBj-uf-Tn8"/>
                         <outlet property="commentTextField" destination="Aft-f8-E5K" id="5tI-08-dKV"/>
+                        <outlet property="imageV" destination="BmP-YC-L0Q" id="kbB-9r-oV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-Pq-ebm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
