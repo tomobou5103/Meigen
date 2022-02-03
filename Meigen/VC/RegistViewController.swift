@@ -18,8 +18,7 @@ final class RegistViewController: UIViewController {
 //MARK: -IBAction
     
     @IBAction private func insertImageButton(_ sender: Any) {
-        checkPermission()
-        selectImage()
+        makePhotoAlert()
     }
     
     @IBAction private func barButtonAction(_ sender: Any) {
@@ -37,6 +36,25 @@ final class RegistViewController: UIViewController {
         }
         self.bookNameTextField.text = model.volumeInfo.title
         self.authorTextField.text = model.volumeInfo.authors?[0]
+    }
+//MARK: -MakeAlert
+    func makePhotoAlert(){
+        let alert = UIAlertController(title: "名言を写真で追加します", message: "選択してください", preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "カメラで撮影する", style: .default, handler:{(action:UIAlertAction!)->Void in
+            print("launch camera")
+        })
+        let cameraRollAction = UIAlertAction(title: "カメラロール", style: .default, handler: {(action:UIAlertAction!)->Void in
+            self.checkPermission()
+            self.selectImage()
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: {(action:UIAlertAction!)->Void in
+            print("cancel")
+        })
+        alert.addAction(cameraAction)
+        alert.addAction(cameraRollAction)
+        alert.addAction(cancelAction)
+        present(alert,animated:true,completion:nil)
+        
     }
 }
 //MARK: -Extension
