@@ -226,9 +226,10 @@
                                         <rect key="frame" x="15" y="15" width="384" height="270"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-pn-GuK">
-                                        <rect key="frame" x="322" y="244" width="67" height="31"/>
+                                        <rect key="frame" x="322.5" y="221" width="66.5" height="54"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="camera"/>
                                         <connections>
                                             <action selector="insertImageButton:" destination="Q5n-6k-y53" eventType="touchUpInside" id="Oqs-7D-wG6"/>
                                         </connections>
@@ -241,12 +242,14 @@
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="leading" secondItem="s3c-Ea-UEs" secondAttribute="leading" constant="15" id="Lus-qM-rDe"/>
                                     <constraint firstItem="BmP-YC-L0Q" firstAttribute="top" secondItem="4PU-vY-MKi" secondAttribute="top" id="MDr-SE-QUA"/>
                                     <constraint firstAttribute="trailing" secondItem="4PU-vY-MKi" secondAttribute="trailing" constant="15" id="QVC-9g-l0v"/>
+                                    <constraint firstItem="Soj-pn-GuK" firstAttribute="width" secondItem="BmP-YC-L0Q" secondAttribute="width" multiplier="0.173" id="Tun-9x-ar5"/>
                                     <constraint firstAttribute="trailing" secondItem="Soj-pn-GuK" secondAttribute="trailing" constant="25" id="abj-wA-leO"/>
                                     <constraint firstItem="BmP-YC-L0Q" firstAttribute="height" secondItem="4PU-vY-MKi" secondAttribute="height" id="qnw-0z-JmW"/>
                                     <constraint firstAttribute="bottom" secondItem="4PU-vY-MKi" secondAttribute="bottom" constant="15" id="ras-I0-K9a"/>
                                     <constraint firstAttribute="bottom" secondItem="Soj-pn-GuK" secondAttribute="bottom" constant="25" id="u92-cQ-OdE"/>
                                     <constraint firstItem="BmP-YC-L0Q" firstAttribute="centerX" secondItem="s3c-Ea-UEs" secondAttribute="centerX" id="wur-SS-KH1"/>
                                     <constraint firstItem="4PU-vY-MKi" firstAttribute="top" secondItem="s3c-Ea-UEs" secondAttribute="top" constant="15" id="xsr-gn-ha8"/>
+                                    <constraint firstItem="Soj-pn-GuK" firstAttribute="height" secondItem="BmP-YC-L0Q" secondAttribute="height" multiplier="0.2" id="yiI-B3-opx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH7-Ht-f6F">
@@ -330,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-Pq-ebm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682.608695652174" y="873.88392857142856"/>
+            <point key="canvasLocation" x="1684" y="805"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="gB8-qY-cYX">
@@ -517,6 +520,7 @@
         <segue reference="pAx-j6-qN2"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
