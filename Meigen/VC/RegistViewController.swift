@@ -96,6 +96,7 @@ extension RegistViewController:UIImagePickerControllerDelegate,UINavigationContr
         if info[UIImagePickerController.InfoKey.originalImage] != nil {
             let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
             imageV.alpha = 1
+            MeigenTextView.alpha = 0
             imageV.image = image
         }
         dismiss(animated: true, completion: nil)
