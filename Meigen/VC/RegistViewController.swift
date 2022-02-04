@@ -41,11 +41,11 @@ final class RegistViewController: UIViewController {
     func makePhotoAlert(){
         let alert = UIAlertController(title: "名言を写真で追加します", message: "選択してください", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "カメラで撮影する", style: .default, handler:{(action:UIAlertAction!)->Void in
-            print("launch camera")
+            self.selectImage(type: .camera)
         })
         let cameraRollAction = UIAlertAction(title: "カメラロール", style: .default, handler: {(action:UIAlertAction!)->Void in
             self.checkPermission()
-            self.selectImage()
+            self.selectImage(type: .photoLibrary)
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: {(action:UIAlertAction!)->Void in
             print("cancel")
@@ -59,11 +59,11 @@ final class RegistViewController: UIViewController {
 }
 //MARK: -Extension
 extension RegistViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    func selectImage(){
+    func selectImage(type:UIImagePickerController.SourceType){
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             let imagePicker = UIImagePickerController.init()
             imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = type
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
