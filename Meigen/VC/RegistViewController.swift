@@ -38,7 +38,7 @@ final class RegistViewController: UIViewController {
         self.authorTextField.text = model.volumeInfo.authors?[0]
     }
 //MARK: -MakeAlert
-    func makePhotoAlert(){
+    private func makePhotoAlert(){
         let alert = UIAlertController(title: "名言を写真で追加します", message: "選択してください", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "カメラで撮影する", style: .default, handler:{(action:UIAlertAction!)->Void in
             self.selectImage(type: .camera)
