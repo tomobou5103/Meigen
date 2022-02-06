@@ -9,6 +9,7 @@ target 'Meigen' do
     pod 'RxSwift', '6.2.0'
     pod 'RxCocoa', '6.2.0'
     pod 'Alamofire'
+    pod 'Parchment'
   target 'MeigenTests' do
     inherit! :search_paths
     # Pods for testing
