@@ -25,8 +25,6 @@
 		73FFD7B6272110CA000F236E /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7B5272110CA000F236E /* TopViewController.swift */; };
 		73FFD7BB272113D5000F236E /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7B9272113D5000F236E /* TopTableViewCell.swift */; };
 		73FFD7BC272113D5000F236E /* TopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD7BA272113D5000F236E /* TopTableViewCell.xib */; };
-		73FFD7BF27211AFC000F236E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7BE27211AFC000F236E /* CategoryViewController.swift */; };
-		73FFD7C12721235F000F236E /* MeigenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7C02721235F000F236E /* MeigenViewController.swift */; };
 		73FFD7C327213D4E000F236E /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7C227213D4E000F236E /* RegistViewController.swift */; };
 		7975DE728C275B32D81F9C8B /* Pods_MeigenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B9638F09C11EEFBA6D5D7C /* Pods_MeigenTests.framework */; };
 		9FC9E9A4E89FB409ADDC41A3 /* Pods_Meigen_MeigenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D138A3B5E4F8B111858EF /* Pods_Meigen_MeigenUITests.framework */; };
@@ -76,8 +74,6 @@
 		73FFD7B5272110CA000F236E /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		73FFD7B9272113D5000F236E /* TopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		73FFD7BA272113D5000F236E /* TopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTableViewCell.xib; sourceTree = "<group>"; };
-		73FFD7BE27211AFC000F236E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		73FFD7C02721235F000F236E /* MeigenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeigenViewController.swift; sourceTree = "<group>"; };
 		73FFD7C227213D4E000F236E /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		AB8D16F16C0A486FB2B1AFAB /* Pods-Meigen-MeigenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meigen-MeigenUITests.release.xcconfig"; path = "Target Support Files/Pods-Meigen-MeigenUITests/Pods-Meigen-MeigenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C989DFC7B46FD5722DC47977 /* Pods-Meigen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meigen.release.xcconfig"; path = "Target Support Files/Pods-Meigen/Pods-Meigen.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 			children = (
 				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
 				73FFD7B5272110CA000F236E /* TopViewController.swift */,
-				73FFD7BE27211AFC000F236E /* CategoryViewController.swift */,
-				73FFD7C02721235F000F236E /* MeigenViewController.swift */,
 				734395442786D2FB00733CA7 /* SearchBookViewController.swift */,
 				73FFD7C227213D4E000F236E /* RegistViewController.swift */,
 				73FFD7BD272113E2000F236E /* View */,
@@ -473,9 +467,7 @@
 				73FFD78627210D34000F236E /* AppDelegate.swift in Sources */,
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
-				73FFD7BF27211AFC000F236E /* CategoryViewController.swift in Sources */,
 				73FFD7C327213D4E000F236E /* RegistViewController.swift in Sources */,
-				73FFD7C12721235F000F236E /* MeigenViewController.swift in Sources */,
 				7337B4992722D60C006C6820 /* BooksModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
