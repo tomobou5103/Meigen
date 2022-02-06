@@ -1,20 +1,19 @@
 import UIKit
+import Parchment
 
 final class TopViewController: UIViewController{
     
 //MARK: Property-
    
     private let topTableId = "TopTableViewCell" //TableViewCellID
-    
-//MARK: IBOutlet-
 
-    @IBOutlet weak var tableV: UITableView!{
-        didSet{
-            tableV.delegate = self
-            tableV.dataSource = self
-            tableV.register(UINib(nibName: topTableId, bundle: nil), forCellReuseIdentifier: topTableId)
-        }
+    
+//MARK: Configure
+    private func vcConfigure(){
+        
     }
+//MARK: IBOutlet-
+    @IBOutlet weak var backgroundV: UIView!
     @IBOutlet weak var bottomV: UIView!
     @IBOutlet weak var bottomButton: UIButton!
 
@@ -29,21 +28,4 @@ final class TopViewController: UIViewController{
 
     }
 
-}
-extension TopViewController:UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //UserDefaults()
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableV.dequeueReusableCell(withIdentifier: topTableId, for: indexPath) as? TopTableViewCell
-        cell?.textLabel?.text = "カテゴリー名"
-        return cell ?? UITableViewCell()
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ToCategorySegue", sender: nil)
-    }
-    
-    
 }

@@ -43,11 +43,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-R1-ngq">
-                                <rect key="frame" x="0.0" y="94" width="414" height="708"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.090196078430000007" green="0.86274509799999999" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-wB-ta8">
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <subviews>
@@ -71,20 +66,28 @@
                                     <constraint firstItem="HTy-pg-FiP" firstAttribute="centerY" secondItem="szZ-wB-ta8" secondAttribute="centerY" id="ray-s0-xxU"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="708"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zTl-yW-XRr" secondAttribute="trailing" id="1H4-H4-v4J"/>
                             <constraint firstAttribute="bottom" secondItem="szZ-wB-ta8" secondAttribute="bottom" id="DXM-mz-lAF"/>
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GOV-vV-mcX"/>
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gmm-MB-smx"/>
+                            <constraint firstItem="zTl-yW-XRr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S8u-zB-gfw"/>
+                            <constraint firstItem="zTl-yW-XRr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SSj-vz-kUJ"/>
+                            <constraint firstItem="szZ-wB-ta8" firstAttribute="top" secondItem="zTl-yW-XRr" secondAttribute="bottom" id="XaZ-gc-neh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TopVC" id="H43-Sr-V1M"/>
                     <connections>
+                        <outlet property="backgroundV" destination="zTl-yW-XRr" id="9Sq-5p-WE4"/>
                         <outlet property="bottomButton" destination="HTy-pg-FiP" id="lDw-vc-HRr"/>
                         <outlet property="bottomV" destination="szZ-wB-ta8" id="uQM-2E-1Ck"/>
-                        <outlet property="tableV" destination="HZd-R1-ngq" id="BgM-Gi-VY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -402,6 +405,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
