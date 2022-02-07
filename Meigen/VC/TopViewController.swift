@@ -3,15 +3,15 @@ import Parchment
 
 final class TopViewController: UIViewController{
     
-//MARK: Property-
+//MARK: -Property
     private let topTableId = "TopTableViewCell" //TableViewCellID
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
     private var categories:[String] = ["カテゴリ1","カテゴリ2","カテゴリ3"]
-//MARK: IBOutlet-
+//MARK: -IBOutlet
     @IBOutlet weak var backgroundV: UIView!
     @IBOutlet weak var bottomV: UIView!
     @IBOutlet weak var bottomButton: UIButton!
-//MARK: Configure
+//MARK: -Configure
     func generateVCS()->[UIViewController]{
         var vcs:[UIViewController] = []
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -44,10 +44,10 @@ final class TopViewController: UIViewController{
         pagingVC.borderColor = .clear
         pagingVC.select(index: 0)
     }
-//MARK: IBAction-
+//MARK: -IBAction
     @IBAction func buttomButtonAction(_ sender: Any) {
     }
-//MARK: LifeCycle-
+//MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         vcConfigure()
