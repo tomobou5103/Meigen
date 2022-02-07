@@ -1,10 +1,3 @@
-//
-//  CustomTableViewCell.swift
-//  Meigen
-//
-//  Created by TomoHarada on 2022/02/08.
-//
-
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
