@@ -11,6 +11,8 @@
 		731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */; };
 		731EDE5227B16FA200D6B2D3 /* RegistBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5127B16FA200D6B2D3 /* RegistBookModel.swift */; };
 		731EDE5427B16FF200D6B2D3 /* ToDo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 731EDE5327B16FF200D6B2D3 /* ToDo.rtf */; };
+		731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */; };
+		731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */; };
 		7337B4992722D60C006C6820 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7337B4982722D60C006C6820 /* BooksModel.swift */; };
 		734395452786D2FB00733CA7 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734395442786D2FB00733CA7 /* SearchBookViewController.swift */; };
 		734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734395472787057E00733CA7 /* GoogleBooksAPI.swift */; };
@@ -25,8 +27,6 @@
 		73FFD7A727210D35000F236E /* MeigenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7A627210D35000F236E /* MeigenUITests.swift */; };
 		73FFD7A927210D35000F236E /* MeigenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7A827210D35000F236E /* MeigenUITestsLaunchTests.swift */; };
 		73FFD7B6272110CA000F236E /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7B5272110CA000F236E /* TopViewController.swift */; };
-		73FFD7BB272113D5000F236E /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7B9272113D5000F236E /* TopTableViewCell.swift */; };
-		73FFD7BC272113D5000F236E /* TopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD7BA272113D5000F236E /* TopTableViewCell.xib */; };
 		73FFD7C327213D4E000F236E /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD7C227213D4E000F236E /* RegistViewController.swift */; };
 		7975DE728C275B32D81F9C8B /* Pods_MeigenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B9638F09C11EEFBA6D5D7C /* Pods_MeigenTests.framework */; };
 		9FC9E9A4E89FB409ADDC41A3 /* Pods_Meigen_MeigenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D138A3B5E4F8B111858EF /* Pods_Meigen_MeigenUITests.framework */; };
@@ -58,6 +58,8 @@
 		731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		731EDE5127B16FA200D6B2D3 /* RegistBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistBookModel.swift; sourceTree = "<group>"; };
 		731EDE5327B16FF200D6B2D3 /* ToDo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ToDo.rtf; sourceTree = "<group>"; };
+		731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		7337B4982722D60C006C6820 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
 		734395442786D2FB00733CA7 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		734395472787057E00733CA7 /* GoogleBooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPI.swift; sourceTree = "<group>"; };
@@ -76,8 +78,6 @@
 		73FFD7A627210D35000F236E /* MeigenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeigenUITests.swift; sourceTree = "<group>"; };
 		73FFD7A827210D35000F236E /* MeigenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeigenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		73FFD7B5272110CA000F236E /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
-		73FFD7B9272113D5000F236E /* TopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
-		73FFD7BA272113D5000F236E /* TopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTableViewCell.xib; sourceTree = "<group>"; };
 		73FFD7C227213D4E000F236E /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		AB8D16F16C0A486FB2B1AFAB /* Pods-Meigen-MeigenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meigen-MeigenUITests.release.xcconfig"; path = "Target Support Files/Pods-Meigen-MeigenUITests/Pods-Meigen-MeigenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C989DFC7B46FD5722DC47977 /* Pods-Meigen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meigen.release.xcconfig"; path = "Target Support Files/Pods-Meigen/Pods-Meigen.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,9 +193,9 @@
 		73FFD7BD272113E2000F236E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				73FFD7B9272113D5000F236E /* TopTableViewCell.swift */,
+				731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */,
 				734395492788807D00733CA7 /* SearchBookTableViewCell.swift */,
-				73FFD7BA272113D5000F236E /* TopTableViewCell.xib */,
+				731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */,
 				7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */,
 			);
 			path = View;
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73FFD79227210D35000F236E /* LaunchScreen.storyboard in Resources */,
-				73FFD7BC272113D5000F236E /* TopTableViewCell.xib in Resources */,
+				731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */,
 				731EDE5427B16FF200D6B2D3 /* ToDo.rtf in Resources */,
 				7343954C2788807D00733CA7 /* SearchBookTableViewCell.xib in Resources */,
 				73FFD78F27210D35000F236E /* Assets.xcassets in Resources */,
@@ -468,10 +468,10 @@
 			files = (
 				7343954B2788807D00733CA7 /* SearchBookTableViewCell.swift in Sources */,
 				73FFD7B6272110CA000F236E /* TopViewController.swift in Sources */,
-				73FFD7BB272113D5000F236E /* TopTableViewCell.swift in Sources */,
 				731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */,
 				734395452786D2FB00733CA7 /* SearchBookViewController.swift in Sources */,
 				73FFD78627210D34000F236E /* AppDelegate.swift in Sources */,
+				731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */,
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
 				731EDE5227B16FA200D6B2D3 /* RegistBookModel.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
