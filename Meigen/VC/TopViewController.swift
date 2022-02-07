@@ -4,7 +4,6 @@ import Parchment
 final class TopViewController: UIViewController{
     
 //MARK: -Property
-    private let topTableId = "TopTableViewCell" //TableViewCellID
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
     private var categories:[String] = ["カテゴリ1","カテゴリ2","カテゴリ3"]
 //MARK: -IBOutlet
