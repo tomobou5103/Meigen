@@ -5,6 +5,7 @@ final class TopViewController: UIViewController{
     
 //MARK: Property-
     private let topTableId = "TopTableViewCell" //TableViewCellID
+    private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
 //MARK: IBOutlet-
     @IBOutlet weak var backgroundV: UIView!
     @IBOutlet weak var bottomV: UIView!
@@ -12,8 +13,8 @@ final class TopViewController: UIViewController{
 //MARK: Configure
     func vcConfigure(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "CustomViewController")
-        let vc2 = storyBoard.instantiateViewController(withIdentifier: "CustomViewController")
+        let vc = storyBoard.instantiateViewController(withIdentifier: customVCId)
+        let vc2 = storyBoard.instantiateViewController(withIdentifier: customVCId)
         vc.title = "Category"
         vc2.title = "Category2"
         let pagingVC = PagingViewController(viewControllers: [vc,vc2])
