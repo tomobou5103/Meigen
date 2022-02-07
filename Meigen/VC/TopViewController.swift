@@ -12,11 +12,11 @@ final class TopViewController: UIViewController{
 //MARK: Configure
     func vcConfigure(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc1 = UIViewController.init()
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CustomViewController")
         let vc2 = storyBoard.instantiateViewController(withIdentifier: "CustomViewController")
-        vc1.title = "カテゴリ1"
-        vc2.title = "CustomVC"
-        let pagingVC = PagingViewController(viewControllers: [vc1,vc2])
+        vc.title = "Category"
+        vc2.title = "Category2"
+        let pagingVC = PagingViewController(viewControllers: [vc,vc2])
         addChild(pagingVC)
         view.addSubview(pagingVC.view)
         pagingVC.didMove(toParent: self)
