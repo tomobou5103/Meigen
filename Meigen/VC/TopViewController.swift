@@ -6,18 +6,25 @@ final class TopViewController: UIViewController{
 //MARK: Property-
     private let topTableId = "TopTableViewCell" //TableViewCellID
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
+    private var categories:[String] = ["カテゴリ1","カテゴリ2","カテゴリ3"]
 //MARK: IBOutlet-
     @IBOutlet weak var backgroundV: UIView!
     @IBOutlet weak var bottomV: UIView!
     @IBOutlet weak var bottomButton: UIButton!
 //MARK: Configure
-    func vcConfigure(){
+    func generateVCS()->[UIViewController]{
+        var vcs:[UIViewController] = []
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: customVCId)
-        let vc2 = storyBoard.instantiateViewController(withIdentifier: customVCId)
-        vc.title = "Category"
-        vc2.title = "Category2"
-        let pagingVC = PagingViewController(viewControllers: [vc,vc2])
+        for st in categories{
+            let vc = storyBoard.instantiateViewController(withIdentifier: customVCId)
+            vc.title = st
+            vcs.append(vc)
+        }
+        return vcs
+    }
+    func vcConfigure(){
+        let vcs = generateVCS()
+        let pagingVC = PagingViewController(viewControllers: vcs)
         addChild(pagingVC)
         view.addSubview(pagingVC.view)
         pagingVC.didMove(toParent: self)
