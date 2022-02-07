@@ -22,7 +22,7 @@ final class TopViewController: UIViewController{
         }
         return vcs
     }
-    func vcConfigure(){
+    func topViewControllerConfigure(){
         let vcs = generateVCS()
         let pagingVC = PagingViewController(viewControllers: vcs)
         addChild(pagingVC)
@@ -50,6 +50,6 @@ final class TopViewController: UIViewController{
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        vcConfigure()
+        topViewControllerConfigure()
     }
 }
