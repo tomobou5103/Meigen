@@ -1,19 +1,19 @@
 import UIKit
 
 struct CategoryModel{
-    internal var title:String = ""
-    internal var author:[String?]
+    internal var title:String?
+    internal var author:String?
     internal var comment:String?
     internal var meigenText:String?
-    internal var bookImage:UIImage?
+    internal var bookImage:String?
     internal var meigenImage:UIImage?
     
     init(
-        title:String,
-        _ author:[String?],
+        title:String?,
+        _ author:String?,
         _ comment:String?,
         _ meigenText:String?,
-        _ bookImage:UIImage?,
+        _ bookImage:String?,
         _ meigenImage:UIImage?
     ){
         self.title = title
@@ -24,4 +24,5 @@ struct CategoryModel{
         self.meigenImage = meigenImage
     }
 }
- 
+//RegistViewControllerでCategoryModelを作成、TopViewContorllerの[CategoryModel]に入れる
+

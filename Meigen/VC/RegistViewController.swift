@@ -22,8 +22,7 @@ final class RegistViewController: UIViewController {
     }
     
     @IBAction private func barButtonAction(_ sender: Any) {
-        //UD()
-        //rx isHidden
+        
     }
     internal func configure(model:Item){
         self.model = model
@@ -55,6 +54,16 @@ final class RegistViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert,animated:true,completion:nil)
         
+    }
+//MARK: -MakeRegistBookModel
+    private func makeRegistBookModel(){
+        let title = bookNameTextField.text
+        let author = authorTextField.text
+        let comment = commentTextField.text
+        let meigenText = MeigenTextView.text
+        let bookImage = model?.volumeInfo.imageLinks.thumbnail
+        let meigenImage = imageV.image
+        let model = CategoryModel(title: title, author, comment, meigenText, bookImage, meigenImage)
     }
 }
 //MARK: -Extension
