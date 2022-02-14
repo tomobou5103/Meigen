@@ -60,7 +60,7 @@ final class RegistViewController: UIViewController {
         
     }
 //MARK: -MakeRegistBookModel
-    private func makeRegistBookModel(){
+    private func makeCategoryModel(){
         let model = CategoryModel(
             title: bookNameTextField.text,
             author:authorTextField.text,
