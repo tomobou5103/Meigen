@@ -2,7 +2,10 @@ import UIKit
 final class CustomViewController: UIViewController {
     
 //MARK: -Property
-    let CustomTableViewCellId = "CustomTableViewCell"
+    private let CustomTableViewCellId = "CustomTableViewCell"
+    private let CustomVCtoSlectSegueId = "showSelect"
+    internal var categoryIndex = 0
+    
 //MARK: -IBOutlet
     @IBOutlet weak var tableV: UITableView!{
         didSet{
@@ -11,9 +14,18 @@ final class CustomViewController: UIViewController {
             tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
         }
     }
+    @IBAction func showSelectVCButton(_ sender: Any) {
+        performSegue(withIdentifier: CustomVCtoSlectSegueId, sender: nil)
+    }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == CustomVCtoSlectSegueId{
+            let nextVC = segue.destination as? SelectViewController
+            nextVC?.configure(categoryIndex: self.categoryIndex)
+        }
     }
 }
 //MARK: -Extension

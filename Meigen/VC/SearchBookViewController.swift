@@ -10,6 +10,7 @@ final class SearchBookViewController: UIViewController {
     private let tableViewNameId = "SearchBookTableViewCell"
     private let segueId = "SearchBookRegist"
     private var keepIndexPath:Int = 0
+    private var categoryIndex:Int?
     
 //MARK: -IBOutlet
     @IBOutlet weak private var textF: UITextField!{didSet{textFieldDidChangValue()}}
@@ -33,6 +34,9 @@ final class SearchBookViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+    internal func configure(categoryIndex:Int){
+        self.categoryIndex = categoryIndex
+    }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +45,13 @@ final class SearchBookViewController: UIViewController {
         if segue.identifier == self.segueId{
             guard
                 let model = self.model?.items[self.keepIndexPath],
-                let nextVC = segue.destination as? RegistViewController
+                let nextVC = segue.destination as? RegistViewController,
+                let index = self.categoryIndex
             else{
                 return
             }
-            nextVC.configure(model: model)
+            nextVC.modelConfigure(model: model)
+            nextVC.categoryIndexConfigure(categoryIndex: index)
         }
     }
 }

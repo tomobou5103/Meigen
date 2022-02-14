@@ -21,10 +21,24 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUW-bn-blR">
-                                <rect key="frame" x="0.0" y="746" width="414" height="150"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-Bb-f1H">
+                                        <rect key="frame" x="188" y="29" width="44" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="+">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showSelectVCButton:" destination="t7Z-cJ-PBS" eventType="touchUpInside" id="12c-JK-ilk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Ih7-yC-9uN"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ih7-yC-9uN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -42,11 +56,12 @@
                     </view>
                     <connections>
                         <outlet property="tableV" destination="eIg-vm-pt6" id="dsq-aW-WSj"/>
+                        <segue destination="R2k-dp-52q" kind="show" identifier="showSelect" id="k7e-gv-gcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBE-XT-aE4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="-583.25892857142856"/>
+            <point key="canvasLocation" x="1683" y="66"/>
         </scene>
         <!--TopVC-->
         <scene sceneID="tne-QT-ifu">
@@ -58,25 +73,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-wB-ta8">
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTy-pg-FiP">
-                                        <rect key="frame" x="184.5" y="30.5" width="45.5" height="39.5"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="＋">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="21"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttomButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7l8-4m-w9k"/>
-                                            <segue destination="R2k-dp-52q" kind="show" id="ePB-iG-hLr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
-                                    <constraint firstItem="HTy-pg-FiP" firstAttribute="centerX" secondItem="szZ-wB-ta8" secondAttribute="centerX" id="lAk-mK-QB7"/>
-                                    <constraint firstItem="HTy-pg-FiP" firstAttribute="centerY" secondItem="szZ-wB-ta8" secondAttribute="centerY" id="ray-s0-xxU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
@@ -99,7 +98,6 @@
                     <navigationItem key="navigationItem" title="TopVC" id="H43-Sr-V1M"/>
                     <connections>
                         <outlet property="backgroundV" destination="zTl-yW-XRr" id="9Sq-5p-WE4"/>
-                        <outlet property="bottomButton" destination="HTy-pg-FiP" id="lDw-vc-HRr"/>
                         <outlet property="bottomV" destination="szZ-wB-ta8" id="uQM-2E-1Ck"/>
                     </connections>
                 </viewController>
@@ -107,32 +105,33 @@
             </objects>
             <point key="canvasLocation" x="931.88405797101461" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Select View Controller-->
         <scene sceneID="a67-Na-aWs">
             <objects>
-                <viewController id="R2k-dp-52q" sceneMemberID="viewController">
+                <viewController id="R2k-dp-52q" customClass="SelectViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ss5-2u-WBI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Ad-gX-u8H">
-                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <rect key="frame" x="20" y="20" width="374" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stB-WY-mmq">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="376.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="書籍検索入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9T-bj-fBQ">
-                                                <rect key="frame" x="96" y="162" width="182" height="36"/>
+                                                <rect key="frame" x="96" y="170.5" width="182" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8W-fy-VeH">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="376.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="OZq-Qy-UPo" kind="show" id="yKM-93-E0O"/>
+                                                    <action selector="bookSearchButton:" destination="R2k-dp-52q" eventType="touchUpInside" id="3lz-X3-POm"/>
+                                                    <action selector="bookSearchButton:" destination="qrg-ub-SVE" eventType="touchUpInside" id="bXC-Ml-7qt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -147,20 +146,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQ1-Qk-45v">
-                                        <rect key="frame" x="0.0" y="370" width="374" height="364"/>
+                                        <rect key="frame" x="0.0" y="387" width="374" height="381"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手動入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFD-5B-oJR">
-                                                <rect key="frame" x="126.5" y="164" width="121.5" height="36"/>
+                                                <rect key="frame" x="126.5" y="172.5" width="121.5" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYH-6h-bhO">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="364"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="381"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="Q5n-6k-y53" kind="show" id="NyN-xC-Mbg"/>
+                                                    <action selector="fullScratchButton:" destination="qrg-ub-SVE" eventType="touchUpInside" id="2XV-BF-EJF"/>
+                                                    <action selector="fullScratchButton:" destination="R2k-dp-52q" eventType="touchUpInside" id="IR6-GC-eNu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -195,8 +195,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ygL-hM-bVd"/>
+                    <connections>
+                        <segue destination="Q5n-6k-y53" kind="show" identifier="showRegist" id="DSG-F8-Ift"/>
+                        <segue destination="OZq-Qy-UPo" kind="show" identifier="showSearchBook" id="etH-t0-HNl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mN-0s-4xp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qrg-ub-SVE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="932" y="805"/>
         </scene>
@@ -205,11 +210,11 @@
             <objects>
                 <viewController id="OZq-Qy-UPo" customClass="SearchBookViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jgm-9z-i1r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="書籍名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-F1-oFg">
-                                <rect key="frame" x="20" y="138" width="374" height="40"/>
+                                <rect key="frame" x="20" y="50" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9i4-GN-dzj"/>
                                 </constraints>
@@ -217,7 +222,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-4t-LIa">
-                                <rect key="frame" x="20" y="193" width="374" height="649"/>
+                                <rect key="frame" x="20" y="105" width="374" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -249,11 +254,11 @@
             <objects>
                 <viewController id="Q5n-6k-y53" customClass="RegistViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CBP-ux-zIg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3c-Ea-UEs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4PU-vY-MKi">
                                         <rect key="frame" x="15" y="15" width="384" height="270"/>
@@ -296,41 +301,41 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH7-Ht-f6F">
-                                <rect key="frame" x="0.0" y="388" width="414" height="508"/>
+                                <rect key="frame" x="0.0" y="300" width="414" height="542"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xXc-0G-N7T">
-                                        <rect key="frame" x="15" y="0.0" width="384" height="458"/>
+                                        <rect key="frame" x="15" y="0.0" width="384" height="492"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本のタイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gG-b0-aSN">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：D坂の殺人事件" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iN8-Jb-qgx">
-                                                <rect key="frame" x="0.0" y="76.5" width="384" height="76"/>
+                                                <rect key="frame" x="0.0" y="82" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="著者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlU-gQ-GUB">
-                                                <rect key="frame" x="0.0" y="152.5" width="384" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="164" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：江戸川乱歩" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6h0-Bv-HIU">
-                                                <rect key="frame" x="0.0" y="229" width="384" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="246" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kO-Cv-NcR">
-                                                <rect key="frame" x="0.0" y="305.5" width="384" height="76"/>
+                                                <rect key="frame" x="0.0" y="328" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：明智のセリフが印象的で心に残った" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-f8-E5K">
-                                                <rect key="frame" x="0.0" y="381.5" width="384" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="410" width="384" height="82"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -398,7 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pAx-j6-qN2"/>
+        <segue reference="DSG-F8-Ift"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
@@ -413,9 +418,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

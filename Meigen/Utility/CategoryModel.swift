@@ -10,11 +10,11 @@ struct CategoryModel{
     
     init(
         title:String?,
-        _ author:String?,
-        _ comment:String?,
-        _ meigenText:String?,
-        _ bookImage:String?,
-        _ meigenImage:UIImage?
+        author:String?,
+        comment:String?,
+        meigenText:String?,
+        bookImage:String?,
+        meigenImage:UIImage?
     ){
         self.title = title
         self.author = author

@@ -8,6 +8,7 @@ final class RegistViewController: UIViewController {
 
 //MARK: -Property
     private var model:Item?
+    private var categoryIndex = 0
 //MARK: -IBOutlet
     @IBOutlet weak private var MeigenTextView: UITextView!
     @IBOutlet weak private var barButton: UIBarButtonItem!
@@ -24,8 +25,11 @@ final class RegistViewController: UIViewController {
     @IBAction private func barButtonAction(_ sender: Any) {
         
     }
-    internal func configure(model:Item){
+    internal func modelConfigure(model:Item){
         self.model = model
+    }
+    internal func categoryIndexConfigure(categoryIndex:Int){
+        self.categoryIndex = categoryIndex
     }
 //MARK: -LifeCycle
     override func viewDidLoad() {
@@ -57,13 +61,14 @@ final class RegistViewController: UIViewController {
     }
 //MARK: -MakeRegistBookModel
     private func makeRegistBookModel(){
-        let title = bookNameTextField.text
-        let author = authorTextField.text
-        let comment = commentTextField.text
-        let meigenText = MeigenTextView.text
-        let bookImage = model?.volumeInfo.imageLinks.thumbnail
-        let meigenImage = imageV.image
-        let model = CategoryModel(title: title, author, comment, meigenText, bookImage, meigenImage)
+        let model = CategoryModel(
+            title: bookNameTextField.text,
+            author:authorTextField.text,
+            comment: commentTextField.text,
+            meigenText: MeigenTextView.text,
+            bookImage: model?.volumeInfo.imageLinks.thumbnail,
+            meigenImage: imageV.image)
+        
     }
 }
 //MARK: -Extension

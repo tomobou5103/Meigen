@@ -9,14 +9,18 @@ final class TopViewController: UIViewController{
 //MARK: -IBOutlet
     @IBOutlet weak var backgroundV: UIView!
     @IBOutlet weak var bottomV: UIView!
-    @IBOutlet weak var bottomButton: UIButton!
 //MARK: -Configure
     func generateVCS()->[UIViewController]{
         var vcs:[UIViewController] = []
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        for st in categories{
-            let vc = storyBoard.instantiateViewController(withIdentifier: customVCId)
+        for (index,st) in categories.enumerated(){
+            guard
+                let vc = storyBoard.instantiateViewController(withIdentifier: customVCId) as? CustomViewController
+            else{
+                return [UIViewController]()
+            }
             vc.title = st
+            vc.categoryIndex = index
             vcs.append(vc)
         }
         return vcs
