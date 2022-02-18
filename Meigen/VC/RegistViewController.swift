@@ -42,9 +42,7 @@ final class RegistViewController: UIViewController {
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let model = self.model else{
-            return
-        }
+        guard let model = self.model else{return}
         self.bookNameTextField.text = model.volumeInfo.title
         self.authorTextField.text = model.volumeInfo.authors?[0]
     }
