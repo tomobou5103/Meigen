@@ -1,31 +1,36 @@
 import UIKit
 import Parchment
+import RealmSwift
 
 final class TopViewController: UIViewController{
-    
 //MARK: -Property
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
-    private var categories:[String] = ["カテゴリ1","カテゴリ2","カテゴリ3"]
+    private var categories:[String] = ["category1","category2","category3"]
+    private var pagingVC:PagingViewController?
 //MARK: -IBOutlet
-    @IBOutlet weak var backgroundV: UIView!
-    @IBOutlet weak var bottomV: UIView!
+    @IBOutlet private weak var backgroundV: UIView!
+    @IBOutlet private weak var bottomV: UIView!
 //MARK: -Configure
-    func generateVCS()->[UIViewController]{
-        var vcs:[UIViewController] = []
+    private func generateVCS()->[UIViewController]{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        var vcs:[UIViewController] = []
+        let realm = try! Realm()
+        let res = realm.objects(CategoryModel.self)
         for (index,st) in categories.enumerated(){
             guard
                 let vc = storyBoard.instantiateViewController(withIdentifier: customVCId) as? CustomViewController
             else{
                 return [UIViewController]()
             }
-            vc.title = st
-            vc.categoryIndex = index
+            vc.configure(model: res.filter{$0.categoryIndex == index}, index: index, title: st)
             vcs.append(vc)
         }
         return vcs
     }
-    func topViewControllerConfigure(){
+    private func removePagingView(){
+        self.pagingVC?.view.removeFromSuperview()
+    }
+    private func pagingViewConfigure(){
         let vcs = generateVCS()
         let pagingVC = PagingViewController(viewControllers: vcs)
         addChild(pagingVC)
@@ -46,13 +51,17 @@ final class TopViewController: UIViewController{
         pagingVC.menuBackgroundColor = .clear
         pagingVC.borderColor = .clear
         pagingVC.select(index: 0)
-    }
-//MARK: -IBAction
-    @IBAction func buttomButtonAction(_ sender: Any) {
+        self.pagingVC = pagingVC
     }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        topViewControllerConfigure()
+        self.navigationController?.delegate = self
+    }
+}
+extension TopViewController:UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        removePagingView()
+        pagingViewConfigure()
     }
 }

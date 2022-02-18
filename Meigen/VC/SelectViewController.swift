@@ -7,10 +7,10 @@ final class SelectViewController: UIViewController {
     internal func configure(categoryIndex:Int){
         self.categoryIndex = categoryIndex
     }
-    @IBAction func bookSearchButton(_ sender: Any) {
+    @IBAction private func bookSearchButton(_ sender: Any) {
         performSegue(withIdentifier: toSearchBookVCSegueId, sender: nil)
     }
-    @IBAction func fullScratchButton(_ sender: Any) {
+    @IBAction private func fullScratchButton(_ sender: Any) {
         performSegue(withIdentifier: toRegistVCSegueId, sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -1,28 +1,12 @@
 import UIKit
+import RealmSwift
 
-struct CategoryModel{
-    internal var title:String?
-    internal var author:String?
-    internal var comment:String?
-    internal var meigenText:String?
-    internal var bookImage:String?
-    internal var meigenImage:UIImage?
-    
-    init(
-        title:String?,
-        author:String?,
-        comment:String?,
-        meigenText:String?,
-        bookImage:String?,
-        meigenImage:UIImage?
-    ){
-        self.title = title
-        self.author = author
-        self.comment = comment
-        self.meigenText = meigenText
-        self.bookImage = bookImage
-        self.meigenImage = meigenImage
-    }
+final class CategoryModel:Object{
+    @objc dynamic internal var title:String?
+    @objc dynamic internal var author:String?
+    @objc dynamic internal var comment:String?
+    @objc dynamic internal var meigenText:String?
+    @objc dynamic internal var bookImage:String?
+    @objc dynamic internal var meigenImage:String?
+    @objc dynamic internal var categoryIndex:Int = 0
 }
-//RegistViewControllerでCategoryModelを作成、TopViewContorllerの[CategoryModel]に入れる
-

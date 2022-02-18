@@ -1,16 +1,10 @@
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+final class CustomTableViewCell: UITableViewCell {
+    @IBOutlet private weak var bookImageV: UIImageView!
+    @IBOutlet private weak var bookNameLabel: UILabel!
     
+    internal func configure(model:CategoryModel){
+        self.bookNameLabel.text = model.title
+    }
 }

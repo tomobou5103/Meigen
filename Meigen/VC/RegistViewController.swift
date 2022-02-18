@@ -2,13 +2,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Photos
-
+import RealmSwift
 
 final class RegistViewController: UIViewController {
 
 //MARK: -Property
+    private var toTopVCSegueId = "showTop"
     private var model:Item?
     private var categoryIndex = 0
+    private var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    private let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 //MARK: -IBOutlet
     @IBOutlet weak private var MeigenTextView: UITextView!
     @IBOutlet weak private var barButton: UIBarButtonItem!
@@ -23,7 +26,12 @@ final class RegistViewController: UIViewController {
     }
     
     @IBAction private func barButtonAction(_ sender: Any) {
-        
+        let realm = try! Realm()
+        try! realm.write{
+            realm.add(makeCategoryModel())
+        }
+        print("----------ToTopVC----------")
+        self.navigationController?.popToRootViewController(animated: true)
     }
     internal func modelConfigure(model:Item){
         self.model = model
@@ -57,18 +65,33 @@ final class RegistViewController: UIViewController {
         alert.addAction(cameraRollAction)
         alert.addAction(cancelAction)
         present(alert,animated:true,completion:nil)
-        
     }
 //MARK: -MakeRegistBookModel
-    private func makeCategoryModel(){
-        let model = CategoryModel(
-            title: bookNameTextField.text,
-            author:authorTextField.text,
-            comment: commentTextField.text,
-            meigenText: MeigenTextView.text,
-            bookImage: model?.volumeInfo.imageLinks.thumbnail,
-            meigenImage: imageV.image)
-        
+    private func makeCategoryModel()->CategoryModel{
+        let model = CategoryModel()
+        model.title = bookNameTextField.text
+        model.author = authorTextField.text
+        model.comment = commentTextField.text
+        model.meigenText = MeigenTextView.text
+        model.bookImage = self.model?.volumeInfo.imageLinks.thumbnail
+        model.categoryIndex = self.categoryIndex
+        saveImage()
+        model.meigenImage = documentDirectoryFileURL.absoluteString
+        return model
+    }
+    private func createLocalDataFile(){
+        let fileName = "\(NSUUID().uuidString).png"
+        let path = documentDirectoryFileURL.appendingPathComponent(fileName)
+        documentDirectoryFileURL = path
+    }
+    private func saveImage(){
+        createLocalDataFile()
+        let pngImageData = imageV.image?.pngData()
+        do {
+            try pngImageData?.write(to: documentDirectoryFileURL)
+        } catch {
+            print("エラー")
+        }
     }
 }
 //MARK: -Extension
