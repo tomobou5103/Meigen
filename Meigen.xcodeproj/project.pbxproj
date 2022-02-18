@@ -10,7 +10,6 @@
 		5697B4DE9A99690D09E076D2 /* Pods_Meigen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FBC23597663FFA20195E7 /* Pods_Meigen.framework */; };
 		731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */; };
 		731EDE5227B16FA200D6B2D3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5127B16FA200D6B2D3 /* CategoryModel.swift */; };
-		731EDE5427B16FF200D6B2D3 /* ToDo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 731EDE5327B16FF200D6B2D3 /* ToDo.rtf */; };
 		731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */; };
 		731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */; };
 		731EDE5A27B3130F00D6B2D3 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */; };
@@ -58,7 +57,6 @@
 		4D12E3A4EB6B101D0100DCAA /* Pods-MeigenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeigenTests.debug.xcconfig"; path = "Target Support Files/Pods-MeigenTests/Pods-MeigenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		731EDE5127B16FA200D6B2D3 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		731EDE5327B16FF200D6B2D3 /* ToDo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ToDo.rtf; sourceTree = "<group>"; };
 		731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				734395462787053A00733CA7 /* Utility */,
 				73FFD79027210D35000F236E /* LaunchScreen.storyboard */,
 				73FFD78B27210D34000F236E /* Main.storyboard */,
-				731EDE5327B16FF200D6B2D3 /* ToDo.rtf */,
 				73FFD79327210D35000F236E /* Info.plist */,
 				73FFD78E27210D35000F236E /* Assets.xcassets */,
 			);
@@ -338,7 +335,6 @@
 			files = (
 				73FFD79227210D35000F236E /* LaunchScreen.storyboard in Resources */,
 				731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */,
-				731EDE5427B16FF200D6B2D3 /* ToDo.rtf in Resources */,
 				7343954C2788807D00733CA7 /* SearchBookTableViewCell.xib in Resources */,
 				73FFD78F27210D35000F236E /* Assets.xcassets in Resources */,
 				73FFD78D27210D34000F236E /* Main.storyboard in Resources */,
