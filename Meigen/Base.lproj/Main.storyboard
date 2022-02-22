@@ -64,23 +64,53 @@
             </objects>
             <point key="canvasLocation" x="1683" y="66"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="kwB-I1-zeB">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="uJy-I1-Zju" customClass="MenuViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="I6k-gJ-amK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5It-SP-Ek5">
+                                <rect key="frame" x="0.0" y="0.0" width="248.5" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A2G-X3-xF9"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5It-SP-Ek5" firstAttribute="width" secondItem="I6k-gJ-amK" secondAttribute="width" multiplier="0.6" id="9Nq-0G-w7f"/>
+                            <constraint firstItem="5It-SP-Ek5" firstAttribute="leading" secondItem="A2G-X3-xF9" secondAttribute="leading" id="A2p-ci-qbS"/>
+                            <constraint firstAttribute="bottom" secondItem="5It-SP-Ek5" secondAttribute="bottom" id="ORZ-4a-f80"/>
+                            <constraint firstItem="5It-SP-Ek5" firstAttribute="top" secondItem="I6k-gJ-amK" secondAttribute="top" id="U2t-zW-bAe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuView" destination="5It-SP-Ek5" id="Vah-e6-IwJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOL-uk-bxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915.94202898550736" y="-581.25"/>
+        </scene>
         <!--TopVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-wB-ta8">
-                                <rect key="frame" x="0.0" y="742" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             </view>
                         </subviews>
@@ -96,7 +126,13 @@
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="top" secondItem="zTl-yW-XRr" secondAttribute="bottom" id="XaZ-gc-neh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TopVC" id="H43-Sr-V1M"/>
+                    <navigationItem key="navigationItem" title="TopVC" id="H43-Sr-V1M">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.plus" catalog="system" id="u2J-ZF-ffC">
+                            <connections>
+                                <segue destination="uJy-I1-Zju" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="duD-5J-62R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundV" destination="zTl-yW-XRr" id="9Sq-5p-WE4"/>
                         <outlet property="bottomV" destination="szZ-wB-ta8" id="uQM-2E-1Ck"/>
@@ -406,10 +442,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pAx-j6-qN2"/>
-        <segue reference="1M3-UK-YNI"/>
+        <segue reference="AFt-Q2-8a5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

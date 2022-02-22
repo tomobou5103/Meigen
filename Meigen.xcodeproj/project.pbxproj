@@ -18,6 +18,7 @@
 		734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734395472787057E00733CA7 /* GoogleBooksAPI.swift */; };
 		7343954B2788807D00733CA7 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734395492788807D00733CA7 /* SearchBookTableViewCell.swift */; };
 		7343954C2788807D00733CA7 /* SearchBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */; };
+		737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45E227C4BA2000436541 /* MenuViewController.swift */; };
 		73FFD78627210D34000F236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78527210D34000F236E /* AppDelegate.swift */; };
 		73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78727210D34000F236E /* SceneDelegate.swift */; };
 		73FFD78D27210D34000F236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD78B27210D34000F236E /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		734395472787057E00733CA7 /* GoogleBooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPI.swift; sourceTree = "<group>"; };
 		734395492788807D00733CA7 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBookTableViewCell.xib; sourceTree = "<group>"; };
+		737F45E227C4BA2000436541 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		73FFD78227210D34000F236E /* Meigen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meigen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FFD78527210D34000F236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73FFD78727210D34000F236E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				73FFD7B5272110CA000F236E /* TopViewController.swift */,
 				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
+				737F45E227C4BA2000436541 /* MenuViewController.swift */,
 				731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */,
 				734395442786D2FB00733CA7 /* SearchBookViewController.swift */,
 				73FFD7C227213D4E000F236E /* RegistViewController.swift */,
@@ -472,6 +475,7 @@
 				731EDE5A27B3130F00D6B2D3 /* SelectViewController.swift in Sources */,
 				73FFD78627210D34000F236E /* AppDelegate.swift in Sources */,
 				731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */,
+				737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */,
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
 				731EDE5227B16FA200D6B2D3 /* CategoryModel.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
