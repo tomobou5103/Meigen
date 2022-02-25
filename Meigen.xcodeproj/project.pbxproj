@@ -19,6 +19,8 @@
 		7343954B2788807D00733CA7 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734395492788807D00733CA7 /* SearchBookTableViewCell.swift */; };
 		7343954C2788807D00733CA7 /* SearchBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */; };
 		737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45E227C4BA2000436541 /* MenuViewController.swift */; };
+		737F45E627C8A30500436541 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45E427C8A30500436541 /* MenuTableViewCell.swift */; };
+		737F45E727C8A30500436541 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737F45E527C8A30500436541 /* MenuTableViewCell.xib */; };
 		73FFD78627210D34000F236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78527210D34000F236E /* AppDelegate.swift */; };
 		73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78727210D34000F236E /* SceneDelegate.swift */; };
 		73FFD78D27210D34000F236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD78B27210D34000F236E /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		734395492788807D00733CA7 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBookTableViewCell.xib; sourceTree = "<group>"; };
 		737F45E227C4BA2000436541 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		737F45E427C8A30500436541 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		737F45E527C8A30500436541 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		73FFD78227210D34000F236E /* Meigen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meigen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FFD78527210D34000F236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73FFD78727210D34000F236E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,8 +200,10 @@
 		73FFD7BD272113E2000F236E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				737F45E427C8A30500436541 /* MenuTableViewCell.swift */,
 				731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */,
 				734395492788807D00733CA7 /* SearchBookTableViewCell.swift */,
+				737F45E527C8A30500436541 /* MenuTableViewCell.xib */,
 				731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */,
 				7343954A2788807D00733CA7 /* SearchBookTableViewCell.xib */,
 			);
@@ -336,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737F45E727C8A30500436541 /* MenuTableViewCell.xib in Resources */,
 				73FFD79227210D35000F236E /* LaunchScreen.storyboard in Resources */,
 				731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */,
 				7343954C2788807D00733CA7 /* SearchBookTableViewCell.xib in Resources */,
@@ -470,6 +477,7 @@
 			files = (
 				7343954B2788807D00733CA7 /* SearchBookTableViewCell.swift in Sources */,
 				73FFD7B6272110CA000F236E /* TopViewController.swift in Sources */,
+				737F45E627C8A30500436541 /* MenuTableViewCell.swift in Sources */,
 				731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */,
 				734395452786D2FB00733CA7 /* SearchBookViewController.swift in Sources */,
 				731EDE5A27B3130F00D6B2D3 /* SelectViewController.swift in Sources */,
