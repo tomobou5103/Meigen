@@ -7,10 +7,14 @@ final class TopViewController: UIViewController{
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
     private var categories:[String] = ["category1","category2","category3"]
     private var pagingVC:PagingViewController?
+    private let toMenuSegueId = "showMenu"
 //MARK: -IBOutlet
     @IBOutlet private weak var backgroundV: UIView!
     @IBOutlet private weak var bottomV: UIView!
-//MARK: -Configure
+    @IBAction func toMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: toMenuSegueId, sender: nil)
+    }
+    //MARK: -Configure
     private func generateVCS()->[UIViewController]{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         var vcs:[UIViewController] = []
@@ -58,6 +62,13 @@ final class TopViewController: UIViewController{
         super.viewDidLoad()
         self.navigationController?.delegate = self
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == toMenuSegueId{
+            let nextVC = segue.destination as? MenuViewController
+            nextVC?.configure(categories: categories)
+        }
+    }
+    
 }
 extension TopViewController:UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {

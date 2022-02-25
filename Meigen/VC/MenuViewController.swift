@@ -1,8 +1,16 @@
 import UIKit
-class MenuViewController: UIViewController {
-    @IBOutlet weak var menuView: UIView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+final class MenuViewController: UIViewController {
+    private var categories:[String] = []
+    
+    @IBOutlet private weak var menuView: UIView!
+    @IBOutlet private weak var tableV: UITableView!{
+        didSet{
+            self.tableV.delegate = self
+            self.tableV.dataSource = self
+        }
+    }
+    internal func configure(categories:[String]){
+        self.categories = categories
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,5 +43,17 @@ class MenuViewController: UIViewController {
                 )
             }
         }
+    }
+}
+extension MenuViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.layer.cornerRadius = 10
+        cell.textLabel?.text = categories[indexPath.row]
+        return cell
     }
 }

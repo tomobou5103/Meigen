@@ -183,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				73FFD7B5272110CA000F236E /* TopViewController.swift */,
-				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
 				737F45E227C4BA2000436541 /* MenuViewController.swift */,
+				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
 				731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */,
 				734395442786D2FB00733CA7 /* SearchBookViewController.swift */,
 				73FFD7C227213D4E000F236E /* RegistViewController.swift */,
