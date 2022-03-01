@@ -5,4 +5,13 @@ final class MenuTableViewCell: UITableViewCell {
     internal func configure(name:String){
         self.nameLabel.text = name
     }
+    internal func firstCellConfigure(){
+        self.nameLabel.text = "カテゴリーを追加する"
+        self.nameLabel.textColor = .white
+        self.backgroundColor = .systemBlue
+    }
+    override func prepareForReuse() {
+        self.backgroundColor = .white
+        self.nameLabel.textColor = .black
+    }
 }

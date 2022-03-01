@@ -5,7 +5,11 @@ import RealmSwift
 final class TopViewController: UIViewController{
 //MARK: -Property
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
-    private var categories:[String] = ["category1","category2","category3"]
+    private var categories:[String] = ["category1"]{
+        didSet{
+            self.categories = categoryConfigure()
+        }
+    }
     private var pagingVC:PagingViewController?
     private let toMenuSegueId = "showMenu"
 //MARK: -IBOutlet
@@ -14,7 +18,7 @@ final class TopViewController: UIViewController{
     @IBAction func toMenuButton(_ sender: Any) {
         performSegue(withIdentifier: toMenuSegueId, sender: nil)
     }
-    //MARK: -Configure
+//MARK: -Configure
     private func generateVCS()->[UIViewController]{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         var vcs:[UIViewController] = []
@@ -57,6 +61,11 @@ final class TopViewController: UIViewController{
         pagingVC.select(index: 0)
         self.pagingVC = pagingVC
     }
+    private func categoryConfigure()->[String]{
+        let ud = UserDefaults.standard
+        guard let res = ud.stringArray(forKey: "categories")else{return self.categories}
+        return res
+    }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +74,7 @@ final class TopViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == toMenuSegueId{
             let nextVC = segue.destination as? MenuViewController
+            nextVC?.delegate = self
             nextVC?.configure(categories: categories)
         }
     }
@@ -72,6 +82,13 @@ final class TopViewController: UIViewController{
 }
 extension TopViewController:UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        removePagingView()
+        pagingViewConfigure()
+    }
+}
+extension TopViewController:MenuViewControllerDelegate{
+    func reloadView() {
+        self.categories = categoryConfigure()
         removePagingView()
         pagingViewConfigure()
     }
