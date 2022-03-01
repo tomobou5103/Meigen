@@ -3,7 +3,7 @@ final class CustomViewController: UIViewController {
 //MARK: -Property
     private let CustomTableViewCellId = "CustomTableViewCell"
     private let CustomVCtoSlectSegueId = "showSelect"
-    private var categoryIndex = 0
+    private var categoryId = ""
     private var model:[CategoryModel]?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
@@ -17,16 +17,20 @@ final class CustomViewController: UIViewController {
         tableV.dataSource = self
         tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
     }
-    internal func configure(model:[CategoryModel],index:Int,title:String){
+    internal func configure(model:[CategoryModel],categoryId:String){
         self.model = model
-        self.categoryIndex = index
-        self.title = title
+        self.categoryId = categoryId
+        self.title = convertFromIdToTitle(id: categoryId)
+    }
+    private func convertFromIdToTitle(id:String)->String{
+        let title = id.components(separatedBy: "&")
+        return title[0]
     }
 //MARK: -LifeCycle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == CustomVCtoSlectSegueId{
             let nextVC = segue.destination as? SelectViewController
-            nextVC?.configure(categoryIndex: self.categoryIndex)
+            nextVC?.configure(categoryId: self.categoryId)
         }
     }
 }

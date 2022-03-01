@@ -1,11 +1,11 @@
 import UIKit
 
 final class SelectViewController: UIViewController {
-    private var categoryIndex:Int?
+    private var categoryId:String?
     private let toSearchBookVCSegueId = "showSearchBook"
     private let toRegistVCSegueId = "showRegist"
-    internal func configure(categoryIndex:Int){
-        self.categoryIndex = categoryIndex
+    internal func configure(categoryId:String){
+        self.categoryId = categoryId
     }
     @IBAction private func bookSearchButton(_ sender: Any) {
         performSegue(withIdentifier: toSearchBookVCSegueId, sender: nil)
@@ -14,14 +14,14 @@ final class SelectViewController: UIViewController {
         performSegue(withIdentifier: toRegistVCSegueId, sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let index = self.categoryIndex else{return}
+        guard let categoryId = self.categoryId else{return}
         switch segue.identifier{
         case toSearchBookVCSegueId:
             guard let nextVC = segue.destination as? SearchBookViewController else{return}
-            nextVC.configure(categoryIndex: index)
+            nextVC.configure(categoryId: categoryId)
         case toRegistVCSegueId:
             guard let nextVC = segue.destination as? RegistViewController else{return}
-            nextVC.categoryIndexConfigure(categoryIndex: index)
+            nextVC.categoryIdConfigure(categoryId: categoryId)
         default:
             return
         }

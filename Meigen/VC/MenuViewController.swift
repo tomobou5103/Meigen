@@ -26,7 +26,8 @@ final class MenuViewController: UIViewController {
             let okAction = UIAlertAction(title: "追加する", style: .default, handler: {(action:UIAlertAction!)->Void in
                 guard let text = alert.textFields?.first?.text else {return}
                 if text != ""{
-                    self.categories.append(text)
+                    let category = text + "&" + UUID().uuidString
+                    self.categories.append(category)
                     self.addCategoryUd()
                     self.delegate?.reloadView()
                     self.tableV.reloadData()
@@ -95,7 +96,7 @@ extension MenuViewController:UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0{
             cell.firstCellConfigure()
         }else{
-            cell.configure(name: categories[indexPath.row - 1])
+            cell.configure(categoryId: categories[indexPath.row - 1])
         }
         return cell
     }

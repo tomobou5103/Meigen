@@ -5,11 +5,7 @@ import RealmSwift
 final class TopViewController: UIViewController{
 //MARK: -Property
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
-    private var categories:[String] = ["category1"]{
-        didSet{
-            self.categories = categoryConfigure()
-        }
-    }
+    private var categories:[String] = ["category1&uuid"]
     private var pagingVC:PagingViewController?
     private let toMenuSegueId = "showMenu"
 //MARK: -IBOutlet
@@ -24,13 +20,13 @@ final class TopViewController: UIViewController{
         var vcs:[UIViewController] = []
         let realm = try! Realm()
         let res = realm.objects(CategoryModel.self)
-        for (index,st) in categories.enumerated(){
+        for (index,id) in categories.enumerated(){
             guard
                 let vc = storyBoard.instantiateViewController(withIdentifier: customVCId) as? CustomViewController
             else{
                 return [UIViewController]()
             }
-            vc.configure(model: res.filter{$0.categoryIndex == index}, index: index, title: st)
+            vc.configure(model: res.filter{$0.categoryId == self.categories[index]}, categoryId: id)
             vcs.append(vc)
         }
         return vcs
@@ -61,15 +57,16 @@ final class TopViewController: UIViewController{
         pagingVC.select(index: 0)
         self.pagingVC = pagingVC
     }
-    private func categoryConfigure()->[String]{
+    private func categoriesConfigure(){
         let ud = UserDefaults.standard
-        guard let res = ud.stringArray(forKey: "categories")else{return self.categories}
-        return res
+        guard let res = ud.stringArray(forKey: "categories")else{return}
+        self.categories = res
     }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.delegate = self
+        categoriesConfigure()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == toMenuSegueId{
@@ -88,7 +85,7 @@ extension TopViewController:UINavigationControllerDelegate{
 }
 extension TopViewController:MenuViewControllerDelegate{
     func reloadView() {
-        self.categories = categoryConfigure()
+        categoriesConfigure()
         removePagingView()
         pagingViewConfigure()
     }

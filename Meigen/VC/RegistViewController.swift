@@ -9,7 +9,7 @@ final class RegistViewController: UIViewController {
 //MARK: -Property
     private var toTopVCSegueId = "showTop"
     private var model:Item?
-    private var categoryIndex = 0
+    private var categoryId = ""
     private var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     private let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 //MARK: -IBOutlet
@@ -36,8 +36,8 @@ final class RegistViewController: UIViewController {
     internal func modelConfigure(model:Item){
         self.model = model
     }
-    internal func categoryIndexConfigure(categoryIndex:Int){
-        self.categoryIndex = categoryIndex
+    internal func categoryIdConfigure(categoryId:String){
+        self.categoryId = categoryId
     }
 //MARK: -LifeCycle
     override func viewDidLoad() {
@@ -72,7 +72,7 @@ final class RegistViewController: UIViewController {
         model.comment = commentTextField.text
         model.meigenText = MeigenTextView.text
         model.bookImage = self.model?.volumeInfo.imageLinks.thumbnail
-        model.categoryIndex = self.categoryIndex
+        model.categoryId = self.categoryId
         saveImage()
         model.meigenImage = documentDirectoryFileURL.absoluteString
         return model
