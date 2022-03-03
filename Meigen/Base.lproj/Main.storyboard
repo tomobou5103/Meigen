@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,22 +74,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5It-SP-Ek5">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="331" height="842"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="リスト一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-tX-dby">
-                                        <rect key="frame" x="82.5" y="50" width="125" height="25"/>
-                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-tX-dby">
+                                        <rect key="frame" x="105.5" y="50" width="120" height="20"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-GF-iKe">
-                                        <rect key="frame" x="15" y="100" width="260" height="727"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-GF-iKe">
+                                        <rect key="frame" x="15" y="95" width="301" height="697"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kvm-GF-iKe" secondAttribute="bottom" constant="15" id="1Ae-h5-Wsu"/>
+                                    <constraint firstAttribute="bottom" secondItem="kvm-GF-iKe" secondAttribute="bottom" constant="50" id="1Ae-h5-Wsu"/>
                                     <constraint firstItem="kvm-GF-iKe" firstAttribute="leading" secondItem="5It-SP-Ek5" secondAttribute="leading" constant="15" id="Boy-oa-07t"/>
                                     <constraint firstItem="Pv6-tX-dby" firstAttribute="centerX" secondItem="5It-SP-Ek5" secondAttribute="centerX" id="PJj-hz-zii"/>
                                     <constraint firstItem="Pv6-tX-dby" firstAttribute="top" secondItem="5It-SP-Ek5" secondAttribute="top" constant="50" id="Qn2-oe-0Be"/>
@@ -100,7 +101,7 @@
                         <viewLayoutGuide key="safeArea" id="A2G-X3-xF9"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5It-SP-Ek5" firstAttribute="width" secondItem="I6k-gJ-amK" secondAttribute="width" multiplier="0.7" id="9Nq-0G-w7f"/>
+                            <constraint firstItem="5It-SP-Ek5" firstAttribute="width" secondItem="I6k-gJ-amK" secondAttribute="width" multiplier="0.8" id="9Nq-0G-w7f"/>
                             <constraint firstItem="5It-SP-Ek5" firstAttribute="leading" secondItem="A2G-X3-xF9" secondAttribute="leading" id="A2p-ci-qbS"/>
                             <constraint firstAttribute="bottom" secondItem="5It-SP-Ek5" secondAttribute="bottom" id="ORZ-4a-f80"/>
                             <constraint firstItem="5It-SP-Ek5" firstAttribute="top" secondItem="I6k-gJ-amK" secondAttribute="top" id="U2t-zW-bAe"/>
@@ -465,7 +466,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pAx-j6-qN2"/>
+        <segue reference="DSG-F8-Ift"/>
         <segue reference="1M3-UK-YNI"/>
     </inferredMetricsTieBreakers>
     <resources>

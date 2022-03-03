@@ -20,7 +20,7 @@ final class MenuViewController: UIViewController {
     internal func configure(categories:[String]){
         self.categories = categories
     }
-    private func makeAlert(index:Int){
+    private func makeAlert(){
         let alert = UIAlertController(title: "新規カテゴリー", message: "カテゴリ名", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "追加する", style: .default, handler: {(action:UIAlertAction!)->Void in
             guard let text = alert.textFields?.first?.text else {return}
@@ -81,9 +81,16 @@ final class MenuViewController: UIViewController {
     }
 }
 //MARK: -Extension
-extension MenuViewController:UITableViewDelegate,UITableViewDataSource{
+extension MenuViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count + 1
+        if section == 2{
+            return categories.count
+        }else{
+            return 1
+        }
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
@@ -91,16 +98,32 @@ extension MenuViewController:UITableViewDelegate,UITableViewDataSource{
         else{
             return UITableViewCell()
         }
-        if indexPath.row == 0{
+        cell.layer.cornerRadius = 10
+        switch indexPath.section{
+        case 0:
             cell.firstCellConfigure()
-        }else{
-            cell.configure(categoryId: categories[indexPath.row - 1])
+        case 1:
+            cell.secondCellConfigure()
+        case 2:
+            cell.configure(categoryId: categories[indexPath.row], index: indexPath.row)
+        default:
+            break
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0{
-            makeAlert(index: indexPath.row)
+        if indexPath.section == 0{
+            makeAlert()
+        }else if indexPath.section == 1{
+            
         }
+    }
+}
+extension MenuViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
 }
