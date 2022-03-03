@@ -21,28 +21,26 @@ final class MenuViewController: UIViewController {
         self.categories = categories
     }
     private func makeAlert(index:Int){
-        if index == 0{
-            let alert = UIAlertController(title: "新規カテゴリー", message: "カテゴリ名", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "追加する", style: .default, handler: {(action:UIAlertAction!)->Void in
-                guard let text = alert.textFields?.first?.text else {return}
-                if text != ""{
-                    let category = text + "&" + UUID().uuidString
-                    self.categories.append(category)
-                    self.addCategoryUd()
-                    self.delegate?.reloadView()
-                    self.tableV.reloadData()
-                }
-            })
-            let cancelAction = UIAlertAction(title: "やめる", style: .cancel, handler: {(action:UIAlertAction!) -> Void in
-                print("cancel")
-            })
-            alert.addAction(cancelAction)
-            alert.addAction(okAction)
-            alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
-                text.placeholder = "例:夏目漱石"
-            })
-            present(alert, animated: true, completion: nil)
-        }
+        let alert = UIAlertController(title: "新規カテゴリー", message: "カテゴリ名", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "追加する", style: .default, handler: {(action:UIAlertAction!)->Void in
+            guard let text = alert.textFields?.first?.text else {return}
+            if text != ""{
+                let category = text + "&" + UUID().uuidString
+                self.categories.append(category)
+                self.addCategoryUd()
+                self.delegate?.reloadView()
+                self.tableV.reloadData()
+            }
+        })
+        let cancelAction = UIAlertAction(title: "やめる", style: .cancel, handler: {(action:UIAlertAction!) -> Void in
+            print("cancel")
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
+            text.placeholder = "例:夏目漱石"
+        })
+        present(alert, animated: true, completion: nil)
     }
     private func addCategoryUd(){
         let ud = UserDefaults.standard
@@ -101,6 +99,8 @@ extension MenuViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        makeAlert(index: indexPath.row)
+        if indexPath.row == 0{
+            makeAlert(index: indexPath.row)
+        }
     }
 }
