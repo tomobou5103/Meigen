@@ -69,11 +69,11 @@
             <objects>
                 <viewController modalPresentationStyle="overCurrentContext" id="uJy-I1-Zju" customClass="MenuViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="I6k-gJ-amK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5It-SP-Ek5">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="リスト一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-tX-dby">
                                         <rect key="frame" x="82.5" y="50" width="125" height="25"/>
@@ -82,7 +82,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-GF-iKe">
-                                        <rect key="frame" x="15" y="100" width="260" height="781"/>
+                                        <rect key="frame" x="15" y="100" width="260" height="727"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     </tableView>
                                 </subviews>
@@ -120,18 +120,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-wB-ta8">
-                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="742" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             </view>
                         </subviews>
@@ -335,7 +335,9 @@
                                         <rect key="frame" x="322.5" y="221" width="66.5" height="54"/>
                                         <color key="tintColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="camera"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                            <imageReference key="image" image="camera" symbolScale="large"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="insertImageButton:" destination="Q5n-6k-y53" eventType="touchUpInside" id="Oqs-7D-wG6"/>
                                         </connections>
@@ -464,7 +466,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pAx-j6-qN2"/>
-        <segue reference="AFt-Q2-8a5"/>
+        <segue reference="1M3-UK-YNI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
