@@ -6,7 +6,7 @@ final class CustomTableViewCell: UITableViewCell {
     @IBOutlet private weak var bookAuthorLabel: UILabel!
     @IBOutlet private weak var meigenTextLabel: UILabel!
     
-    internal func configure(model:CategoryModel){
+    internal func configure(model:MeigenModel){
         self.bookNameLabel.text = model.title
         if let author = model.author{
             self.bookAuthorLabel.text = author

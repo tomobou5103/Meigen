@@ -19,7 +19,7 @@ final class TopViewController: UIViewController{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         var vcs:[UIViewController] = []
         let realm = try! Realm()
-        let res = realm.objects(CategoryModel.self)
+        let res = realm.objects(MeigenModel.self)
         for (index,id) in categories.enumerated(){
             guard
                 let vc = storyBoard.instantiateViewController(withIdentifier: customVCId) as? CustomViewController

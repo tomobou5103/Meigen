@@ -4,7 +4,7 @@ final class CustomViewController: UIViewController {
     private let CustomTableViewCellId = "CustomTableViewCell"
     private let CustomVCtoSlectSegueId = "showSelect"
     private var categoryId = ""
-    private var model:[CategoryModel]?
+    private var model:[MeigenModel]?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
 //MARK: -IBAction
@@ -17,7 +17,7 @@ final class CustomViewController: UIViewController {
         tableV.dataSource = self
         tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
     }
-    internal func configure(model:[CategoryModel],categoryId:String){
+    internal func configure(model:[MeigenModel],categoryId:String){
         self.model = model
         self.categoryId = categoryId
         self.title = convertFromIdToTitle(id: categoryId)

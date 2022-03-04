@@ -1,6 +1,6 @@
 import RealmSwift
 
-final class CategoryModel:Object{
+final class MeigenModel:Object{
     @objc dynamic internal var title:String?
     @objc dynamic internal var author:String?
     @objc dynamic internal var comment:String?

@@ -65,8 +65,8 @@ final class RegistViewController: UIViewController {
         present(alert,animated:true,completion:nil)
     }
 //MARK: -MakeRegistBookModel
-    private func makeCategoryModel()->CategoryModel{
-        let model = CategoryModel()
+    private func makeCategoryModel()->MeigenModel{
+        let model = MeigenModel()
         model.title = bookNameTextField.text
         model.author = authorTextField.text
         model.comment = commentTextField.text

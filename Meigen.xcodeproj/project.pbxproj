@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5697B4DE9A99690D09E076D2 /* Pods_Meigen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FBC23597663FFA20195E7 /* Pods_Meigen.framework */; };
 		731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */; };
-		731EDE5227B16FA200D6B2D3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5127B16FA200D6B2D3 /* CategoryModel.swift */; };
+		731EDE5227B16FA200D6B2D3 /* MeigenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */; };
 		731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */; };
 		731EDE5827B1A47800D6B2D3 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */; };
 		731EDE5A27B3130F00D6B2D3 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */; };
@@ -60,7 +60,7 @@
 		22B9638F09C11EEFBA6D5D7C /* Pods_MeigenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeigenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D12E3A4EB6B101D0100DCAA /* Pods-MeigenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeigenTests.debug.xcconfig"; path = "Target Support Files/Pods-MeigenTests/Pods-MeigenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		731EDE5127B16FA200D6B2D3 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeigenModel.swift; sourceTree = "<group>"; };
 		731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		731EDE5627B1A47800D6B2D3 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		731EDE5927B3130F00D6B2D3 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			children = (
 				734395472787057E00733CA7 /* GoogleBooksAPI.swift */,
 				7337B4982722D60C006C6820 /* BooksModel.swift */,
-				731EDE5127B16FA200D6B2D3 /* CategoryModel.swift */,
+				731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */,
 				737F45EA27D1E34F00436541 /* ExtesionMakeTextAlert.swift */,
 			);
 			path = Utility;
@@ -489,7 +489,7 @@
 				731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */,
 				737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */,
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
-				731EDE5227B16FA200D6B2D3 /* CategoryModel.swift in Sources */,
+				731EDE5227B16FA200D6B2D3 /* MeigenModel.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
 				73FFD7C327213D4E000F236E /* RegistViewController.swift in Sources */,
 				7337B4992722D60C006C6820 /* BooksModel.swift in Sources */,
