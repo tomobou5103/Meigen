@@ -98,7 +98,6 @@ extension MenuViewController:UITableViewDataSource{
         else{
             return UITableViewCell()
         }
-        cell.layer.cornerRadius = 10
         switch indexPath.section{
         case 0:
             cell.firstCellConfigure()

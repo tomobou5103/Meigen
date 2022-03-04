@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-vm-pt6">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.88452589511871338" green="0.87864691019058228" blue="0.9632452130317688" alpha="0.8517694536423841" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUW-bn-blR">
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
@@ -85,6 +85,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-GF-iKe">
                                         <rect key="frame" x="15" y="95" width="301" height="697"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="separatorColor" systemColor="systemGray5Color"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>

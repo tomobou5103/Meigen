@@ -15,20 +15,26 @@ final class MenuTableViewCell: UITableViewCell {
         self.nameLabel.textColor = .white
         self.backgroundColor = .systemBlue
         self.renameButton.isHidden = true
+        addCorner(cell: self)
     }
     internal func secondCellConfigure(){
         self.nameLabel.text = "カテゴリを削除する"
         self.nameLabel.textColor = .white
         self.backgroundColor = .systemGray2
         self.renameButton.isHidden = true
+        addCorner(cell: self)
     }
     private func convertFromCategoryIdToTitle(id:String)->String{
         let title = id.components(separatedBy: "&")
         return title[0]
     }
+    private func addCorner(cell:UITableViewCell){
+        cell.layer.cornerRadius = 10
+    }
     override func prepareForReuse() {
         self.backgroundColor = .white
         self.nameLabel.textColor = .black
         self.renameButton.isHidden = false
+        self.layer.cornerRadius = 0
     }
 }
