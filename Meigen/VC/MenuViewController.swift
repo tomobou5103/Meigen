@@ -20,28 +20,6 @@ final class MenuViewController: UIViewController {
     internal func configure(categories:[String]){
         self.categories = categories
     }
-    private func makeAlert(){
-        let alert = UIAlertController(title: "新規カテゴリー", message: "カテゴリ名", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "追加する", style: .default, handler: {(action:UIAlertAction!)->Void in
-            guard let text = alert.textFields?.first?.text else {return}
-            if text != ""{
-                let category = text + "&" + UUID().uuidString
-                self.categories.append(category)
-                self.addCategoryUd()
-                self.delegate?.reloadView()
-                self.tableV.reloadData()
-            }
-        })
-        let cancelAction = UIAlertAction(title: "やめる", style: .cancel, handler: {(action:UIAlertAction!) -> Void in
-            print("cancel")
-        })
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
-            text.placeholder = "例:夏目漱石"
-        })
-        present(alert, animated: true, completion: nil)
-    }
     private func addCategoryUd(){
         let ud = UserDefaults.standard
         ud.set(categories, forKey: "categories")
@@ -104,7 +82,7 @@ extension MenuViewController:UITableViewDataSource{
         case 1:
             cell.secondCellConfigure()
         case 2:
-            cell.configure(categoryId: categories[indexPath.row], index: indexPath.row)
+            cell.configure(categoryId: categories[indexPath.row], index: indexPath.row,delegate:self)
         default:
             break
         }
@@ -112,7 +90,13 @@ extension MenuViewController:UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            makeAlert()
+            makeTextAlert(title: "新規カテゴリ", message: "カテゴリ名", okActionTitle: "追加する", textPlaceholder: "例:江戸川乱歩") { text in
+                let category = text + "&" + UUID().uuidString
+                self.categories.append(category)
+                self.addCategoryUd()
+                self.delegate?.reloadView()
+                self.tableV.reloadData()
+            }
         }else if indexPath.section == 1{
             
         }
@@ -124,5 +108,12 @@ extension MenuViewController:UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
+    }
+}
+extension MenuViewController:MenuTableViewCellDelegate{
+    func launchAlert(index:Int) {
+        makeTextAlert(title: "カテゴリ名を変更", message: "カテゴリ名", okActionTitle: "変更する", textPlaceholder: "変更後のカテゴリ名") { text in
+            print("rename")
+        }
     }
 }

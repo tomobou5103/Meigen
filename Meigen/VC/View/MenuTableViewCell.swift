@@ -1,14 +1,20 @@
 import UIKit
-
+protocol MenuTableViewCellDelegate:AnyObject{
+    func launchAlert(index:Int)
+}
 final class MenuTableViewCell: UITableViewCell {
+    
+    internal weak var delegate:MenuTableViewCellDelegate?
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var renameButton: UIButton!
     @IBAction func renameAction(_ sender: Any) {
+        delegate?.launchAlert(index:self.renameButton.tag)
     }
-    
-    internal func configure(categoryId:String,index:Int){
+    internal func configure(categoryId:String,index:Int,delegate:MenuTableViewCellDelegate){
         self.renameButton.tag = index
         self.nameLabel.text = convertFromCategoryIdToTitle(id: categoryId)
+        self.delegate = delegate
     }
     internal func firstCellConfigure(){
         self.nameLabel.text = "カテゴリを追加する"
