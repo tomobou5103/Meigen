@@ -71,8 +71,7 @@ final class TopViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == toMenuSegueId{
             let nextVC = segue.destination as? MenuViewController
-            nextVC?.delegate = self
-            nextVC?.configure(categories: categories)
+            nextVC?.configure(categories: categories,delegate: self)
         }
     }
     

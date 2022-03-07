@@ -17,8 +17,9 @@ final class MenuViewController: UIViewController {
         self.tableV.dataSource = self
         self.tableV.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
-    internal func configure(categories:[String]){
+    internal func configure(categories:[String],delegate:MenuViewControllerDelegate){
         self.categories = categories
+        self.delegate = delegate
     }
     private func addCategoryUd(){
         let ud = UserDefaults.standard
