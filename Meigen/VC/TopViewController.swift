@@ -88,4 +88,12 @@ extension TopViewController:MenuViewControllerDelegate{
         removePagingView()
         pagingViewConfigure()
     }
+    func removeMeigenModel(uuid:String) {
+        let realm = try! Realm()
+        let res = realm.objects(MeigenModel.self).filter{$0.categoryId == uuid}
+        try! realm.write{
+            realm.delete(res)
+        }
+        reloadView()
+    }
 }

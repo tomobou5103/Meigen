@@ -1,6 +1,7 @@
 import UIKit
 protocol MenuViewControllerDelegate:AnyObject{
     func reloadView()
+    func removeMeigenModel(uuid:String)
 }
 final class MenuViewController: UIViewController {
 //MARK: -Property
@@ -120,8 +121,11 @@ extension MenuViewController:MenuTableViewCellDelegate{
     }
     func launchRemoveAlert(index:Int) {
         let categoryComponets = categories[index].components(separatedBy: "&")
-        makeAlert(title: categoryComponets[0] + "を削除", message: "*カテゴリを削除するとカテゴリ内のMeigenも同時に削除されます。", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: "", completion: {text in
-            
+        makeAlert(title: categoryComponets[0] + "を削除", message: "*カテゴリを削除するとカテゴリ内のMeigenも同時に削除されます。", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: "", completion: {_ in
+            self.categories.remove(at: index)
+            self.saveCategoriesUD()
+            self.tableV.reloadData()
+            self.delegate?.removeMeigenModel(uuid:categoryComponets[1])
         })
     }
 }
