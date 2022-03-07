@@ -62,14 +62,14 @@ final class MenuViewController: UIViewController {
 //MARK: -Extension
 extension MenuViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 2{
+        if section == 1{
             return categories.count
         }else{
             return 1
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
@@ -81,8 +81,6 @@ extension MenuViewController:UITableViewDataSource{
         case 0:
             cell.firstCellConfigure()
         case 1:
-            cell.secondCellConfigure()
-        case 2:
             cell.configure(categoryId: categories[indexPath.row], index: indexPath.row,delegate:self)
         default:
             break
@@ -98,8 +96,6 @@ extension MenuViewController:UITableViewDataSource{
                 self.delegate?.reloadView()
                 self.tableV.reloadData()
             }
-        }else if indexPath.section == 1{
-            
         }
     }
 }
