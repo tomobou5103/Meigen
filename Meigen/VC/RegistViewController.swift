@@ -2,7 +2,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Photos
-import RealmSwift
 
 final class RegistViewController: UIViewController {
 
@@ -26,10 +25,7 @@ final class RegistViewController: UIViewController {
     }
     
     @IBAction private func barButtonAction(_ sender: Any) {
-        let realm = try! Realm()
-        try! realm.write{
-            realm.add(makeMeigenModel())
-        }
+        makeMeigenModel().saveModel()
         self.navigationController?.popToRootViewController(animated: true)
     }
     internal func modelConfigure(model:Item){

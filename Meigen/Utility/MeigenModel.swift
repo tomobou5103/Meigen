@@ -8,4 +8,11 @@ final class MeigenModel:Object{
     @objc dynamic internal var bookImage:String?
     @objc dynamic internal var meigenImage:String?
     @objc dynamic internal var categoryId:String = ""
+    
+    internal func saveModel(){
+        let realm = try! Realm()
+        try! realm.write{
+            realm.add(self)
+        }
+    }
 }
