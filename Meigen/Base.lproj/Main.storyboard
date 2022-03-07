@@ -74,16 +74,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5It-SP-Ek5">
-                                <rect key="frame" x="0.0" y="0.0" width="331" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-tX-dby">
-                                        <rect key="frame" x="105.5" y="50" width="120" height="20"/>
+                                        <rect key="frame" x="116" y="50" width="120" height="20"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-GF-iKe">
-                                        <rect key="frame" x="15" y="95" width="301" height="697"/>
+                                        <rect key="frame" x="15" y="95" width="322" height="697"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <color key="separatorColor" systemColor="systemGray5Color"/>
                                     </tableView>
@@ -102,7 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="A2G-X3-xF9"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5It-SP-Ek5" firstAttribute="width" secondItem="I6k-gJ-amK" secondAttribute="width" multiplier="0.8" id="9Nq-0G-w7f"/>
+                            <constraint firstItem="5It-SP-Ek5" firstAttribute="width" secondItem="I6k-gJ-amK" secondAttribute="width" multiplier="0.85" id="9Nq-0G-w7f"/>
                             <constraint firstItem="5It-SP-Ek5" firstAttribute="leading" secondItem="A2G-X3-xF9" secondAttribute="leading" id="A2p-ci-qbS"/>
                             <constraint firstAttribute="bottom" secondItem="5It-SP-Ek5" secondAttribute="bottom" id="ORZ-4a-f80"/>
                             <constraint firstItem="5It-SP-Ek5" firstAttribute="top" secondItem="I6k-gJ-amK" secondAttribute="top" id="U2t-zW-bAe"/>

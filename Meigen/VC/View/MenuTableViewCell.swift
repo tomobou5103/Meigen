@@ -27,6 +27,7 @@ final class MenuTableViewCell: UITableViewCell {
         self.nameLabel.textColor = .white
         self.backgroundColor = .systemBlue
         self.renameButton.isHidden = true
+        self.removeButton.isHidden = true
         addCorner(cell: self)
     }
     private func convertFromCategoryIdToTitle(id:String)->String{
@@ -40,6 +41,9 @@ final class MenuTableViewCell: UITableViewCell {
         self.backgroundColor = .white
         self.nameLabel.textColor = .black
         self.renameButton.isHidden = false
+        self.removeButton.isHidden = false
         self.layer.cornerRadius = 0
+
+        
     }
 }

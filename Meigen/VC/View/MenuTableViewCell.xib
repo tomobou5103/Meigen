@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1t-AJ-fso">
-                        <rect key="frame" x="126" y="27" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="124" y="29.5" width="46.5" height="16"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52O-eF-Nas">
-                        <rect key="frame" x="243" y="22" width="46" height="31"/>
+                        <rect key="frame" x="248" y="22" width="46" height="31"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
@@ -34,7 +34,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-Z5-aL9">
-                        <rect key="frame" x="5" y="22" width="44" height="31"/>
+                        <rect key="frame" x="0.0" y="22" width="44" height="31"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                         <connections>
@@ -46,9 +46,9 @@
                     <constraint firstItem="52O-eF-Nas" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v1t-AJ-fso" secondAttribute="trailing" id="KeA-5o-w2d"/>
                     <constraint firstItem="v1t-AJ-fso" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MXX-Z5-aL9" secondAttribute="trailing" id="MF2-U7-Oxq"/>
                     <constraint firstItem="v1t-AJ-fso" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="XsR-Qa-9SQ"/>
-                    <constraint firstAttribute="trailing" secondItem="52O-eF-Nas" secondAttribute="trailing" constant="5" id="lxD-ya-qkm"/>
+                    <constraint firstAttribute="trailing" secondItem="52O-eF-Nas" secondAttribute="trailing" id="lxD-ya-qkm"/>
                     <constraint firstItem="52O-eF-Nas" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qDg-e1-fzU"/>
-                    <constraint firstItem="MXX-Z5-aL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="sSB-Hk-FU4"/>
+                    <constraint firstItem="MXX-Z5-aL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sSB-Hk-FU4"/>
                     <constraint firstItem="MXX-Z5-aL9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vYH-C5-gPR"/>
                     <constraint firstItem="v1t-AJ-fso" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zOf-qb-E5C"/>
                 </constraints>

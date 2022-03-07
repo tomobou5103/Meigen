@@ -90,12 +90,16 @@ extension MenuViewController:UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            makeAlert(title: "新規カテゴリ", message: "カテゴリ名", okActionTitle: "追加する",textViewIsOn: true,textPlaceholder: "例:江戸川乱歩") { text in
-                let category = text + "&" + UUID().uuidString
-                self.categories.append(category)
-                self.saveCategoriesUD()
-                self.delegate?.reloadView()
-                self.tableV.reloadData()
+            makeAlert(title: "新規カテゴリ", message: "*カテゴリ名は10文字以下になるように入力してください", okActionTitle: "追加する",textViewIsOn: true,textPlaceholder: "例:江戸川乱歩") { text in
+                if text.count <= 10{
+                    let category = text + "&" + UUID().uuidString
+                    self.categories.append(category)
+                    self.saveCategoriesUD()
+                    self.delegate?.reloadView()
+                    self.tableV.reloadData()
+                }else{
+                    print("11文字以上です")
+                }
             }
         }
     }
