@@ -30,7 +30,6 @@ final class RegistViewController: UIViewController {
         try! realm.write{
             realm.add(makeMeigenModel())
         }
-        print("----------ToTopVC----------")
         self.navigationController?.popToRootViewController(animated: true)
     }
     internal func modelConfigure(model:Item){
