@@ -21,7 +21,7 @@ final class MenuViewController: UIViewController {
         self.categories = categories
         self.delegate = delegate
     }
-    private func addCategoryUd(){
+    private func saveCategoriesUD(){
         let ud = UserDefaults.standard
         ud.set(categories, forKey: "categories")
     }
@@ -114,7 +114,14 @@ extension MenuViewController:UITableViewDelegate{
 extension MenuViewController:MenuTableViewCellDelegate{
     func launchAlert(index:Int) {
         makeTextAlert(title: "カテゴリ名を変更", message: "カテゴリ名", okActionTitle: "変更する", textPlaceholder: "変更後のカテゴリ名") { text in
-            print("rename")
+            let category = self.categories[index]
+            let categoryComponents = category.components(separatedBy: "&")
+            let newCategoryName = text + "&" + categoryComponents[1]
+            self.categories[index] = newCategoryName
+            self.saveCategoriesUD()
+            self.tableV.reloadData()
+            self.delegate?.reloadView()
+            
         }
     }
 }
