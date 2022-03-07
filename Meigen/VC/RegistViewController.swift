@@ -28,7 +28,7 @@ final class RegistViewController: UIViewController {
     @IBAction private func barButtonAction(_ sender: Any) {
         let realm = try! Realm()
         try! realm.write{
-            realm.add(makeCategoryModel())
+            realm.add(makeMeigenModel())
         }
         print("----------ToTopVC----------")
         self.navigationController?.popToRootViewController(animated: true)
@@ -65,7 +65,7 @@ final class RegistViewController: UIViewController {
         present(alert,animated:true,completion:nil)
     }
 //MARK: -MakeRegistBookModel
-    private func makeCategoryModel()->MeigenModel{
+    private func makeMeigenModel()->MeigenModel{
         let model = MeigenModel()
         model.title = bookNameTextField.text
         model.author = authorTextField.text
