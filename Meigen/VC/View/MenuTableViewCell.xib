@@ -33,18 +33,30 @@
                             <action selector="renameAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jty-Kx-pZf"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-Z5-aL9">
+                        <rect key="frame" x="5" y="22" width="44" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                        <connections>
+                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CqG-LD-lc0"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="52O-eF-Nas" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v1t-AJ-fso" secondAttribute="trailing" id="KeA-5o-w2d"/>
+                    <constraint firstItem="v1t-AJ-fso" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MXX-Z5-aL9" secondAttribute="trailing" id="MF2-U7-Oxq"/>
                     <constraint firstItem="v1t-AJ-fso" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="XsR-Qa-9SQ"/>
                     <constraint firstAttribute="trailing" secondItem="52O-eF-Nas" secondAttribute="trailing" constant="5" id="lxD-ya-qkm"/>
                     <constraint firstItem="52O-eF-Nas" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qDg-e1-fzU"/>
+                    <constraint firstItem="MXX-Z5-aL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="sSB-Hk-FU4"/>
+                    <constraint firstItem="MXX-Z5-aL9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vYH-C5-gPR"/>
                     <constraint firstItem="v1t-AJ-fso" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zOf-qb-E5C"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="v1t-AJ-fso" id="fPI-OX-bMR"/>
+                <outlet property="removeButton" destination="MXX-Z5-aL9" id="hku-za-alA"/>
                 <outlet property="renameButton" destination="52O-eF-Nas" id="oMs-aC-dUE"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="3.0133928571428572"/>
@@ -52,5 +64,6 @@
     </objects>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

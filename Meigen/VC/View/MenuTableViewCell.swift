@@ -1,18 +1,24 @@
 import UIKit
 protocol MenuTableViewCellDelegate:AnyObject{
-    func launchAlert(index:Int)
+    func launchRenameAlert(index:Int)
+    func launchRemoveAlert(index:Int)
 }
 final class MenuTableViewCell: UITableViewCell {
     
     internal weak var delegate:MenuTableViewCellDelegate?
+    private var index:Int = 0
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var renameButton: UIButton!
+    @IBOutlet private weak var removeButton: UIButton!
     @IBAction func renameAction(_ sender: Any) {
-        delegate?.launchAlert(index:self.renameButton.tag)
+        delegate?.launchRenameAlert(index:index)
+    }
+    @IBAction func removeAction(_ sender: Any) {
+        delegate?.launchRemoveAlert(index:index)
     }
     internal func configure(categoryId:String,index:Int,delegate:MenuTableViewCellDelegate){
-        self.renameButton.tag = index
+        self.index = index
         self.nameLabel.text = convertFromCategoryIdToTitle(id: categoryId)
         self.delegate = delegate
     }

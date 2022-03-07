@@ -89,7 +89,7 @@ extension MenuViewController:UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            makeTextAlert(title: "新規カテゴリ", message: "カテゴリ名", okActionTitle: "追加する", textPlaceholder: "例:江戸川乱歩") { text in
+            makeAlert(title: "新規カテゴリ", message: "カテゴリ名", okActionTitle: "追加する",textViewIsOn: true,textPlaceholder: "例:江戸川乱歩") { text in
                 let category = text + "&" + UUID().uuidString
                 self.categories.append(category)
                 self.saveCategoriesUD()
@@ -108,16 +108,20 @@ extension MenuViewController:UITableViewDelegate{
     }
 }
 extension MenuViewController:MenuTableViewCellDelegate{
-    func launchAlert(index:Int) {
-        makeTextAlert(title: "カテゴリ名を変更", message: "カテゴリ名", okActionTitle: "変更する", textPlaceholder: "変更後のカテゴリ名") { text in
+    func launchRenameAlert(index:Int) {
+        makeAlert(title: "カテゴリ名を変更",message: "カテゴリ名",okActionTitle: "変更する",textViewIsOn: true,textPlaceholder:"変更後のカテゴリ名"){ text in
             let category = self.categories[index]
             let categoryComponents = category.components(separatedBy: "&")
-            let newCategoryName = text + "&" + categoryComponents[1]
-            self.categories[index] = newCategoryName
+            self.categories[index] = text + "&" + categoryComponents[1]
             self.saveCategoriesUD()
             self.tableV.reloadData()
             self.delegate?.reloadView()
-            
         }
+    }
+    func launchRemoveAlert(index:Int) {
+        let categoryComponets = categories[index].components(separatedBy: "&")
+        makeAlert(title: categoryComponets[0] + "を削除", message: "*カテゴリを削除するとカテゴリ内のMeigenも同時に削除されます。", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: "", completion: {text in
+            
+        })
     }
 }
