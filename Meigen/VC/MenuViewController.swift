@@ -94,7 +94,7 @@ extension MenuViewController:UITableViewDataSource{
             makeTextAlert(title: "新規カテゴリ", message: "カテゴリ名", okActionTitle: "追加する", textPlaceholder: "例:江戸川乱歩") { text in
                 let category = text + "&" + UUID().uuidString
                 self.categories.append(category)
-                self.addCategoryUd()
+                self.saveCategoriesUD()
                 self.delegate?.reloadView()
                 self.tableV.reloadData()
             }
