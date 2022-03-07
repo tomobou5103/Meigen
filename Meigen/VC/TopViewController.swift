@@ -5,7 +5,7 @@ import RealmSwift
 final class TopViewController: UIViewController{
 //MARK: -Property
     private let customVCId = "CustomViewController"//CustomViewControllerID for Parchment
-    private var categories:[String] = ["category1&uuid"]
+    private var categories:[String] = ["初期カテゴリ&uuid"]
     private var pagingVC:PagingViewController?
     private let toMenuSegueId = "showMenu"
 //MARK: -IBOutlet
