@@ -1,7 +1,8 @@
 import UIKit
 protocol MenuViewControllerDelegate:AnyObject{
-    func reloadView()
-    func removeMeigenModel(uuid:String)
+    func reloadTopView()
+    func renameMeigenModel(categoryId:String,newCategoryId:String)
+    func removeMeigenModel(categoryId:String)
 }
 final class MenuViewController: UIViewController {
 //MARK: -Property
@@ -95,7 +96,7 @@ extension MenuViewController:UITableViewDataSource{
                     let category = text + "&" + UUID().uuidString
                     self.categories.append(category)
                     self.saveCategoriesUD()
-                    self.delegate?.reloadView()
+                    self.delegate?.reloadTopView()
                     self.tableV.reloadData()
                 }else{
                     print("11文字以上です")
@@ -115,21 +116,22 @@ extension MenuViewController:UITableViewDelegate{
 extension MenuViewController:MenuTableViewCellDelegate{
     func launchRenameAlert(index:Int) {
         makeAlert(title: "カテゴリ名を変更",message: "カテゴリ名",okActionTitle: "変更する",textViewIsOn: true,textPlaceholder:"変更後のカテゴリ名"){ text in
-            let category = self.categories[index]
-            let categoryComponents = category.components(separatedBy: "&")
-            self.categories[index] = text + "&" + categoryComponents[1]
+            let categoryComponents = self.categories[index].components(separatedBy: "&")
+            let newVal = text + "&" + categoryComponents[1]
+            self.delegate?.renameMeigenModel(categoryId: self.categories[index], newCategoryId: newVal)
+            self.categories[index] = newVal
             self.saveCategoriesUD()
             self.tableV.reloadData()
-            self.delegate?.reloadView()
         }
     }
     func launchRemoveAlert(index:Int) {
         let categoryComponets = categories[index].components(separatedBy: "&")
         makeAlert(title: categoryComponets[0] + "を削除", message: "*カテゴリを削除するとカテゴリ内のMeigenも同時に削除されます。", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: "", completion: {_ in
+            self.delegate?.removeMeigenModel(categoryId:self.categories[index])
             self.categories.remove(at: index)
             self.saveCategoriesUD()
             self.tableV.reloadData()
-            self.delegate?.removeMeigenModel(uuid:categoryComponets[1])
+            
         })
     }
 }

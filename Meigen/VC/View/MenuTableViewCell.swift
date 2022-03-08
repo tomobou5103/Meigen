@@ -21,6 +21,9 @@ final class MenuTableViewCell: UITableViewCell {
         self.index = index
         self.nameLabel.text = convertFromCategoryIdToTitle(id: categoryId)
         self.delegate = delegate
+        if index == 0{
+            self.removeButton.isHidden = true
+        }
     }
     internal func firstCellConfigure(){
         self.nameLabel.text = "カテゴリを追加する"

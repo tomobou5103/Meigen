@@ -8,6 +8,7 @@ final class TopViewController: UIViewController{
     private var categories:[String] = ["初期カテゴリ&uuid"]
     private var pagingVC:PagingViewController?
     private let toMenuSegueId = "showMenu"
+    private let realm = try! Realm()
 //MARK: -IBOutlet
     @IBOutlet private weak var backgroundV: UIView!
     @IBOutlet private weak var bottomV: UIView!
@@ -20,6 +21,7 @@ final class TopViewController: UIViewController{
         var vcs:[UIViewController] = []
         let realm = try! Realm()
         let res = realm.objects(MeigenModel.self)
+        print(res)
         for (index,id) in categories.enumerated(){
             guard
                 let vc = storyBoard.instantiateViewController(withIdentifier: customVCId) as? CustomViewController
@@ -30,9 +32,6 @@ final class TopViewController: UIViewController{
             vcs.append(vc)
         }
         return vcs
-    }
-    private func removePagingView(){
-        self.pagingVC?.view.removeFromSuperview()
     }
     private func pagingViewConfigure(){
         let vcs = generateVCS()
@@ -62,6 +61,15 @@ final class TopViewController: UIViewController{
         guard let res = ud.stringArray(forKey: "categories")else{return}
         self.categories = res
     }
+//MARK: -Func
+    private func removePagingView(){
+        self.pagingVC?.view.removeFromSuperview()
+    }
+    private func reloadView() {
+        categoriesConfigure()
+        removePagingView()
+        pagingViewConfigure()
+    }
 //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,22 +86,31 @@ final class TopViewController: UIViewController{
 }
 extension TopViewController:UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        removePagingView()
-        pagingViewConfigure()
+        reloadView()
     }
 }
 extension TopViewController:MenuViewControllerDelegate{
-    func reloadView() {
-        categoriesConfigure()
-        removePagingView()
-        pagingViewConfigure()
+    func renameMeigenModel(categoryId: String,newCategoryId:String) {
+        let res = realm.objects(MeigenModel.self).filter("categoryId == %@",categoryId)
+        try! realm.write{
+            res.forEach{
+                $0.categoryId = newCategoryId
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {()-> Void in
+            self.reloadView()
+        })
     }
-    func removeMeigenModel(uuid:String) {
-        let realm = try! Realm()
-        let res = realm.objects(MeigenModel.self).filter{$0.categoryId == uuid}
+    func removeMeigenModel(categoryId:String) {
+        let res = realm.objects(MeigenModel.self).filter("categoryId == %@",categoryId)
         try! realm.write{
             realm.delete(res)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {()-> Void in
+            self.reloadView()
+        })
+    }
+    func reloadTopView(){
         reloadView()
     }
 }
