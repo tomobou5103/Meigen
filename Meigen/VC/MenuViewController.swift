@@ -98,8 +98,6 @@ extension MenuViewController:UITableViewDataSource{
                     self.saveCategoriesUD()
                     self.delegate?.reloadTopView()
                     self.tableV.reloadData()
-                }else{
-                    print("11文字以上です")
                 }
             }
         }
@@ -115,13 +113,15 @@ extension MenuViewController:UITableViewDelegate{
 }
 extension MenuViewController:MenuTableViewCellDelegate{
     func launchRenameAlert(index:Int) {
-        makeAlert(title: "カテゴリ名を変更",message: "カテゴリ名",okActionTitle: "変更する",textViewIsOn: true,textPlaceholder:"変更後のカテゴリ名"){ text in
-            let categoryComponents = self.categories[index].components(separatedBy: "&")
-            let newVal = text + "&" + categoryComponents[1]
-            self.delegate?.renameMeigenModel(categoryId: self.categories[index], newCategoryId: newVal)
-            self.categories[index] = newVal
-            self.saveCategoriesUD()
-            self.tableV.reloadData()
+        makeAlert(title: "カテゴリ名を変更",message: "*カテゴリ名は10文字以下になるように入力してください",okActionTitle: "変更する",textViewIsOn: true,textPlaceholder:"変更後のカテゴリ名"){ text in
+            if text.count <= 10{
+                let categoryComponents = self.categories[index].components(separatedBy: "&")
+                let newVal = text + "&" + categoryComponents[1]
+                self.delegate?.renameMeigenModel(categoryId: self.categories[index], newCategoryId: newVal)
+                self.categories[index] = newVal
+                self.saveCategoriesUD()
+                self.tableV.reloadData()
+            }
         }
     }
     func launchRemoveAlert(index:Int) {
