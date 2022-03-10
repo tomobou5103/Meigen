@@ -1,7 +1,7 @@
 import UIKit
 
-class AddMeigenViewController: UIViewController {
-    @IBOutlet weak var addMeigenView: UIView!
+final class AddMeigenViewController: UIViewController {
+    @IBOutlet private weak var addMeigenView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
