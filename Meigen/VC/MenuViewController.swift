@@ -38,9 +38,9 @@ final class MenuViewController: UIViewController {
             options: .curveEaseOut,
             animations: {
                 self.menuView.layer.position.x = menuPos.x
-        },
-            completion: { bool in
-        })
+            },
+            completion: nil
+        )
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
@@ -53,7 +53,7 @@ final class MenuViewController: UIViewController {
                     animations: {
                         self.menuView.layer.position.x = -self.menuView.frame.width
                 },
-                    completion: { bool in
+                    completion: {_ in
                         self.dismiss(animated: true, completion: nil)
                 }
                 )

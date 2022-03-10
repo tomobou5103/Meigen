@@ -9,7 +9,8 @@ final class CustomViewController: UIViewController {
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
 //MARK: -IBAction
     @IBAction private func showSelectVCButton(_ sender: Any) {
-        performSegue(withIdentifier: CustomVCtoSlectSegueId, sender: nil)
+//        performSegue(withIdentifier: CustomVCtoSlectSegueId, sender: nil)
+        performSegue(withIdentifier: "showAddMeigen", sender: nil)
     }
 //MARK: -Configure
     private func tableViewConfigure(){
