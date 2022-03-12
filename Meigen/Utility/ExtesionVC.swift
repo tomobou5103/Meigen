@@ -1,7 +1,7 @@
 import UIKit
 
 public extension UIViewController{
-    internal func makeAlert(title:String,message:String,okActionTitle:String,textViewIsOn:Bool,textPlaceholder:String,completion:@escaping(String)->Void){
+    internal func makeAlert(title:String,message:String?,okActionTitle:String,textViewIsOn:Bool,textPlaceholder:String?,completion:@escaping(String)->Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         var okAction = UIAlertAction()
         if textViewIsOn{

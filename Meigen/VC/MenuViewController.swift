@@ -1,15 +1,10 @@
 import UIKit
-protocol MenuViewControllerDelegate:AnyObject{
-    func reloadTopView()
-    func renameMeigenModel(categoryId:String,newCategoryId:String)
-    func removeMeigenModel(categoryId:String)
-}
 final class MenuViewController: UIViewController {
 //MARK: -Property
     private let cellId = "MenuTableViewCell"
     private var categories:[String] = []
     private var text = ""
-    internal weak var delegate:MenuViewControllerDelegate?
+    private weak var delegate:ReloadTopViewControllerDelegate?
 //MARK: -IBOutlet
     @IBOutlet private weak var menuView: UIView!
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
@@ -19,7 +14,7 @@ final class MenuViewController: UIViewController {
         self.tableV.dataSource = self
         self.tableV.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
-    internal func configure(categories:[String],delegate:MenuViewControllerDelegate){
+    internal func configure(categories:[String],delegate:ReloadTopViewControllerDelegate){
         self.categories = categories
         self.delegate = delegate
     }
@@ -96,7 +91,7 @@ extension MenuViewController:UITableViewDataSource{
                     let category = text + "&" + UUID().uuidString
                     self.categories.append(category)
                     self.saveCategoriesUD()
-                    self.delegate?.reloadTopView()
+                    self.delegate?.reloadTopView(categoryIndex: nil)
                     self.tableV.reloadData()
                 }
             }

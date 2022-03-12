@@ -23,6 +23,7 @@
 		737F45E727C8A30500436541 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737F45E527C8A30500436541 /* MenuTableViewCell.xib */; };
 		737F45EB27D1E34F00436541 /* ExtesionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EA27D1E34F00436541 /* ExtesionVC.swift */; };
 		737F45EF27DA57C400436541 /* AddMeigenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EE27DA57C400436541 /* AddMeigenViewController.swift */; };
+		737F45F127DD132400436541 /* ReloadTopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */; };
 		73FFD78627210D34000F236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78527210D34000F236E /* AppDelegate.swift */; };
 		73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78727210D34000F236E /* SceneDelegate.swift */; };
 		73FFD78D27210D34000F236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD78B27210D34000F236E /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		737F45E527C8A30500436541 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		737F45EA27D1E34F00436541 /* ExtesionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtesionVC.swift; sourceTree = "<group>"; };
 		737F45EE27DA57C400436541 /* AddMeigenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeigenViewController.swift; sourceTree = "<group>"; };
+		737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTopViewControllerDelegate.swift; sourceTree = "<group>"; };
 		73FFD78227210D34000F236E /* Meigen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meigen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FFD78527210D34000F236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73FFD78727210D34000F236E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				734395472787057E00733CA7 /* GoogleBooksAPI.swift */,
 				7337B4982722D60C006C6820 /* BooksModel.swift */,
+				737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */,
 				731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */,
 				737F45EA27D1E34F00436541 /* ExtesionVC.swift */,
 			);
@@ -496,6 +499,7 @@
 				731EDE5227B16FA200D6B2D3 /* MeigenModel.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
 				73FFD7C327213D4E000F236E /* RegistViewController.swift in Sources */,
+				737F45F127DD132400436541 /* ReloadTopViewControllerDelegate.swift in Sources */,
 				7337B4992722D60C006C6820 /* BooksModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
