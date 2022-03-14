@@ -236,7 +236,7 @@
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一言：明智のセリフが印象的だった" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iut-hK-Blu">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一言：セリフが印象的だった" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iut-hK-Blu">
                                                         <rect key="frame" x="0.0" y="90" width="394" height="39"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
@@ -405,6 +405,7 @@
                         <outlet property="bookNameTextField" destination="eeT-bK-JF7" id="cbb-D4-HaZ"/>
                         <outlet property="commentTextField" destination="Iut-hK-Blu" id="7N3-sM-wR8"/>
                         <outlet property="imageView" destination="VSF-F9-NCN" id="qRp-b7-USl"/>
+                        <outlet property="saveButton" destination="zjA-ZD-c46" id="WLh-pZ-IMv"/>
                         <outlet property="textView" destination="Je8-cm-ZBj" id="GvW-D9-IV7"/>
                         <segue destination="OZq-Qy-UPo" kind="presentation" identifier="toSearchBook" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bbg-YY-834"/>
                     </connections>
