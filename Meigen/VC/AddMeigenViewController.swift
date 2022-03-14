@@ -4,10 +4,12 @@ import Photos
 
 final class AddMeigenViewController: UIViewController {
 //MARK: -Property
+    private let toSearchBookId = "toSearchBook"
     private var categoryId:String = ""
     private var categoryIndex:Int = 0
     private var searedBookModel:Item?
     private weak var delegate:ReloadTopViewControllerDelegate?
+    private var bookModelImageSt:String?
 //MARK: -IBOutlet
     @IBOutlet private weak var addMeigenView: UIView!
     @IBOutlet private weak var bookNameTextField: UITextField!
@@ -17,6 +19,7 @@ final class AddMeigenViewController: UIViewController {
     @IBOutlet private weak var textView: KMPlaceholderTextView!
 //MARK: -IBAction
     @IBAction private func searchBookAction(_ sender: Any) {
+        performSegue(withIdentifier: toSearchBookId, sender: nil)
     }
     @IBAction private func saveAction(_ sender: Any) {
         makeMeigenModel().saveModel()
@@ -66,7 +69,7 @@ final class AddMeigenViewController: UIViewController {
         model.author = authorTextField.text
         model.comment = commentTextField.text
         model.meigenText = textView.text
-        model.bookImage = self.searedBookModel?.volumeInfo.imageLinks.thumbnail
+        model.bookImage = self.bookModelImageSt
         model.saveImage(image: self.imageView.image)
         model.categoryId = self.categoryId
         return model
@@ -132,6 +135,12 @@ final class AddMeigenViewController: UIViewController {
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == toSearchBookId{
+            let nextVC = segue.destination as? SearchBookViewController
+            nextVC?.configure(delegate: self)
+        }
+    }
 }
 //MARK: -Extension
 extension AddMeigenViewController:UITextFieldDelegate{
@@ -158,5 +167,13 @@ extension AddMeigenViewController:UIImagePickerControllerDelegate,UINavigationCo
             imageView.image = image
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+extension AddMeigenViewController:SearchBookViewControllerDelegate{
+    func reloadAddMeigenView(model:Item) {
+        self.bookNameTextField.text = model.volumeInfo.title
+        self.authorTextField.text = model.volumeInfo.authors?[0]
+        guard let imageSt = model.volumeInfo.imageLinks.thumbnail else{return}
+        self.bookModelImageSt = imageSt
     }
 }

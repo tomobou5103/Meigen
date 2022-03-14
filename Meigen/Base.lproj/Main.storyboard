@@ -406,6 +406,7 @@
                         <outlet property="commentTextField" destination="Iut-hK-Blu" id="7N3-sM-wR8"/>
                         <outlet property="imageView" destination="VSF-F9-NCN" id="qRp-b7-USl"/>
                         <outlet property="textView" destination="Je8-cm-ZBj" id="GvW-D9-IV7"/>
+                        <segue destination="OZq-Qy-UPo" kind="presentation" identifier="toSearchBook" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bbg-YY-834"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AT8-x4-qP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,7 +505,6 @@
                     <navigationItem key="navigationItem" id="ygL-hM-bVd"/>
                     <connections>
                         <segue destination="Q5n-6k-y53" kind="show" identifier="showRegist" id="DSG-F8-Ift"/>
-                        <segue destination="OZq-Qy-UPo" kind="show" identifier="showSearchBook" id="etH-t0-HNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mN-0s-4xp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -516,45 +516,54 @@
         <scene sceneID="6iz-WB-6tb">
             <objects>
                 <viewController id="OZq-Qy-UPo" customClass="SearchBookViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jgm-9z-i1r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                    <view key="view" tag="2" contentMode="scaleToFill" id="Jgm-9z-i1r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="書籍名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-F1-oFg">
-                                <rect key="frame" x="20" y="50" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9i4-GN-dzj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-4t-LIa">
-                                <rect key="frame" x="20" y="105" width="374" height="683"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-Vf-2wa">
+                                <rect key="frame" x="0.0" y="224" width="331" height="672"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-4t-LIa">
+                                        <rect key="frame" x="10" y="67" width="311" height="563"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="書籍名を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-F1-oFg">
+                                        <rect key="frame" x="10" y="10" width="311" height="47"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstItem="aZE-4t-LIa" firstAttribute="leading" secondItem="s9g-Vf-2wa" secondAttribute="leading" constant="10" id="0Gk-7p-LVD"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZE-4t-LIa" secondAttribute="trailing" constant="10" id="B45-Xs-aYd"/>
+                                    <constraint firstItem="Ffr-F1-oFg" firstAttribute="leading" secondItem="s9g-Vf-2wa" secondAttribute="leading" constant="10" id="C6i-LH-374"/>
+                                    <constraint firstItem="aZE-4t-LIa" firstAttribute="top" secondItem="Ffr-F1-oFg" secondAttribute="bottom" constant="10" id="LFy-2T-Dg0"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="aZE-4t-LIa" secondAttribute="bottom" id="VdM-9d-Icb"/>
+                                    <constraint firstItem="Ffr-F1-oFg" firstAttribute="top" secondItem="s9g-Vf-2wa" secondAttribute="top" constant="10" id="eBU-o6-Qlf"/>
+                                    <constraint firstItem="Ffr-F1-oFg" firstAttribute="height" secondItem="s9g-Vf-2wa" secondAttribute="height" multiplier="0.07" id="gBL-fo-IWA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ffr-F1-oFg" secondAttribute="trailing" constant="10" id="gbN-S8-t5C"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W9h-PK-ZpC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aZE-4t-LIa" firstAttribute="leading" secondItem="W9h-PK-ZpC" secondAttribute="leading" constant="20" id="0fK-hE-OkQ"/>
-                            <constraint firstItem="Ffr-F1-oFg" firstAttribute="top" secondItem="W9h-PK-ZpC" secondAttribute="top" constant="50" id="OgF-hU-cXT"/>
-                            <constraint firstItem="Ffr-F1-oFg" firstAttribute="leading" secondItem="W9h-PK-ZpC" secondAttribute="leading" constant="20" id="bgE-Lm-X4U"/>
-                            <constraint firstItem="W9h-PK-ZpC" firstAttribute="trailing" secondItem="aZE-4t-LIa" secondAttribute="trailing" constant="20" id="nXZ-ms-u8J"/>
-                            <constraint firstItem="W9h-PK-ZpC" firstAttribute="trailing" secondItem="Ffr-F1-oFg" secondAttribute="trailing" constant="20" id="tiG-Hk-Bn5"/>
-                            <constraint firstItem="W9h-PK-ZpC" firstAttribute="bottom" secondItem="aZE-4t-LIa" secondAttribute="bottom" constant="20" id="xAn-ey-cMM"/>
-                            <constraint firstItem="aZE-4t-LIa" firstAttribute="top" secondItem="Ffr-F1-oFg" secondAttribute="bottom" constant="15" id="zQg-Ir-Tqn"/>
+                            <constraint firstItem="s9g-Vf-2wa" firstAttribute="height" secondItem="Jgm-9z-i1r" secondAttribute="height" multiplier="0.75" id="9xY-5x-eaX"/>
+                            <constraint firstItem="s9g-Vf-2wa" firstAttribute="width" secondItem="Jgm-9z-i1r" secondAttribute="width" multiplier="0.8" id="N2h-ym-eJh"/>
+                            <constraint firstAttribute="bottom" secondItem="s9g-Vf-2wa" secondAttribute="bottom" id="XYb-jM-mWd"/>
+                            <constraint firstItem="s9g-Vf-2wa" firstAttribute="leading" secondItem="W9h-PK-ZpC" secondAttribute="leading" id="js1-z0-O83"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="urT-LY-r5y"/>
                     <connections>
                         <outlet property="tableV" destination="aZE-4t-LIa" id="MBf-Ek-Fes"/>
                         <outlet property="textF" destination="Ffr-F1-oFg" id="lgt-zv-RGi"/>
-                        <segue destination="Q5n-6k-y53" kind="show" identifier="SearchBookRegist" id="pAx-j6-qN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWz-pQ-gJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492.753623188406" y="804.91071428571422"/>
+            <point key="canvasLocation" x="-700" y="804.91071428571422"/>
         </scene>
         <!--Regist View Controller-->
         <scene sceneID="BC8-tv-1eb">
@@ -713,7 +722,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DSG-F8-Ift"/>
         <segue reference="1M3-UK-YNI"/>
     </inferredMetricsTieBreakers>
     <resources>
