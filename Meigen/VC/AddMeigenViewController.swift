@@ -1,6 +1,8 @@
 import UIKit
 import KMPlaceholderTextView
 import Photos
+import RxSwift
+import RxCocoa
 
 final class AddMeigenViewController: UIViewController {
 //MARK: -Property
@@ -10,6 +12,8 @@ final class AddMeigenViewController: UIViewController {
     private var searedBookModel:Item?
     private weak var delegate:ReloadTopViewControllerDelegate?
     private var bookModelImageSt:String?
+    private let disposeBag = DisposeBag()
+    
 //MARK: -IBOutlet
     @IBOutlet private weak var addMeigenView: UIView!
     @IBOutlet private weak var bookNameTextField: UITextField!
@@ -17,7 +21,8 @@ final class AddMeigenViewController: UIViewController {
     @IBOutlet private weak var commentTextField: UITextField!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var textView: KMPlaceholderTextView!
-//MARK: -IBAction
+    @IBOutlet private weak var saveButton: UIButton!
+    //MARK: -IBAction
     @IBAction private func searchBookAction(_ sender: Any) {
         performSegue(withIdentifier: toSearchBookId, sender: nil)
     }
@@ -59,7 +64,37 @@ final class AddMeigenViewController: UIViewController {
             self.commentTextField
         ]
         textFields.forEach{field in
-            field?.delegate = self
+            guard let field = field else{return}
+            field.delegate = self
+            let countLabel = UILabel()
+            countLabel.translatesAutoresizingMaskIntoConstraints = false
+            countLabel.textAlignment = .right
+            countLabel.textColor = .gray
+            field.addSubview(countLabel)
+            countLabel.centerYAnchor.constraint(equalTo: field.centerYAnchor).isActive = true
+            let _ = NSLayoutConstraint.init(item: countLabel, attribute: .right, relatedBy: .equal, toItem: field, attribute: .right, multiplier: 1.0, constant: -10).isActive = true
+            field.rx.text.asDriver()
+                .drive(onNext: {[unowned self]text in
+                    if let text = text{
+                        let saveButtonIsOnCounter = 20 - text.count
+                        countLabel.text = "\(saveButtonIsOnCounter)"
+                        if saveButtonIsOnCounter < 0{
+                            saveButton.backgroundColor = .lightGray
+                            saveButton.isEnabled = false
+                            countLabel.textColor = .systemRed
+                            print("false")
+                        }else{
+                            saveButton.backgroundColor = .systemBlue
+                            saveButton.isEnabled = true
+                            countLabel.textColor = .gray
+                            print("trues")
+                        }
+                    }else{
+                        countLabel.text = "0"
+                    }
+                })
+                .disposed(by: disposeBag)
+            
         }
     }
 //MARK: -MakeMeigenModel
