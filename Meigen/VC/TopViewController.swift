@@ -28,7 +28,7 @@ final class TopViewController: UIViewController{
             else{
                 return [UIViewController]()
             }
-            vc.configure(model: res.filter{$0.categoryId == self.categories[index]}, categoryId: id)
+            vc.configure(model: res.filter{$0.categoryId == self.categories[index]}, categoryId: id,categoryIndex:index,delegate:self)
             vcs.append(vc)
         }
         return vcs
@@ -89,7 +89,7 @@ extension TopViewController:UINavigationControllerDelegate{
         reloadView()
     }
 }
-extension TopViewController:MenuViewControllerDelegate{
+extension TopViewController:ReloadTopViewControllerDelegate{
     func renameMeigenModel(categoryId: String,newCategoryId:String) {
         let res = realm.objects(MeigenModel.self).filter("categoryId == %@",categoryId)
         try! realm.write{
@@ -110,7 +110,11 @@ extension TopViewController:MenuViewControllerDelegate{
             self.reloadView()
         })
     }
-    func reloadTopView(){
+    func reloadTopView(categoryIndex:Int?){
         reloadView()
+        guard let categoryIndex = categoryIndex else {
+            return
+        }
+        pagingVC?.select(index: categoryIndex)
     }
 }

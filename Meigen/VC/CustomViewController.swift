@@ -2,14 +2,16 @@ import UIKit
 final class CustomViewController: UIViewController {
 //MARK: -Property
     private let CustomTableViewCellId = "CustomTableViewCell"
-    private let CustomVCtoSlectSegueId = "showSelect"
+    private let toAddMeigenVCId = "showAddMeigen"
     private var categoryId = ""
+    private var categoryIndex = 0
     private var model:[MeigenModel]?
+    private weak var delegate:ReloadTopViewControllerDelegate?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
 //MARK: -IBAction
     @IBAction private func showSelectVCButton(_ sender: Any) {
-        performSegue(withIdentifier: CustomVCtoSlectSegueId, sender: nil)
+        performSegue(withIdentifier: toAddMeigenVCId, sender: nil)
     }
 //MARK: -Configure
     private func tableViewConfigure(){
@@ -17,10 +19,13 @@ final class CustomViewController: UIViewController {
         tableV.dataSource = self
         tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
     }
-    internal func configure(model:[MeigenModel],categoryId:String){
+    internal func configure(model:[MeigenModel],categoryId:String,categoryIndex:Int,delegate:ReloadTopViewControllerDelegate){
         self.model = model
         self.categoryId = categoryId
+        self.categoryIndex = categoryIndex
         self.title = convertFromIdToTitle(id: categoryId)
+        self.delegate = delegate
+
     }
     private func convertFromIdToTitle(id:String)->String{
         let title = id.components(separatedBy: "&")
@@ -28,9 +33,9 @@ final class CustomViewController: UIViewController {
     }
 //MARK: -LifeCycle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == CustomVCtoSlectSegueId{
-            let nextVC = segue.destination as? SelectViewController
-            nextVC?.configure(categoryId: self.categoryId)
+        if segue.identifier == toAddMeigenVCId{
+            let nextVC = segue.destination as? AddMeigenViewController
+            nextVC?.configure(categoryId: self.categoryId,categoryIndex:self.categoryIndex, searchedBookModel: nil,delegate:self.delegate)
         }
     }
 }

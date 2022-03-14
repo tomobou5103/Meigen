@@ -11,6 +11,7 @@ target 'Meigen' do
     pod 'Alamofire'
     pod 'Parchment'
     pod 'RealmSwift'
+    pod 'KMPlaceholderTextView'
   target 'MeigenTests' do
     inherit! :search_paths
     # Pods for testing
