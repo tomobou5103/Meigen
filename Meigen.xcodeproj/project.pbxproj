@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5697B4DE9A99690D09E076D2 /* Pods_Meigen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FBC23597663FFA20195E7 /* Pods_Meigen.framework */; };
+		7319C2BB27E13F3C002D3E9A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319C2BA27E13F3C002D3E9A /* DetailViewController.swift */; };
 		731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */; };
 		731EDE5227B16FA200D6B2D3 /* MeigenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */; };
 		731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		1C6FBC23597663FFA20195E7 /* Pods_Meigen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meigen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B9638F09C11EEFBA6D5D7C /* Pods_MeigenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeigenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D12E3A4EB6B101D0100DCAA /* Pods-MeigenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeigenTests.debug.xcconfig"; path = "Target Support Files/Pods-MeigenTests/Pods-MeigenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7319C2BA27E13F3C002D3E9A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeigenModel.swift; sourceTree = "<group>"; };
 		731EDE5527B1A47800D6B2D3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
 				737F45EE27DA57C400436541 /* AddMeigenViewController.swift */,
 				734395442786D2FB00733CA7 /* SearchBookViewController.swift */,
+				7319C2BA27E13F3C002D3E9A /* DetailViewController.swift */,
 				73FFD7BD272113E2000F236E /* View */,
 			);
 			path = VC;
@@ -485,6 +488,7 @@
 				731EDE5027B0740800D6B2D3 /* CustomViewController.swift in Sources */,
 				737F45EF27DA57C400436541 /* AddMeigenViewController.swift in Sources */,
 				734395452786D2FB00733CA7 /* SearchBookViewController.swift in Sources */,
+				7319C2BB27E13F3C002D3E9A /* DetailViewController.swift in Sources */,
 				73FFD78627210D34000F236E /* AppDelegate.swift in Sources */,
 				731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */,
 				737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */,

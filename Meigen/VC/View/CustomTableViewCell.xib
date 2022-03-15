@@ -45,21 +45,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="みつお" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jK-Mg-UCq">
-                                <rect key="frame" x="243" y="108" width="43" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5jK-Mg-UCq" secondAttribute="bottom" constant="3" id="9BS-aO-oXD"/>
                             <constraint firstItem="4Sg-Mw-FDP" firstAttribute="centerX" secondItem="HE3-tB-laE" secondAttribute="centerX" id="E6j-NK-LxO"/>
                             <constraint firstItem="RCJ-eS-r12" firstAttribute="centerX" secondItem="HE3-tB-laE" secondAttribute="centerX" id="HIc-jo-sLg"/>
                             <constraint firstItem="wbe-dq-FO2" firstAttribute="top" secondItem="RCJ-eS-r12" secondAttribute="bottom" constant="5" id="Pb4-Ij-rg7"/>
                             <constraint firstItem="RCJ-eS-r12" firstAttribute="top" secondItem="4Sg-Mw-FDP" secondAttribute="bottom" constant="5" id="WWb-s2-IJb"/>
-                            <constraint firstAttribute="trailing" secondItem="5jK-Mg-UCq" secondAttribute="trailing" constant="10" id="Wm4-u8-Z5q"/>
                             <constraint firstItem="wbe-dq-FO2" firstAttribute="leading" secondItem="HE3-tB-laE" secondAttribute="leading" constant="7" id="dXJ-aM-546"/>
                             <constraint firstItem="wbe-dq-FO2" firstAttribute="centerX" secondItem="HE3-tB-laE" secondAttribute="centerX" id="fdA-Xg-GhE"/>
                             <constraint firstAttribute="trailing" secondItem="wbe-dq-FO2" secondAttribute="trailing" constant="7" id="iiP-Ni-KDC"/>
