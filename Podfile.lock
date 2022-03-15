@@ -2,11 +2,11 @@ PODS:
   - Alamofire (5.5.0)
   - KMPlaceholderTextView (1.4.0)
   - Parchment (3.2.0)
-  - Realm (10.24.0):
-    - Realm/Headers (= 10.24.0)
-  - Realm/Headers (10.24.0)
-  - RealmSwift (10.24.0):
-    - Realm (= 10.24.0)
+  - Realm (10.24.1):
+    - Realm/Headers (= 10.24.1)
+  - Realm/Headers (10.24.1)
+  - RealmSwift (10.24.1):
+    - Realm (= 10.24.1)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -37,8 +37,8 @@ SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
-  Realm: 5d6f84e3f65d4efa204d46b461e5bbbbbbf84c6c
-  RealmSwift: 9022754b93fad23e1ffc950c93574c5b7899bd51
+  Realm: f9bc5a212a9ab084b4ed90cda1c28d835a38a06b
+  RealmSwift: 0b03bb38001bee4280dcc27709e6b33f438cfad1
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
