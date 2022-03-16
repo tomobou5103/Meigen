@@ -3,9 +3,11 @@ final class CustomViewController: UIViewController {
 //MARK: -Property
     private let CustomTableViewCellId = "CustomTableViewCell"
     private let toAddMeigenVCId = "showAddMeigen"
+    private let toDetailVCId = "showDetail"
     private var categoryId = ""
     private var categoryIndex = 0
     private var model:[MeigenModel]?
+    private var modelIndex = 0
     private weak var delegate:ReloadTopViewControllerDelegate?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
@@ -36,6 +38,10 @@ final class CustomViewController: UIViewController {
         if segue.identifier == toAddMeigenVCId{
             let nextVC = segue.destination as? AddMeigenViewController
             nextVC?.configure(categoryId: self.categoryId,categoryIndex:self.categoryIndex, searchedBookModel: nil,delegate:self.delegate)
+        }else if segue.identifier == toDetailVCId{
+            let nextVC = segue.destination as? DetailViewController
+            guard let meigenModel = model?[modelIndex]else{return}
+            nextVC?.configure(model:meigenModel)
         }
     }
 }
@@ -53,5 +59,9 @@ extension CustomViewController:UITableViewDelegate,UITableViewDataSource{
         }
         cell.configure(model: model)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.modelIndex = indexPath.row
+        self.performSegue(withIdentifier: toDetailVCId, sender: nil)
     }
 }
