@@ -14,9 +14,6 @@ final class CustomTableViewCell: UITableViewCell {
         if let meigenText = model.meigenText{
             self.meigenTextLabel.text = meigenText
         }
-                
-            
-                
         stringToImage(imageSt: model.bookImage, completion: {image in
             DispatchQueue.main.async {
                 self.bookImageV.image = image
