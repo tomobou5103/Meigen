@@ -6,6 +6,9 @@ final class CustomTableViewCell: UITableViewCell {
     @IBOutlet private weak var bookAuthorLabel: UILabel!
     @IBOutlet private weak var meigenTextLabel: UILabel!
     
+    override func prepareForReuse() {
+        self.bookImageV.image = UIImage()
+    }
     internal func configure(model:MeigenModel){
         self.bookNameLabel.text = model.title
         if let author = model.author{
