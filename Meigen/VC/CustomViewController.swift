@@ -21,7 +21,7 @@ final class CustomViewController: UIViewController {
         tableV.dataSource = self
         tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
     }
-    internal func configure(model:[MeigenModel],categoryId:String,categoryIndex:Int,delegate:ReloadTopViewControllerDelegate){
+    internal func configure(model:[MeigenModel]?,categoryId:String,categoryIndex:Int,delegate:ReloadTopViewControllerDelegate){
         self.model = model
         self.categoryId = categoryId
         self.categoryIndex = categoryIndex
