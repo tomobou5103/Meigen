@@ -23,9 +23,9 @@ final class SearchBookViewController: UIViewController {
         textF.rx.text.orEmpty.asDriver()
             .drive(onNext:{[unowned self] text in
                 GoogleBooksAPI.shared.receiveBooksData(textValue: text,completion:{ booksModel in
-                    self.model = booksModel
+                    model = booksModel
                     DispatchQueue.main.async {
-                        self.tableV.reloadData()
+                        tableV.reloadData()
                     }
                 })
             })
