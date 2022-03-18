@@ -82,12 +82,10 @@ final class AddMeigenViewController: UIViewController {
                             saveButton.backgroundColor = .lightGray
                             saveButton.isEnabled = false
                             countLabel.textColor = .systemRed
-                            print("false")
                         }else{
                             saveButton.backgroundColor = .systemBlue
                             saveButton.isEnabled = true
                             countLabel.textColor = .gray
-                            print("trues")
                         }
                     }else{
                         countLabel.text = "0"
