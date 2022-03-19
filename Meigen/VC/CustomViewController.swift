@@ -2,32 +2,24 @@ import UIKit
 final class CustomViewController: UIViewController {
 //MARK: -Property
     private let CustomTableViewCellId = "CustomTableViewCell"
-    private let toAddMeigenVCId = "showAddMeigen"
     private let toDetailVCId = "showDetail"
     private var categoryId = ""
     private var categoryIndex = 0
     private var model:[MeigenModel]?
     private var modelIndex = 0
-    private weak var delegate:ReloadTopViewControllerDelegate?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
-//MARK: -IBAction
-    @IBAction private func showSelectVCButton(_ sender: Any) {
-        performSegue(withIdentifier: toAddMeigenVCId, sender: nil)
-    }
 //MARK: -Configure
     private func tableViewConfigure(){
         tableV.delegate = self
         tableV.dataSource = self
         tableV.register(UINib(nibName: CustomTableViewCellId, bundle: nil), forCellReuseIdentifier: CustomTableViewCellId)
     }
-    internal func configure(model:[MeigenModel]?,categoryId:String,categoryIndex:Int,delegate:ReloadTopViewControllerDelegate){
+    internal func configure(model:[MeigenModel]?,categoryId:String,categoryIndex:Int){
         self.model = model
         self.categoryId = categoryId
         self.categoryIndex = categoryIndex
         self.title = convertFromIdToTitle(id: categoryId)
-        self.delegate = delegate
-
     }
     private func convertFromIdToTitle(id:String)->String{
         let title = id.components(separatedBy: "&")
@@ -35,10 +27,7 @@ final class CustomViewController: UIViewController {
     }
 //MARK: -LifeCycle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == toAddMeigenVCId{
-            let nextVC = segue.destination as? AddMeigenViewController
-            nextVC?.configure(categoryId: self.categoryId,categoryIndex:self.categoryIndex, searchedBookModel: nil,delegate:self.delegate)
-        }else if segue.identifier == toDetailVCId{
+        if segue.identifier == toDetailVCId{
             let nextVC = segue.destination as? DetailViewController
             guard let meigenModel = model?[modelIndex]else{return}
             nextVC?.configure(model:meigenModel)
