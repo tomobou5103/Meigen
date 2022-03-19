@@ -64,4 +64,7 @@ extension CustomViewController:UITableViewDelegate,UITableViewDataSource{
         self.modelIndex = indexPath.row
         self.performSegue(withIdentifier: toDetailVCId, sender: nil)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }
