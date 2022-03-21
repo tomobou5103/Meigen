@@ -21,11 +21,11 @@ final class SearchBookViewController: UIViewController {
     }
     private func textFieldDidChangValue(){
         textF.rx.text.orEmpty.asDriver()
-            .drive(onNext:{[unowned self] text in
+            .drive(onNext:{[weak self] text in
                 GoogleBooksAPI.shared.receiveBooksData(textValue: text,completion:{ booksModel in
-                    model = booksModel
+                    self?.model = booksModel
                     DispatchQueue.main.async {
-                        tableV.reloadData()
+                        self?.tableV.reloadData()
                     }
                 })
             })
@@ -84,5 +84,8 @@ extension SearchBookViewController:UITableViewDelegate,UITableViewDataSource{
         guard let model = self.model else{return}
         delegate?.reloadAddMeigenView(model:model.items[indexPath.row])
         self.dismiss(animated: true, completion: nil)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
