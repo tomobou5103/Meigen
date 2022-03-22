@@ -1,16 +1,18 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-
+//MARK: -Propety
     private var model:MeigenModel = MeigenModel()
     private var index:IndexPath?
     private weak var delegate:RemoveCellDelegate?
+//MARK: -IBOutlet
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var commentLabel: UILabel!
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
+//MARK: -IBAction
     @IBAction private func removeMeigenModelAction(_ sender: Any) {
         guard let title = self.model.title else{return}
         makeAlert(title: "Meigen削除", message: "\(title)を削除します", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: nil, completion: {_ in
@@ -19,12 +21,22 @@ final class DetailViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         })
     }
+//MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         if !self.model.isInvalidated{
             detailViewConfigure(model: self.model)
         }
     }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        for touch in touches {
+            if touch.view?.tag == 3 {
+                dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+//MARK: -Configure
     internal func configure(model:MeigenModel,index:IndexPath,delegate:RemoveCellDelegate){
         self.model = model
         self.index = index
@@ -34,7 +46,6 @@ final class DetailViewController: UIViewController {
         self.titleLabel.text = model.title
         self.authorLabel.text = model.author
         self.commentLabel.text = model.comment
-
         stringToImage(imageSt: model.bookImage, completion: {image in
             DispatchQueue.main.async {
                 self.bookImageView.image = image
@@ -48,14 +59,6 @@ final class DetailViewController: UIViewController {
         }else{
             self.imageView.alpha = 0
             self.textView.text = model.meigenText
-        }
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        for touch in touches {
-            if touch.view?.tag == 3 {
-                dismiss(animated: true, completion: nil)
-            }
         }
     }
     private func stringToImage(imageSt:String?,completion:@escaping(UIImage)->Void){
