@@ -97,7 +97,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QSm-nT-DKJ">
                                         <rect key="frame" x="0.0" y="161.5" width="414" height="376.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -105,20 +104,39 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zai-Ny-w9O">
                                         <rect key="frame" x="0.0" y="161.5" width="414" height="376.5"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbI-iF-NCj">
+                                        <rect key="frame" x="326" y="457.5" width="83" height="75.5"/>
+                                        <color key="backgroundColor" red="0.38415404040404044" green="0.38415404040404044" blue="0.38415404040404044" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="removeMeigenModelAction:" destination="n31-nh-Ua6" eventType="touchUpInside" id="bFZ-37-ELt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="35C-vp-vYU" firstAttribute="height" secondItem="AK9-7c-6Yx" secondAttribute="height" multiplier="0.3" id="Ajx-vE-xd0"/>
                                     <constraint firstAttribute="trailing" secondItem="35C-vp-vYU" secondAttribute="trailing" id="CfV-UG-uoA"/>
+                                    <constraint firstItem="MbI-iF-NCj" firstAttribute="width" secondItem="Zai-Ny-w9O" secondAttribute="width" multiplier="0.2" id="FgQ-Dt-S4U"/>
                                     <constraint firstAttribute="bottom" secondItem="Zai-Ny-w9O" secondAttribute="bottom" id="IYZ-Fi-o7S"/>
                                     <constraint firstItem="QSm-nT-DKJ" firstAttribute="leading" secondItem="AK9-7c-6Yx" secondAttribute="leading" id="Wm2-u9-fGO"/>
+                                    <constraint firstAttribute="trailing" secondItem="MbI-iF-NCj" secondAttribute="trailing" constant="5" id="X9u-XS-CFX"/>
                                     <constraint firstAttribute="trailing" secondItem="QSm-nT-DKJ" secondAttribute="trailing" id="aCb-P7-NfM"/>
                                     <constraint firstItem="35C-vp-vYU" firstAttribute="top" secondItem="AK9-7c-6Yx" secondAttribute="top" id="aZP-Cs-skc"/>
                                     <constraint firstItem="Zai-Ny-w9O" firstAttribute="top" secondItem="35C-vp-vYU" secondAttribute="bottom" id="fVa-va-LwL"/>
                                     <constraint firstItem="QSm-nT-DKJ" firstAttribute="top" secondItem="35C-vp-vYU" secondAttribute="bottom" id="h2X-Ra-oPl"/>
+                                    <constraint firstAttribute="bottom" secondItem="MbI-iF-NCj" secondAttribute="bottom" constant="5" id="jUA-V2-rJP"/>
                                     <constraint firstItem="Zai-Ny-w9O" firstAttribute="leading" secondItem="AK9-7c-6Yx" secondAttribute="leading" id="mAy-y8-DWO"/>
                                     <constraint firstAttribute="bottom" secondItem="QSm-nT-DKJ" secondAttribute="bottom" id="mEG-tn-Ab7"/>
                                     <constraint firstAttribute="trailing" secondItem="Zai-Ny-w9O" secondAttribute="trailing" id="qXa-7q-evC"/>
+                                    <constraint firstItem="MbI-iF-NCj" firstAttribute="height" secondItem="Zai-Ny-w9O" secondAttribute="height" multiplier="0.2" id="z4J-Of-AMv"/>
                                     <constraint firstItem="35C-vp-vYU" firstAttribute="leading" secondItem="AK9-7c-6Yx" secondAttribute="leading" id="zBQ-BW-j5s"/>
                                 </constraints>
                             </view>
@@ -505,33 +523,6 @@
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="804.91071428571422"/>
         </scene>
-        <!--Popover View Controller-->
-        <scene sceneID="Xoe-21-Muv">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bx8-Nl-9fi" customClass="PopoverViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" tag="5" contentMode="scaleToFill" id="ypF-QG-1Ts">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXd-fM-2xD">
-                                <rect key="frame" x="103.5" y="294.5" width="207" height="253"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mTs-WU-HwK"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="OXd-fM-2xD" firstAttribute="width" secondItem="ypF-QG-1Ts" secondAttribute="width" multiplier="0.5" id="5aX-Td-d9w"/>
-                            <constraint firstItem="OXd-fM-2xD" firstAttribute="centerX" secondItem="ypF-QG-1Ts" secondAttribute="centerX" id="GXm-Y9-wgN"/>
-                            <constraint firstItem="OXd-fM-2xD" firstAttribute="centerY" secondItem="ypF-QG-1Ts" secondAttribute="centerY" id="O96-QH-5yf"/>
-                            <constraint firstItem="OXd-fM-2xD" firstAttribute="height" secondItem="ypF-QG-1Ts" secondAttribute="height" multiplier="0.3" id="fey-qf-BVX"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a7F-xa-ybo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1503" y="805"/>
-        </scene>
         <!--Search Book View Controller-->
         <scene sceneID="6iz-WB-6tb">
             <objects>
@@ -579,9 +570,6 @@
                     <connections>
                         <outlet property="tableV" destination="aZE-4t-LIa" id="MBf-Ek-Fes"/>
                         <outlet property="textF" destination="Ffr-F1-oFg" id="lgt-zv-RGi"/>
-                        <segue destination="bx8-Nl-9fi" kind="popoverPresentation" identifier="toPopver" popoverAnchorView="aZE-4t-LIa" id="64a-fh-1au">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWz-pQ-gJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -611,6 +599,7 @@
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="image" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="trash" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -631,9 +620,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

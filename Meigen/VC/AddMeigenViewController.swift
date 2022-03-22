@@ -105,6 +105,7 @@ final class AddMeigenViewController: UIViewController {
         model.bookImage = self.bookModelImageSt
         model.saveImage(image: self.imageView.image)
         model.categoryId = self.categoryId
+        model.generateUUID()
         return model
     }
 //MARK: -LefeCycle

@@ -1,4 +1,7 @@
 import UIKit
+protocol RemoveCellDelegate:AnyObject{
+    func removeCell(index:IndexPath)
+}
 final class CustomViewController: UIViewController {
 //MARK: -Property
     private let CustomTableViewCellId = "CustomTableViewCell"
@@ -6,7 +9,7 @@ final class CustomViewController: UIViewController {
     private var categoryId = ""
     private var categoryIndex = 0
     private var model:[MeigenModel]?
-    private var modelIndex = 0
+    private var modelIndex:IndexPath?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
 //MARK: -Configure
@@ -29,8 +32,8 @@ final class CustomViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == toDetailVCId{
             let nextVC = segue.destination as? DetailViewController
-            guard let meigenModel = model?[modelIndex]else{return}
-            nextVC?.configure(model:meigenModel)
+            guard let meigenModel = model?[modelIndex!.row]else{return}
+            nextVC?.configure(model:meigenModel,index: self.modelIndex!,delegate: self)
         }
     }
 }
@@ -50,10 +53,17 @@ extension CustomViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.modelIndex = indexPath.row
+        self.modelIndex = indexPath
         self.performSegue(withIdentifier: toDetailVCId, sender: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+}
+extension CustomViewController:RemoveCellDelegate{
+    func removeCell(index:IndexPath) {
+        self.model?.remove(at: modelIndex!.row)
+        self.tableV.deleteRows(at: [index as IndexPath], with: .automatic)
+        self.tableV.reloadData()
     }
 }
