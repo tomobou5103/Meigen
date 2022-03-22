@@ -1,7 +1,6 @@
 import UIKit
 
 final class SearchBookTableViewCell: UITableViewCell {
-    @IBOutlet private weak var imageV: UIImageView!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     
