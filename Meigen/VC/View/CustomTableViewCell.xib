@@ -23,7 +23,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-tB-laE">
                         <rect key="frame" x="97" y="0.0" width="290" height="129"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Mw-FDP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Mw-FDP">
                                 <rect key="frame" x="121.5" y="5" width="47" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -51,7 +51,9 @@
                             <constraint firstItem="wbe-dq-FO2" firstAttribute="leading" secondItem="HE3-tB-laE" secondAttribute="leading" constant="7" id="dXJ-aM-546"/>
                             <constraint firstItem="wbe-dq-FO2" firstAttribute="centerX" secondItem="HE3-tB-laE" secondAttribute="centerX" id="fdA-Xg-GhE"/>
                             <constraint firstAttribute="trailing" secondItem="wbe-dq-FO2" secondAttribute="trailing" constant="7" id="iiP-Ni-KDC"/>
+                            <constraint firstItem="RCJ-eS-r12" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HE3-tB-laE" secondAttribute="leading" id="kCG-Uz-CUB"/>
                             <constraint firstItem="4Sg-Mw-FDP" firstAttribute="top" secondItem="HE3-tB-laE" secondAttribute="top" constant="5" id="uJZ-yQ-G7J"/>
+                            <constraint firstItem="4Sg-Mw-FDP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HE3-tB-laE" secondAttribute="leading" id="zWH-gY-UEC"/>
                         </constraints>
                     </view>
                 </subviews>
