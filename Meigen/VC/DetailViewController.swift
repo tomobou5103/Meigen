@@ -42,7 +42,7 @@ final class DetailViewController: UIViewController {
     @IBAction func saveMeigenTextAction(_ sender: Any) {
         guard let text = self.textView.text else{return}
         makeAlert(title: "Meigenの変更", message: "「\(text)」に変更します", okActionTitle: "変更", textViewIsOn: false, textPlaceholder: nil, completion: {_ in
-            self.model.rewriteMeigfenText(text: text)
+            self.model.rewriteMeigenText(text: text)
             self.delegate?.reloadTableView()
         })
     }

@@ -23,7 +23,7 @@ final class MeigenModel:Object{
             realm.delete(targetModel)
         }
     }
-    internal func rewriteMeigfenText(text:String){
+    internal func rewriteMeigenText(text:String){
         let realm = try! Realm()
         let targetModel = realm.objects(MeigenModel.self).filter("id == %@",id).first
         try! realm.write{
