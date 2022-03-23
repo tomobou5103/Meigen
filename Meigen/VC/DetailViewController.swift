@@ -1,18 +1,36 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class DetailViewController: UIViewController {
 //MARK: -Propety
     private var model:MeigenModel = MeigenModel()
     private var index:IndexPath?
-    private weak var delegate:RemoveCellDelegate?
+    private weak var delegate:DetailViewControllerDelegate?
+    private let disposeBag = DisposeBag()
 //MARK: -IBOutlet
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var commentLabel: UILabel!
-    @IBOutlet private weak var textView: UITextView!
+    @IBOutlet private weak var textView: UITextView!{
+        didSet{
+            self.textView.rx.text.asDriver()
+                .drive(onNext: {[weak self] text in
+                    if text != self?.model.meigenText{
+                        self?.textView.textColor = .systemRed
+                        self?.saveMeigenTextButton.alpha = 1
+                    }else{
+                        self?.textView.textColor = .black
+                        self?.saveMeigenTextButton.alpha = 0
+                    }
+                })
+                .disposed(by: disposeBag)
+        }
+    }
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
-//MARK: -IBAction
+    @IBOutlet weak var saveMeigenTextButton: UIButton!
+    //MARK: -IBAction
     @IBAction private func removeMeigenModelAction(_ sender: Any) {
         guard let title = self.model.title else{return}
         makeAlert(title: "Meigen削除", message: "\(title)を削除します", okActionTitle: "削除", textViewIsOn: false, textPlaceholder: nil, completion: {_ in
@@ -21,7 +39,14 @@ final class DetailViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         })
     }
-//MARK: -LifeCycle
+    @IBAction func saveMeigenTextAction(_ sender: Any) {
+        guard let text = self.textView.text else{return}
+        makeAlert(title: "Meigenの変更", message: "「\(text)」に変更します", okActionTitle: "変更", textViewIsOn: false, textPlaceholder: nil, completion: {_ in
+            self.model.rewriteMeigfenText(text: text)
+            self.delegate?.reloadTableView()
+        })
+    }
+    //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         if !self.model.isInvalidated{
@@ -37,7 +62,7 @@ final class DetailViewController: UIViewController {
         }
     }
 //MARK: -Configure
-    internal func configure(model:MeigenModel,index:IndexPath,delegate:RemoveCellDelegate){
+    internal func configure(model:MeigenModel,index:IndexPath,delegate:DetailViewControllerDelegate){
         self.model = model
         self.index = index
         self.delegate = delegate

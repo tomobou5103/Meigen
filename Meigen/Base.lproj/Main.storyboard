@@ -119,17 +119,38 @@
                                             <action selector="removeMeigenModelAction:" destination="n31-nh-Ua6" eventType="touchUpInside" id="bFZ-37-ELt"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGf-pK-zr1">
+                                        <rect key="frame" x="5" y="457.5" width="75.5" height="75.5"/>
+                                        <color key="backgroundColor" red="0.38415404040000001" green="0.38415404040000001" blue="0.38415404040000001" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DGf-pK-zr1" secondAttribute="height" multiplier="1:1" id="GCC-I1-Exa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pencil"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveMeigenTextAction:" destination="n31-nh-Ua6" eventType="touchUpInside" id="YfI-79-c9Q"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="MbI-iF-NCj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DGf-pK-zr1" secondAttribute="trailing" id="4xr-WX-usF"/>
                                     <constraint firstItem="35C-vp-vYU" firstAttribute="height" secondItem="AK9-7c-6Yx" secondAttribute="height" multiplier="0.3" id="Ajx-vE-xd0"/>
                                     <constraint firstAttribute="trailing" secondItem="35C-vp-vYU" secondAttribute="trailing" id="CfV-UG-uoA"/>
                                     <constraint firstItem="MbI-iF-NCj" firstAttribute="width" secondItem="Zai-Ny-w9O" secondAttribute="width" multiplier="0.2" id="FgQ-Dt-S4U"/>
                                     <constraint firstAttribute="bottom" secondItem="Zai-Ny-w9O" secondAttribute="bottom" id="IYZ-Fi-o7S"/>
+                                    <constraint firstAttribute="bottom" secondItem="DGf-pK-zr1" secondAttribute="bottom" constant="5" id="LKp-SN-LPe"/>
+                                    <constraint firstItem="DGf-pK-zr1" firstAttribute="height" secondItem="Zai-Ny-w9O" secondAttribute="height" multiplier="0.2" id="Q3b-F9-NzZ"/>
                                     <constraint firstItem="QSm-nT-DKJ" firstAttribute="leading" secondItem="AK9-7c-6Yx" secondAttribute="leading" id="Wm2-u9-fGO"/>
                                     <constraint firstAttribute="trailing" secondItem="MbI-iF-NCj" secondAttribute="trailing" constant="5" id="X9u-XS-CFX"/>
                                     <constraint firstAttribute="trailing" secondItem="QSm-nT-DKJ" secondAttribute="trailing" id="aCb-P7-NfM"/>
                                     <constraint firstItem="35C-vp-vYU" firstAttribute="top" secondItem="AK9-7c-6Yx" secondAttribute="top" id="aZP-Cs-skc"/>
+                                    <constraint firstItem="DGf-pK-zr1" firstAttribute="leading" secondItem="AK9-7c-6Yx" secondAttribute="leading" constant="5" id="eKB-na-xzD"/>
                                     <constraint firstItem="Zai-Ny-w9O" firstAttribute="top" secondItem="35C-vp-vYU" secondAttribute="bottom" id="fVa-va-LwL"/>
                                     <constraint firstItem="QSm-nT-DKJ" firstAttribute="top" secondItem="35C-vp-vYU" secondAttribute="bottom" id="h2X-Ra-oPl"/>
                                     <constraint firstAttribute="bottom" secondItem="MbI-iF-NCj" secondAttribute="bottom" constant="5" id="jUA-V2-rJP"/>
@@ -155,6 +176,7 @@
                         <outlet property="bookImageView" destination="C0I-z7-mKf" id="eWR-dm-Ne6"/>
                         <outlet property="commentLabel" destination="6zC-xi-NiP" id="1es-u0-ua8"/>
                         <outlet property="imageView" destination="Zai-Ny-w9O" id="gSl-1e-jRi"/>
+                        <outlet property="saveMeigenTextButton" destination="DGf-pK-zr1" id="1Sm-u3-GOd"/>
                         <outlet property="textView" destination="QSm-nT-DKJ" id="rke-GY-FUC"/>
                         <outlet property="titleLabel" destination="vrz-LI-dEz" id="RGS-ua-JS7"/>
                     </connections>
@@ -599,6 +621,7 @@
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="image" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="pencil" width="42.666667938232422" height="42.666667938232422"/>
         <image name="trash" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

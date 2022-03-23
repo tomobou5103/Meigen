@@ -19,12 +19,15 @@ final class MeigenModel:Object{
     internal func removeModel(){
         let realm = try! Realm()
         let targetModel = realm.objects(MeigenModel.self).filter("id == %@",id)
-        do{
-            try realm.write{
-                realm.delete(targetModel)
-            }
-        }catch{
-            print("Error\(error)")
+        try! realm.write{
+            realm.delete(targetModel)
+        }
+    }
+    internal func rewriteMeigfenText(text:String){
+        let realm = try! Realm()
+        let targetModel = realm.objects(MeigenModel.self).filter("id == %@",id).first
+        try! realm.write{
+            targetModel?.meigenText = text
         }
     }
     private var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

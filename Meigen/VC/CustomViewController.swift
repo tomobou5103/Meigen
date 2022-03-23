@@ -1,6 +1,7 @@
 import UIKit
-protocol RemoveCellDelegate:AnyObject{
+protocol DetailViewControllerDelegate:AnyObject{
     func removeCell(index:IndexPath)
+    func reloadTableView()
 }
 final class CustomViewController: UIViewController {
 //MARK: -Property
@@ -60,10 +61,13 @@ extension CustomViewController:UITableViewDelegate,UITableViewDataSource{
         return 130
     }
 }
-extension CustomViewController:RemoveCellDelegate{
+extension CustomViewController:DetailViewControllerDelegate{
     func removeCell(index:IndexPath) {
         self.model?.remove(at: modelIndex!.row)
         self.tableV.deleteRows(at: [index as IndexPath], with: .automatic)
+        self.tableV.reloadData()
+    }
+    func reloadTableView(){
         self.tableV.reloadData()
     }
 }
