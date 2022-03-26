@@ -13,7 +13,8 @@ final class CustomViewController: UIViewController {
     private var modelIndex:IndexPath?
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
-//MARK: -Configure
+    @IBOutlet private weak var noModelLabel: UILabel!
+    //MARK: -Configure
     private func tableViewConfigure(){
         tableV.delegate = self
         tableV.dataSource = self
@@ -41,6 +42,9 @@ final class CustomViewController: UIViewController {
 //MARK: -Extension
 extension CustomViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if model?.count != 0{
+            self.noModelLabel.isHidden = true
+        }
         return model?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
