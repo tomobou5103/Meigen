@@ -249,9 +249,13 @@
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I98-9l-qqF">
-                                        <rect key="frame" x="173.5" y="34.5" width="67" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Meigen">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="toAddMeigenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BI9-DZ-fQd"/>
                                         </connections>
@@ -259,8 +263,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
+                                    <constraint firstItem="I98-9l-qqF" firstAttribute="leading" secondItem="szZ-wB-ta8" secondAttribute="leading" id="7CX-pI-RjF"/>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="centerX" secondItem="szZ-wB-ta8" secondAttribute="centerX" id="Ax5-Od-Bmv"/>
+                                    <constraint firstAttribute="trailing" secondItem="I98-9l-qqF" secondAttribute="trailing" id="HYa-eQ-ZNE"/>
+                                    <constraint firstItem="I98-9l-qqF" firstAttribute="top" secondItem="szZ-wB-ta8" secondAttribute="top" id="TXn-2f-shF"/>
+                                    <constraint firstAttribute="bottom" secondItem="I98-9l-qqF" secondAttribute="bottom" id="fB3-VQ-kAC"/>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="centerY" secondItem="szZ-wB-ta8" secondAttribute="centerY" id="zuI-Qj-tLz"/>
                                 </constraints>
                             </view>
