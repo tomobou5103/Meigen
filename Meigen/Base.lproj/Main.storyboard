@@ -194,6 +194,21 @@
             </objects>
             <point key="canvasLocation" x="2420" y="66"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5Rv-IE-s5F">
+            <objects>
+                <viewController id="Vg1-fq-lDD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lFT-ip-Waf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jWG-Ir-KG1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z4y-u5-IZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="-581"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="kwB-I1-zeB">
             <objects>
@@ -310,6 +325,7 @@
                         <outlet property="bottomV" destination="szZ-wB-ta8" id="uQM-2E-1Ck"/>
                         <segue destination="uJy-I1-Zju" kind="presentation" identifier="showMenu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="cl1-1Z-rdC"/>
                         <segue destination="3q1-em-3UV" kind="presentation" identifier="showAddMeigen" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="TNQ-ku-YiW"/>
+                        <segue destination="Vg1-fq-lDD" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="xLj-FL-ci9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

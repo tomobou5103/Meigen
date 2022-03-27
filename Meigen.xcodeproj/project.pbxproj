@@ -24,6 +24,7 @@
 		737F45EB27D1E34F00436541 /* ExtesionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EA27D1E34F00436541 /* ExtesionVC.swift */; };
 		737F45EF27DA57C400436541 /* AddMeigenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EE27DA57C400436541 /* AddMeigenViewController.swift */; };
 		737F45F127DD132400436541 /* ReloadTopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */; };
+		73EB14D727F02382001D5003 /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EB14D627F02382001D5003 /* ThemeColorViewController.swift */; };
 		73FFD78627210D34000F236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78527210D34000F236E /* AppDelegate.swift */; };
 		73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FFD78727210D34000F236E /* SceneDelegate.swift */; };
 		73FFD78D27210D34000F236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FFD78B27210D34000F236E /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		737F45EA27D1E34F00436541 /* ExtesionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtesionVC.swift; sourceTree = "<group>"; };
 		737F45EE27DA57C400436541 /* AddMeigenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeigenViewController.swift; sourceTree = "<group>"; };
 		737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTopViewControllerDelegate.swift; sourceTree = "<group>"; };
+		73EB14D627F02382001D5003 /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
 		73FFD78227210D34000F236E /* Meigen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meigen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FFD78527210D34000F236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73FFD78727210D34000F236E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				737F45E227C4BA2000436541 /* MenuViewController.swift */,
 				731EDE4F27B0740800D6B2D3 /* CustomViewController.swift */,
 				7319C2BA27E13F3C002D3E9A /* DetailViewController.swift */,
+				73EB14D627F02382001D5003 /* ThemeColorViewController.swift */,
 				737F45EE27DA57C400436541 /* AddMeigenViewController.swift */,
 				734395442786D2FB00733CA7 /* SearchBookViewController.swift */,
 				73FFD7BD272113E2000F236E /* View */,
@@ -490,6 +493,7 @@
 				734395452786D2FB00733CA7 /* SearchBookViewController.swift in Sources */,
 				7319C2BB27E13F3C002D3E9A /* DetailViewController.swift in Sources */,
 				73FFD78627210D34000F236E /* AppDelegate.swift in Sources */,
+				73EB14D727F02382001D5003 /* ThemeColorViewController.swift in Sources */,
 				731EDE5727B1A47800D6B2D3 /* CustomTableViewCell.swift in Sources */,
 				737F45E327C4BA2000436541 /* MenuViewController.swift in Sources */,
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
