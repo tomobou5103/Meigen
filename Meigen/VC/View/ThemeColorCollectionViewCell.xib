@@ -4,20 +4,60 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThemeColorCollectionViewCell" id="gTV-IL-0wX" customClass="ThemeColorCollectionViewCell" customModule="Meigen" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-sg-lyO">
+                        <rect key="frame" x="0.0" y="0.0" width="113" height="68"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-q2-lEM">
+                        <rect key="frame" x="0.0" y="68" width="113" height="11"/>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qax-pE-x12">
+                        <rect key="frame" x="0.0" y="79" width="113" height="34"/>
+                        <color key="backgroundColor" red="0.88452589510000001" green="0.87864691019999996" blue="0.96324521299999999" alpha="0.8517694536" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="139" y="92"/>
+            <constraints>
+                <constraint firstItem="tzt-q2-lEM" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="1YJ-R0-EJa"/>
+                <constraint firstItem="tzt-q2-lEM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6kY-0Q-aU9"/>
+                <constraint firstItem="qax-pE-x12" firstAttribute="top" secondItem="tzt-q2-lEM" secondAttribute="bottom" id="B6m-cG-ZkU"/>
+                <constraint firstItem="t9U-sg-lyO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.6" id="Bid-Vn-Vr1"/>
+                <constraint firstAttribute="trailing" secondItem="qax-pE-x12" secondAttribute="trailing" id="Egf-p4-gnZ"/>
+                <constraint firstItem="t9U-sg-lyO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W85-zF-YBc"/>
+                <constraint firstItem="tzt-q2-lEM" firstAttribute="top" secondItem="t9U-sg-lyO" secondAttribute="bottom" id="czL-5Q-n9U"/>
+                <constraint firstAttribute="trailing" secondItem="t9U-sg-lyO" secondAttribute="trailing" id="jhH-0n-wCN"/>
+                <constraint firstAttribute="bottom" secondItem="qax-pE-x12" secondAttribute="bottom" id="kFt-Pb-lIo"/>
+                <constraint firstItem="t9U-sg-lyO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="s3W-Bo-oIQ"/>
+                <constraint firstItem="qax-pE-x12" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="v4n-7D-y7W"/>
+                <constraint firstAttribute="trailing" secondItem="tzt-q2-lEM" secondAttribute="trailing" id="wJm-9L-mEN"/>
+            </constraints>
+            <size key="customSize" width="113" height="113"/>
+            <connections>
+                <outlet property="firstColorView" destination="t9U-sg-lyO" id="h0e-Pq-8bH"/>
+                <outlet property="secondColorView" destination="tzt-q2-lEM" id="ZII-oh-slp"/>
+                <outlet property="thirdColorView" destination="qax-pE-x12" id="JFD-3S-7ga"/>
+            </connections>
+            <point key="canvasLocation" x="145.6521739130435" y="70.647321428571431"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -56,6 +56,10 @@ extension ThemeColorViewController:UICollectionViewDelegate,UICollectionViewData
         else{
             return UICollectionViewCell()
         }
+        cell.configure(index: indexPath.row)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }

@@ -30,7 +30,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6On-fc-itO"/>
-                        <color key="backgroundColor" red="0.88452589510000001" green="0.87864691019999996" blue="0.96324521299999999" alpha="0.8517694536" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.87864691019999996" blue="0.96324521299999999" alpha="0.8517694536" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6On-fc-itO" firstAttribute="bottom" secondItem="eIg-vm-pt6" secondAttribute="bottom" id="ID9-6B-p4V"/>
                             <constraint firstItem="rp2-RN-NTp" firstAttribute="centerY" secondItem="hDa-Iy-16U" secondAttribute="centerY" id="JR1-Ib-h2d"/>
@@ -215,7 +215,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="OWs-mH-B3i" firstAttribute="centerY" secondItem="7I3-3A-P3V" secondAttribute="centerY" id="0bP-tr-X5d"/>
                                             <constraint firstItem="OWs-mH-B3i" firstAttribute="centerX" secondItem="7I3-3A-P3V" secondAttribute="centerX" id="rGy-Bm-191"/>
@@ -223,7 +223,7 @@
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hWk-0Z-6OD">
                                         <rect key="frame" x="15" y="97" width="322" height="826"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8f7-op-TpH">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -233,7 +233,7 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="7I3-3A-P3V" firstAttribute="height" secondItem="xZL-4x-pXa" secondAttribute="height" multiplier="0.05" id="9yb-F7-pTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="7I3-3A-P3V" secondAttribute="trailing" id="FDp-Bb-Emh"/>
@@ -344,11 +344,9 @@
                                 <constraints>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="leading" secondItem="szZ-wB-ta8" secondAttribute="leading" id="7CX-pI-RjF"/>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
-                                    <constraint firstItem="I98-9l-qqF" firstAttribute="centerX" secondItem="szZ-wB-ta8" secondAttribute="centerX" id="Ax5-Od-Bmv"/>
                                     <constraint firstAttribute="trailing" secondItem="I98-9l-qqF" secondAttribute="trailing" id="HYa-eQ-ZNE"/>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="top" secondItem="szZ-wB-ta8" secondAttribute="top" id="TXn-2f-shF"/>
                                     <constraint firstAttribute="bottom" secondItem="I98-9l-qqF" secondAttribute="bottom" id="fB3-VQ-kAC"/>
-                                    <constraint firstItem="I98-9l-qqF" firstAttribute="centerY" secondItem="szZ-wB-ta8" secondAttribute="centerY" id="zuI-Qj-tLz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
