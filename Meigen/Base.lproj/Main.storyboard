@@ -256,6 +256,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="hWk-0Z-6OD" id="WCC-qt-9yN"/>
                         <outlet property="menuView" destination="xZL-4x-pXa" id="1Lq-I6-vfM"/>
                     </connections>
                 </viewController>

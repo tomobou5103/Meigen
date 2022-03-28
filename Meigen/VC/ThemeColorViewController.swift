@@ -1,9 +1,16 @@
 import UIKit
 
-class ThemeColorViewController: UIViewController {
+final class ThemeColorViewController: UIViewController {
+//MARK: -Property
+    private let themeColorCollectionViewCellId = "ThemeColorCollectionViewCell"
+//MARK: -IBOutlet
     @IBOutlet private weak var menuView: UIView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet private weak var collectionView: UICollectionView!{didSet{collectionViewConfigure(view: collectionView)}}
+//MARK: -Configure
+    private func collectionViewConfigure(view:UICollectionView){
+        view.delegate = self
+        view.dataSource = self
+        view.register(UINib(nibName: themeColorCollectionViewCellId, bundle: nil), forCellWithReuseIdentifier: themeColorCollectionViewCellId)
     }
 //MARK: -LifeCycle
     override func viewWillAppear(_ animated: Bool) {
@@ -37,5 +44,18 @@ class ThemeColorViewController: UIViewController {
                 )
             }
         }
+    }
+}
+extension ThemeColorViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: themeColorCollectionViewCellId, for: indexPath) as? ThemeColorCollectionViewCell
+        else{
+            return UICollectionViewCell()
+        }
+        return cell
     }
 }
