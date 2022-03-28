@@ -9,6 +9,7 @@ final class TopViewController: UIViewController{
     private var pagingVC:PagingViewController?{didSet{pagingVC?.delegate = self}}
     private let toMenuSegueId = "showMenu"
     private let toAddMeigenId = "showAddMeigen"
+    private let toThemeColorId = "showThemeColor"
     private let realm = try! Realm()
     private var selectIndex:Int = 0
 //MARK: -IBOutlet
@@ -16,6 +17,9 @@ final class TopViewController: UIViewController{
     @IBOutlet private weak var bottomV: UIView!
     @IBAction func toMenuButton(_ sender: Any) {
         performSegue(withIdentifier: toMenuSegueId, sender: nil)
+    }
+    @IBAction func toThemeColorButton(_ sender: Any) {
+        performSegue(withIdentifier: toThemeColorId, sender: nil)
     }
     @IBAction func toAddMeigenButton(_ sender: Any) {
         performSegue(withIdentifier: toAddMeigenId, sender: nil)
