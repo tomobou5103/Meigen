@@ -184,6 +184,7 @@
                         <outlet property="authorLabel" destination="tgI-VW-4kK" id="wuD-Qh-Qjj"/>
                         <outlet property="bookImageView" destination="C0I-z7-mKf" id="eWR-dm-Ne6"/>
                         <outlet property="commentLabel" destination="6zC-xi-NiP" id="1es-u0-ua8"/>
+                        <outlet property="headerView" destination="35C-vp-vYU" id="M76-Vy-tq4"/>
                         <outlet property="imageView" destination="Zai-Ny-w9O" id="gSl-1e-jRi"/>
                         <outlet property="saveMeigenTextButton" destination="DGf-pK-zr1" id="1Sm-u3-GOd"/>
                         <outlet property="textView" destination="QSm-nT-DKJ" id="rke-GY-FUC"/>
@@ -329,7 +330,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I98-9l-qqF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Add Meigen">
@@ -340,7 +341,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="leading" secondItem="szZ-wB-ta8" secondAttribute="leading" id="7CX-pI-RjF"/>
                                     <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
@@ -626,9 +627,11 @@
                         <outlet property="authorTextField" destination="bkW-L9-Pp6" id="rIb-li-D8X"/>
                         <outlet property="bookNameTextField" destination="eeT-bK-JF7" id="cbb-D4-HaZ"/>
                         <outlet property="commentTextField" destination="Iut-hK-Blu" id="7N3-sM-wR8"/>
+                        <outlet property="headerLabel" destination="FRd-qM-SHG" id="k9q-eh-ODE"/>
                         <outlet property="imageView" destination="VSF-F9-NCN" id="qRp-b7-USl"/>
                         <outlet property="saveButton" destination="zjA-ZD-c46" id="WLh-pZ-IMv"/>
                         <outlet property="textView" destination="Je8-cm-ZBj" id="mxe-tl-fRO"/>
+                        <outlet property="textViewEndEditingButton" destination="2aB-JP-iX5" id="mDl-79-KRn"/>
                         <segue destination="OZq-Qy-UPo" kind="presentation" identifier="toSearchBook" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bbg-YY-834"/>
                     </connections>
                 </viewController>
@@ -726,9 +729,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

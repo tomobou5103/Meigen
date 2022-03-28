@@ -23,7 +23,7 @@
 		737F45E727C8A30500436541 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737F45E527C8A30500436541 /* MenuTableViewCell.xib */; };
 		737F45EB27D1E34F00436541 /* ExtesionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EA27D1E34F00436541 /* ExtesionVC.swift */; };
 		737F45EF27DA57C400436541 /* AddMeigenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45EE27DA57C400436541 /* AddMeigenViewController.swift */; };
-		737F45F127DD132400436541 /* ReloadTopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */; };
+		737F45F127DD132400436541 /* MenuThemeColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737F45F027DD132400436541 /* MenuThemeColorDelegate.swift */; };
 		73EB14D727F02382001D5003 /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EB14D627F02382001D5003 /* ThemeColorViewController.swift */; };
 		73EB14DA27F19B1A001D5003 /* ThemeColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EB14D827F19B1A001D5003 /* ThemeColorCollectionViewCell.swift */; };
 		73EB14DB27F19B1A001D5003 /* ThemeColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EB14D927F19B1A001D5003 /* ThemeColorCollectionViewCell.xib */; };
@@ -79,7 +79,7 @@
 		737F45E527C8A30500436541 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		737F45EA27D1E34F00436541 /* ExtesionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtesionVC.swift; sourceTree = "<group>"; };
 		737F45EE27DA57C400436541 /* AddMeigenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeigenViewController.swift; sourceTree = "<group>"; };
-		737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTopViewControllerDelegate.swift; sourceTree = "<group>"; };
+		737F45F027DD132400436541 /* MenuThemeColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuThemeColorDelegate.swift; sourceTree = "<group>"; };
 		73EB14D627F02382001D5003 /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
 		73EB14D827F19B1A001D5003 /* ThemeColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		73EB14D927F19B1A001D5003 /* ThemeColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeColorCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				73EB14DC27F1A65D001D5003 /* ThemeColors.swift */,
 				734395472787057E00733CA7 /* GoogleBooksAPI.swift */,
 				7337B4982722D60C006C6820 /* BooksModel.swift */,
-				737F45F027DD132400436541 /* ReloadTopViewControllerDelegate.swift */,
+				737F45F027DD132400436541 /* MenuThemeColorDelegate.swift */,
 				731EDE5127B16FA200D6B2D3 /* MeigenModel.swift */,
 				737F45EA27D1E34F00436541 /* ExtesionVC.swift */,
 			);
@@ -511,7 +511,7 @@
 				734395482787057E00733CA7 /* GoogleBooksAPI.swift in Sources */,
 				731EDE5227B16FA200D6B2D3 /* MeigenModel.swift in Sources */,
 				73FFD78827210D34000F236E /* SceneDelegate.swift in Sources */,
-				737F45F127DD132400436541 /* ReloadTopViewControllerDelegate.swift in Sources */,
+				737F45F127DD132400436541 /* MenuThemeColorDelegate.swift in Sources */,
 				7337B4992722D60C006C6820 /* BooksModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

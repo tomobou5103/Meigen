@@ -9,18 +9,21 @@ final class AddMeigenViewController: UIViewController {
     private let toSearchBookId = "toSearchBook"
     private var categoryId:String = ""
     private var categoryIndex:Int = 0
-    private var searedBookModel:Item?
-    private weak var delegate:ReloadTopViewControllerDelegate?
+    private var searchedBookModel:Item?
+    private weak var delegate:MenuViewControllerDelegate?
     private var bookModelImageSt:String?
     private let disposeBag = DisposeBag()
+    private let themeColor = ThemeColors().loadColor()
     
 //MARK: -IBOutlet
+    @IBOutlet private weak var headerLabel: UILabel!{didSet{headerLabel.backgroundColor = UIColor(hex: themeColor[0])}}
     @IBOutlet private weak var addMeigenView: UIView!
     @IBOutlet private weak var bookNameTextField: UITextField!
     @IBOutlet private weak var authorTextField: UITextField!
     @IBOutlet private weak var commentTextField: UITextField!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var textView: KMPlaceholderTextView!
+    @IBOutlet private weak var textViewEndEditingButton: UIButton!{didSet{textViewEndEditingButton.backgroundColor = UIColor(hex: themeColor[0])}}
     @IBOutlet private weak var saveButton: UIButton!
     //MARK: -IBAction
     @IBAction private func searchBookAction(_ sender: Any) {
@@ -45,13 +48,10 @@ final class AddMeigenViewController: UIViewController {
         })
     }
     //MARK: -Configure
-    internal func configure(categoryId:String?,categoryIndex:Int,searchedBookModel:Item?,delegate:ReloadTopViewControllerDelegate?){
+    internal func configure(categoryId:String?,categoryIndex:Int,delegate:MenuViewControllerDelegate?){
         self.categoryIndex = categoryIndex
         if let categoryId = categoryId {
             self.categoryId = categoryId
-        }
-        if let searedBookModel = searedBookModel {
-            self.searedBookModel = searedBookModel
         }
         if let delegate = delegate {
             self.delegate = delegate
@@ -112,9 +112,9 @@ final class AddMeigenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldConfigure()
-        if let searedBookModel = self.searedBookModel {
-            self.bookNameTextField.text = searedBookModel.volumeInfo.title
-            self.authorTextField.text = searedBookModel.volumeInfo.authors?[0]
+        if let model = self.searchedBookModel {
+            self.bookNameTextField.text = model.volumeInfo.title
+            self.authorTextField.text = model.volumeInfo.authors?[0]
         }
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false

@@ -8,7 +8,9 @@ final class DetailViewController: UIViewController {
     private var index:IndexPath?
     private weak var delegate:DetailViewControllerDelegate?
     private let disposeBag = DisposeBag()
+    private let themeColor = ThemeColors().loadColor()
 //MARK: -IBOutlet
+    @IBOutlet private weak var headerView: UIView!{didSet{headerView.backgroundColor = UIColor(hex: themeColor[0])}}
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var commentLabel: UILabel!
@@ -29,7 +31,7 @@ final class DetailViewController: UIViewController {
     }
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
-    @IBOutlet weak var saveMeigenTextButton: UIButton!
+    @IBOutlet private weak var saveMeigenTextButton: UIButton!
     //MARK: -IBAction
     @IBAction private func removeMeigenModelAction(_ sender: Any) {
         guard let title = self.model.title else{return}

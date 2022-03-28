@@ -3,10 +3,14 @@ import UIKit
 final class ThemeColorViewController: UIViewController {
 //MARK: -Property
     private let themeColorCollectionViewCellId = "ThemeColorCollectionViewCell"
+    private weak var delegate:ThemeColorViewControllerDelegate?
 //MARK: -IBOutlet
     @IBOutlet private weak var menuView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!{didSet{collectionViewConfigure(view: collectionView)}}
 //MARK: -Configure
+    internal func configure(delegate:ThemeColorViewControllerDelegate){
+        self.delegate = delegate
+    }
     private func collectionViewConfigure(view:UICollectionView){
         view.delegate = self
         view.dataSource = self
@@ -48,7 +52,7 @@ final class ThemeColorViewController: UIViewController {
 }
 extension ThemeColorViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 28
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
@@ -60,6 +64,14 @@ extension ThemeColorViewController:UICollectionViewDelegate,UICollectionViewData
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        ThemeColors().saveColor(index: indexPath.row)
+        delegate?.reloadTopView()
+    }
+}
+extension ThemeColorViewController:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.collectionView.frame.width / 4.5
+        let height = width
+        return CGSize(width: width, height: height)
     }
 }

@@ -11,6 +11,7 @@ final class CustomViewController: UIViewController {
     private var categoryIndex = 0
     private var model:[MeigenModel]?
     private var modelIndex:IndexPath?
+    private let themeColor = ThemeColors().loadColor()
 //MARK: -IBOutlet
     @IBOutlet private weak var tableV: UITableView!{didSet{tableViewConfigure()}}
     @IBOutlet private weak var noModelLabel: UILabel!
@@ -25,6 +26,7 @@ final class CustomViewController: UIViewController {
         self.categoryId = categoryId
         self.categoryIndex = categoryIndex
         self.title = convertFromIdToTitle(id: categoryId)
+        self.view.backgroundColor = UIColor(hex: themeColor[2])
     }
     private func convertFromIdToTitle(id:String)->String{
         let title = id.components(separatedBy: "&")

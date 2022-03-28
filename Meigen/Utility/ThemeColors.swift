@@ -1,6 +1,9 @@
 import UIKit
 
 struct ThemeColors{
+    private let ud = UserDefaults.standard
+    private let udKey = "ThemeColor"
+    private let udColor:[String] = []
     private let colors:[[String]] = [
         ["5857D5","00FF00","CCCCF1"],
         ["f1ac9d","6abe83","dee2d1"],
@@ -14,10 +17,32 @@ struct ThemeColors{
         ["9881f5","f97d81","82aff9"],
         ["68a8ad","737495","c4d4af"],
         ["f9ce00","09194f","fdfdeb"],
-        ["1f192b","4e706a","eec7bb"]
+        ["1f192b","4e706a","eec7bb"],
+        ["393e46","fd7013","eeeeee"],
+        ["20366b","2d095c","eae3e3"],
+        ["1f640a","260033","ffffff"],
+        ["a4bf5b","79a2a6","dcdede"],
+        ["7d6e70","ac5850","c8c8c0"],
+        ["424242","8a0651","ffffff"],
+        ["b5838d","6d6875","ffb4a2"],
+        ["d9ad9a","29000a","e8e1e4"],
+        ["d693bd","9c0063","efd3e7"],
+        ["3366cc","99ccff","ffffff"],
+        ["999999","336666","ffffff"],
+        ["ff6600","cc3333","ffffcc"],
+        ["ffcccc","ff99cc","ffffcc"],
+        ["ff6699","ccffcc","ccffff"],
+        ["660099","00FF00","ffffff"]
         ]
     internal func returnColor(num:Int)->[String]{
         return colors[num]
+    }
+    internal func loadColor() -> [String]{
+        let colorIndex = ud.integer(forKey: udKey)
+        return colors[colorIndex]
+    }
+    internal func saveColor(index:Int){
+        ud.set(index, forKey: udKey)
     }
 }
 extension UIColor {

@@ -55,10 +55,13 @@ final class TopViewController: UIViewController{
           pagingVC.view.bottomAnchor.constraint(equalTo: backgroundV.bottomAnchor),
           pagingVC.view.topAnchor.constraint(equalTo: backgroundV.topAnchor)
         ])
+        let themeColor = ThemeColors().loadColor()
+        self.backgroundV.backgroundColor = UIColor(hex: themeColor[0])
+        self.bottomV.backgroundColor = UIColor(hex: themeColor[0])
+        pagingVC.indicatorColor = UIColor(hex: themeColor[1])
+        pagingVC.selectedTextColor = UIColor(hex: themeColor[1])
         pagingVC.selectedBackgroundColor = .clear
-        pagingVC.indicatorColor = .green
         pagingVC.textColor = .white
-        pagingVC.selectedTextColor = .green
         pagingVC.menuBackgroundColor = .clear
         pagingVC.borderColor = .clear
         pagingVC.select(index: 0)
@@ -90,7 +93,10 @@ final class TopViewController: UIViewController{
             nextVC?.configure(categories: categories,delegate: self)
         }else if segue.identifier == toAddMeigenId{
             let nextVC = segue.destination as? AddMeigenViewController
-            nextVC?.configure(categoryId: categories[selectIndex], categoryIndex: selectIndex, searchedBookModel: nil, delegate: self)
+            nextVC?.configure(categoryId: categories[selectIndex], categoryIndex: selectIndex, delegate: self)
+        }else if segue.identifier == toThemeColorId{
+            let nextVC = segue.destination as? ThemeColorViewController
+            nextVC?.configure(delegate:self)
         }
     }
     
@@ -100,7 +106,7 @@ extension TopViewController:UINavigationControllerDelegate{
         reloadView()
     }
 }
-extension TopViewController:ReloadTopViewControllerDelegate{
+extension TopViewController:MenuViewControllerDelegate{
     func renameMeigenModel(categoryId: String,newCategoryId:String) {
         let res = realm.objects(MeigenModel.self).filter("categoryId == %@",categoryId)
         try! realm.write{
@@ -133,5 +139,10 @@ extension TopViewController: PagingViewControllerDelegate {
     func pagingViewController(_ pagingViewController: PagingViewController, didScrollToItem pagingItem: PagingItem, startingViewController: UIViewController?, destinationViewController: UIViewController, transitionSuccessful: Bool) {
         guard let nums = self.pagingVC?.visibleItems.indexPath(for: pagingItem)else{return}
         self.selectIndex = nums[1]
+    }
+}
+extension TopViewController:ThemeColorViewControllerDelegate{
+    func reloadTopView() {
+        reloadView()
     }
 }
