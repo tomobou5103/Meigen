@@ -317,7 +317,7 @@
             </objects>
             <point key="canvasLocation" x="915.94202898550736" y="-581.25"/>
         </scene>
-        <!--TopVC-->
+        <!--Meigen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="Meigen" customModuleProvider="target" sceneMemberID="viewController">
@@ -367,7 +367,7 @@
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="top" secondItem="zTl-yW-XRr" secondAttribute="bottom" id="XaZ-gc-neh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TopVC" id="H43-Sr-V1M">
+                    <navigationItem key="navigationItem" title="Meigen" id="H43-Sr-V1M">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.plus" catalog="system" id="u2J-ZF-ffC">
                             <connections>
                                 <action selector="toMenuButton:" destination="BYZ-38-t0r" id="6yO-Fc-Nzv"/>
