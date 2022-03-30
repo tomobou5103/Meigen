@@ -64,7 +64,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35C-vp-vYU" userLabel="HeaderView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="161.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C0I-z7-mKf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="C0I-z7-mKf">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="161.5"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CIB-we-Rpu">
@@ -715,6 +715,7 @@
         <image name="camera" width="42.666667938232422" height="42.666667938232422"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="image" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="noimage" width="271" height="352"/>
         <image name="paintpalette" catalog="system" width="128" height="105"/>
         <image name="pencil" width="42.666667938232422" height="42.666667938232422"/>
         <image name="trash" width="42.666667938232422" height="42.666667938232422"/>
