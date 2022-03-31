@@ -18,13 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-2g-SpY">
-                        <rect key="frame" x="0.0" y="0.0" width="97" height="129"/>
+                        <rect key="frame" x="0.0" y="0.0" width="98" height="129"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="fuQ-2g-SpY" secondAttribute="height" multiplier="0.76:1" id="w1w-qc-YdU"/>
+                        </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-tB-laE">
-                        <rect key="frame" x="97" y="0.0" width="290" height="129"/>
+                        <rect key="frame" x="98" y="0.0" width="289" height="129"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Mw-FDP">
-                                <rect key="frame" x="121.5" y="5" width="47" height="21.5"/>
+                                <rect key="frame" x="121" y="5" width="47" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbe-dq-FO2">
-                                <rect key="frame" x="7" y="56" width="276" height="17"/>
+                                <rect key="frame" x="7" y="56" width="275" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,7 +66,6 @@
                     <constraint firstAttribute="trailing" secondItem="HE3-tB-laE" secondAttribute="trailing" id="72C-TU-TEc"/>
                     <constraint firstItem="fuQ-2g-SpY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="76r-kJ-53c"/>
                     <constraint firstAttribute="bottom" secondItem="HE3-tB-laE" secondAttribute="bottom" id="SVs-pX-Cd7"/>
-                    <constraint firstItem="fuQ-2g-SpY" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="VI8-Xb-EkO"/>
                     <constraint firstItem="HE3-tB-laE" firstAttribute="leading" secondItem="fuQ-2g-SpY" secondAttribute="trailing" id="WAE-Cy-yxQ"/>
                     <constraint firstItem="fuQ-2g-SpY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="apo-5t-Aby"/>
                     <constraint firstItem="HE3-tB-laE" firstAttribute="height" secondItem="fuQ-2g-SpY" secondAttribute="height" id="vxd-AJ-fVT"/>
