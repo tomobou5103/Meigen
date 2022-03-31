@@ -18,13 +18,20 @@ final class DetailViewController: UIViewController {
         didSet{
             self.textView.rx.text.asDriver()
                 .drive(onNext: {[weak self] text in
-                    if text != self?.model.meigenText{
-                        self?.textView.textColor = .systemRed
-                        self?.saveMeigenTextButton.alpha = 1
+                    guard let text = text else{return}
+                    if text.count < 200{
+                        if text != self?.model.meigenText{
+                            self?.textView.textColor = .systemRed
+                            self?.saveMeigenTextButton.alpha = 1
+                        }else{
+                            self?.textView.textColor = .black
+                            self?.saveMeigenTextButton.alpha = 0
+                        }
                     }else{
-                        self?.textView.textColor = .black
                         self?.saveMeigenTextButton.alpha = 0
                     }
+
+                    
                 })
                 .disposed(by: disposeBag)
         }
