@@ -483,9 +483,16 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-F9-NCN">
                                                 <rect key="frame" x="10" y="154" width="394" height="239"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRE-QF-NuE">
+                                                <rect key="frame" x="352.5" y="362.5" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Je8-cm-ZBj" firstAttribute="bottom" secondItem="oRE-QF-NuE" secondAttribute="bottom" constant="10" id="4Lm-Ke-l3J"/>
                                             <constraint firstItem="VSF-F9-NCN" firstAttribute="width" secondItem="Je8-cm-ZBj" secondAttribute="width" id="4UJ-hC-Owd"/>
                                             <constraint firstAttribute="trailing" secondItem="mpj-rB-vso" secondAttribute="trailing" constant="10" id="GUB-uX-OfH"/>
                                             <constraint firstAttribute="trailing" secondItem="VSF-F9-NCN" secondAttribute="trailing" constant="10" id="Ioa-bb-TU4"/>
@@ -496,8 +503,10 @@
                                             <constraint firstItem="mpj-rB-vso" firstAttribute="leading" secondItem="ucr-Ms-dUC" secondAttribute="leading" constant="10" id="UQF-Pp-tgF"/>
                                             <constraint firstItem="VSF-F9-NCN" firstAttribute="height" secondItem="Je8-cm-ZBj" secondAttribute="height" id="WwU-sf-MEJ"/>
                                             <constraint firstAttribute="bottom" secondItem="Je8-cm-ZBj" secondAttribute="bottom" constant="10" id="cpb-O2-i79"/>
+                                            <constraint firstItem="oRE-QF-NuE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucr-Ms-dUC" secondAttribute="leading" id="kOm-p6-9q0"/>
                                             <constraint firstItem="VSF-F9-NCN" firstAttribute="top" secondItem="mpj-rB-vso" secondAttribute="bottom" constant="15" id="oIp-Yf-AxE"/>
                                             <constraint firstItem="Je8-cm-ZBj" firstAttribute="top" secondItem="mpj-rB-vso" secondAttribute="bottom" constant="15" id="prb-l1-CC2"/>
+                                            <constraint firstItem="Je8-cm-ZBj" firstAttribute="trailing" secondItem="oRE-QF-NuE" secondAttribute="trailing" constant="10" id="rpr-cA-X80"/>
                                             <constraint firstItem="Je8-cm-ZBj" firstAttribute="leading" secondItem="ucr-Ms-dUC" secondAttribute="leading" constant="10" id="vrh-2V-hEI"/>
                                         </constraints>
                                     </view>
@@ -631,6 +640,7 @@
                         <outlet property="imageView" destination="VSF-F9-NCN" id="qRp-b7-USl"/>
                         <outlet property="saveButton" destination="zjA-ZD-c46" id="WLh-pZ-IMv"/>
                         <outlet property="textView" destination="Je8-cm-ZBj" id="mxe-tl-fRO"/>
+                        <outlet property="textViewCounterLabel" destination="oRE-QF-NuE" id="48Q-Z0-voJ"/>
                         <outlet property="textViewEndEditingButton" destination="2aB-JP-iX5" id="mDl-79-KRn"/>
                         <segue destination="OZq-Qy-UPo" kind="presentation" identifier="toSearchBook" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bbg-YY-834"/>
                     </connections>

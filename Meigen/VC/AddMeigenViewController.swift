@@ -25,6 +25,7 @@ final class AddMeigenViewController: UIViewController {
     @IBOutlet private weak var textView: KMPlaceholderTextView!
     @IBOutlet private weak var textViewEndEditingButton: UIButton!{didSet{textViewEndEditingButton.backgroundColor = UIColor(hex: themeColor[0])}}
     @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var textViewCounterLabel: UILabel!
     //MARK: -IBAction
     @IBAction private func searchBookAction(_ sender: Any) {
         performSegue(withIdentifier: toSearchBookId, sender: nil)
@@ -95,6 +96,27 @@ final class AddMeigenViewController: UIViewController {
             
         }
     }
+    private func textViewConfigure(){
+        self.textView.rx.text.asDriver()
+            .drive(onNext: {[unowned self] text in
+                if let text = text{
+                    let saveButtonIsOnCounter = 200 - text.count
+                        textViewCounterLabel.text = "\(saveButtonIsOnCounter)"
+                    if saveButtonIsOnCounter < 0{
+                        saveButton.backgroundColor = .lightGray
+                        saveButton.isEnabled = false
+                        textViewCounterLabel.textColor = .systemRed
+                    }else{
+                        saveButton.backgroundColor = .systemBlue
+                        saveButton.isEnabled = true
+                        textViewCounterLabel.textColor = .gray
+                    }
+                }else{
+                    textViewCounterLabel.text = "0"
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 //MARK: -MakeMeigenModel
     private func makeMeigenModel()->MeigenModel{
         let model = MeigenModel()
@@ -112,6 +134,7 @@ final class AddMeigenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldConfigure()
+        textViewConfigure()
         if let model = self.searchedBookModel {
             self.bookNameTextField.text = model.volumeInfo.title
             self.authorTextField.text = model.volumeInfo.authors?[0]
