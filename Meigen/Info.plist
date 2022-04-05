@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Meigenを画像で保存するためにカメラを使用します。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>Meigenを画像で保存するためにライブラリを使用します。</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ja_JP</string>
 	<key>NSAppTransportSecurity</key>
