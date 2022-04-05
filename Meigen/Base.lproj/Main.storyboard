@@ -325,11 +325,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="717"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-wB-ta8">
-                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="805" width="414" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I98-9l-qqF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -344,27 +348,24 @@
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="leading" secondItem="szZ-wB-ta8" secondAttribute="leading" id="7CX-pI-RjF"/>
-                                    <constraint firstAttribute="height" constant="100" id="83x-fT-hX1"/>
                                     <constraint firstAttribute="trailing" secondItem="I98-9l-qqF" secondAttribute="trailing" id="HYa-eQ-ZNE"/>
                                     <constraint firstItem="I98-9l-qqF" firstAttribute="top" secondItem="szZ-wB-ta8" secondAttribute="top" id="TXn-2f-shF"/>
                                     <constraint firstAttribute="bottom" secondItem="I98-9l-qqF" secondAttribute="bottom" id="fB3-VQ-kAC"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-yW-XRr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="708"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zTl-yW-XRr" secondAttribute="trailing" id="1H4-H4-v4J"/>
+                            <constraint firstItem="zTl-yW-XRr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="32D-cR-svv"/>
                             <constraint firstAttribute="bottom" secondItem="szZ-wB-ta8" secondAttribute="bottom" id="DXM-mz-lAF"/>
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GOV-vV-mcX"/>
                             <constraint firstItem="szZ-wB-ta8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gmm-MB-smx"/>
+                            <constraint firstItem="szZ-wB-ta8" firstAttribute="top" secondItem="zTl-yW-XRr" secondAttribute="bottom" id="Qxe-y5-GcE"/>
                             <constraint firstItem="zTl-yW-XRr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S8u-zB-gfw"/>
                             <constraint firstItem="zTl-yW-XRr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SSj-vz-kUJ"/>
-                            <constraint firstItem="szZ-wB-ta8" firstAttribute="top" secondItem="zTl-yW-XRr" secondAttribute="bottom" id="XaZ-gc-neh"/>
+                            <constraint firstItem="zTl-yW-XRr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ebP-i5-d7H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meigen" id="H43-Sr-V1M">
