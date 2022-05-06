@@ -61,6 +61,30 @@ final class DetailViewController: UIViewController {
         if !self.model.isInvalidated{
             detailViewConfigure(model: self.model)
         }
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if !textView.isFirstResponder{
+            return
+        }
+        if self.view.frame.origin.y == 0 {
+            if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                let bottomSpaceHeight = self.view.frame.height / 5
+                self.view.frame.origin.y -= keyboardRect.height -  bottomSpaceHeight
+            }
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
